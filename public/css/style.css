@@ -201,7 +201,8 @@ h1.page-title span { position:relative; top:19px; background:#fff; display:inlin
 #homepage-events article.upcoming-event-block { float:left; margin:0 0 0 20px; width:300px; }
 #homepage-events article.upcoming-event-block:first-child { margin:0; }
 
-.bottom-spacer { height:70px; }
+.bottom-spacer { height:40px;
+background-color: black}
 
 
 

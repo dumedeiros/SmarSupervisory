@@ -2,7 +2,7 @@ var KEYCODE_ESC = 27;
 var KEYCODE_ENTER = 13;
  
 function showErro(msg){
-    jQuery('#centralMessage').addClass("erroneous").show(500).children().text(msg);
+    jQuery('#centralMessage').show(500).children().children().text(msg);
 }
 
 function showInfo(msg){

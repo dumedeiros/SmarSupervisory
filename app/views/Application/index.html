@@ -66,25 +66,28 @@
                                 <li class="menu-item"><a href="#">Sub-2</a></li>
                             </ul></section>
                     </li>
-                    <li class="menu-item "><a href="#">Menu-3</a>
+                    <li class="menu-item "><a href="@{home()}">Menu-3</a>
                     </li>
                 </ul>	
             </div>
         </nav>
-        <div style="height: 60px; width: 100%;background: rgb(169,3,41); /* Old browsers */
+
+
+        <div id="centralMessage" style="margin-left: 300px;z-index: 2; position: absolute;height: 40px; width: 50%;background: black; /* Old browsers */
              /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-             background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNhOTAzMjkiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI0NCUiIHN0b3AtY29sb3I9IiM4ZjAyMjIiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNmQwMDE5IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-             background: -moz-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%); /* FF3.6+ */
-             background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(169,3,41,1)), color-stop(44%,rgba(143,2,34,1)), color-stop(100%,rgba(109,0,25,1))); /* Chrome,Safari4+ */
-             background: -webkit-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Chrome10+,Safari5.1+ */
-             background: -o-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Opera 12+ */
-             background: -ms-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* IE10+ */
-             background: radial-gradient(ellipse at center,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* W3C */
-             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
-             " class="notDisplayable" id="tt">
-            <div class="erroneou" style="height: 100%;  width: 100%;  z-index: 1; color: white; font-weight: bold;
+             " class="" id="tt">
+            <div class="erroneou" style="margin-left: 300px;height: 100%;  width: 50%;  z-index: 1; color: white; font-weight: bold;
                  line-height: 50%;
-                 text-align: center;" >
+                 text-align: center;
+                 background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNhOTAzMjkiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI0NCUiIHN0b3AtY29sb3I9IiM4ZjAyMjIiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNmQwMDE5IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+                 background: -moz-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(169,3,41,1)), color-stop(44%,rgba(143,2,34,1)), color-stop(100%,rgba(109,0,25,1))); /* Chrome,Safari4+ */
+                 background: -webkit-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Opera 12+ */
+                 background: -ms-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* IE10+ */
+                 background: radial-gradient(ellipse at center,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */
+                 " >
                 <span style="font-family: Garamond, serif;
                       line-height: 1em;
                       color: #ffffff;
@@ -93,9 +96,6 @@
                       text-shadow:0px 0px 0 rgb(128,128,128),1px 1px 0 rgb(0,0,0), 2px 2px 0 rgb(-127,-127,-127),3px 3px 2px rgba(0,0,0,0.15),3px 3px 1px rgba(0,0,0,0.5),0px 0px 2px rgba(0,0,0,.2);
                       line-height: 50px; 
                       text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">${flash.error}asasdkasdaskdasd  andand  asdas</span>
-                <div class="msg-box-icon pngfix" style="text-align: center;margin: 0 auto; background: green">
-
-                </div>
             </div>
         </div>
         <div id="slider-wrap" class="loader-block top-loader"><!-- START REVOLUTION SLIDER 4.1 fullwidth mode -->
@@ -383,6 +383,15 @@
 
 <script>
     
+    
+    //    jQuery(document).ready(function(){
+    //        if("${flash.error}"){
+    //            //            alert("${flash.error}");
+    //            showErro("Eduardo");
+    //
+    //        }
+    //    });
+    
     initLoginBox();
     
     jQuery(document).keyup(function(e) {
@@ -391,13 +400,15 @@
     });
     
     jQuery('#login').click(function(){
-        //        showLoginBox();
-        jQuery("#tt").show(400);
+        showLoginBox();
+        //        jQuery("#tt").show(400);
+        //        showErro("adad");
     });
     
     jQuery('#login2').click(function(){
+        hideMessage()
         //        showLoginBox();
-        jQuery("#tt").hide(400);
+        //        jQuery("#tt").hide(400);
     });
     
     function submetence(){

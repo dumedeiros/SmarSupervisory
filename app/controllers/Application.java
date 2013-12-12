@@ -6,6 +6,7 @@ import play.mvc.*;
 public class Application extends Controller {
 
     public static void index() {
+        flash.error("teste");
         render();
     }
 
@@ -17,5 +18,9 @@ public class Application extends Controller {
     public static void redirectHomeLogin() {
         flash.success("Usuario logado com sucesso");
         index();
+    }
+    
+    public static void home() {
+        render();
     }
 }
