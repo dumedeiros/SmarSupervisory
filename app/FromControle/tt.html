@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head> <meta name="viewport" content="width=996px"/>
+        <title>Real-time Line Chart</title>
+        <link rel="stylesheet" media="screen" href="@{'public/javascripts/FusionWidgets/Gallery/assets/ui/css/style.css'}"/>
+        <link rel="stylesheet" media="screen" href="@{'public/javascripts/FusionWidgets/Gallery/assets//prettify/prettify.css'}"/>
+
+        <script type="text/javascript" src="@{'public/javascripts/FusionWidgets/Charts/jquery.min.js'}"></script>
+        <script type="text/javascript" src="@{'public/javascripts/FusionWidgets/Charts/FusionCharts.js'}"></script>
+        <script type="text/javascript" src="@{'public/javascripts/FusionWidgets/Gallery/assets/prettify/prettify.js'}"></script>
+        <script type="text/javascript" src="@{'public/javascripts/FusionWidgets/Gallery/assets/ui/js/json2.js'}"></script>
+        <script type="text/javascript" src="@{'public/javascripts/FusionWidgets/Gallery/assets/ui/js/lib.js'}"></script>
+        <script type="text/javascript" src="@{'public/javascripts/FusionWidgets/Gallery/assets/ui/js/date.js'}"></script>
+        <script type="text/javascript" src="@{'public/javascripts/FusionWidgets/Gallery/Data/String/js/RTLine.js'}"></script>
+        <script type="text/javascript" src="@{'public/javascripts/FusionWidgets/Gallery/Data/String/js/Cylinder1.js'}"></script>
+
+    </head>
+
+    <body>
+
+        <h3 class="chart-title" >Cylinder Gauge</h3>
+        <p>&nbsp;</p>
+        <textarea id="ttty">${json}</textarea>
+        <div id="chartdiv" align="center">Chart will load here</div>
+        <div id="tanqueDiv" align="center">Chart will load here</div>
+
+        <script type="text/javascript">
+            
+            $(document).ready(function(){
+                alert($("#tttanque").val());
+            });
+            
+//            if (GALLERY_RENDERER && GALLERY_RENDERER.search(/javascript|flash/i)==0)  FusionCharts.setCurrentRenderer(GALLERY_RENDERER); 
+            var chartLine = new FusionCharts("@{'public/javascripts/charts/MSLine.swf'}", "ChartLineId", "560", "400", "0", "0");
+            chartLine.setJSONData($("#ttty").val());		   
+            chartLine.render("chartdiv");
+
+            if (GALLERY_RENDERER && GALLERY_RENDERER.search(/javascript|flash/i)==0)  FusionCharts.setCurrentRenderer(GALLERY_RENDERER); 
+            var chart = new FusionCharts("@{'public/javascripts/FusionWidgets/Charts/Cylinder.swf'}", "ChartCylinderId", "150", "200", "0", "1" );
+            chart.setXMLData( dataString );
+            chart.render("tanqueDiv");
+//            window.dataUpdateTimer = null;
+//			
+//            FusionCharts.addEventListener("Rendered", function(e,a) {
+//                if(e.sender.id=="tmpChartId") return;
+//                window.dataUpdateTimer = window.setInterval (function (){ 
+//
+//                    var updater= e.sender.setData? e.sender : null;
+//					
+//                    if(updater) updater.setData(Math.random()*70+30);
+//
+//                },3000 );
+//            });			
+//			
+			
+			
+			
+        </script>
+
+        <p>&nbsp;</p>
+        <p align="center" style="padding-left:5px; padding-right:5px;">Real-time cylinder gauge showing operating capacity. The gauge updates itself every 3 seconds. </p>
+        <p>&nbsp;</p>
+        <div class="qua-button-holder"></div>
+        <div class="show-code-block"></div>
+
+    </body>
+</html>

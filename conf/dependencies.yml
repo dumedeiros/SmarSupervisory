@@ -1,0 +1,12 @@
+# Application dependencies
+
+require:
+    - play
+    - provided -> BRCollector 2.0
+    
+repositories: 
+    - provided: 
+        type:       local 
+        artifact:   "${application.path}/lib/[module]-[revision].jar" 
+        contains: 
+            - provided -> * 

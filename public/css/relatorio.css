@@ -1,0 +1,60 @@
+.naoHa{
+    color: lavender;
+    width: 800px;
+}
+
+.nome{
+    padding: 10px 0 10px 0;
+    font-weight: bold;
+}
+
+.negrito{
+    font-weight: bold;
+}
+
+table{
+    font:  9px Arial, Helvetica, sans-serif;
+    margin: -4px;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+table thead{
+    background-color: #CCC
+}
+
+table thead th, td {
+    border-collapse: collapse;
+    border: 1px solid;
+}
+
+table caption{
+    font: bold 16px Tahoma, Geneva, sans-serif;
+    padding: 30px;
+}
+
+
+
+#separador {
+    text-align: center;
+    margin-top: 2%;
+    color: #CCC;
+}
+
+
+
+#total {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#descricaoDocumento {
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bababa', endColorstr='#f2f2f2',GradientType=0 ); /* IE6-9 */
+}
+
+#erro{
+    background-color: red;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+}

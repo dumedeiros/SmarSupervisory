@@ -1,0 +1,368 @@
+.waiting2{
+    float: right;
+}
+
+.p2 {
+    margin:0 0 10px 170px;
+}
+
+p {
+    display: block;
+    text-shadow:2px 2px 2px #111C20;
+    color:white;
+    margin:0 0 10px 135px;
+    padding:5px;
+}
+
+#loginForm {
+
+    font: Georgia, "Times New Roman", Times, serif;
+    /*background:#eee;*/
+    padding:0px 0px;
+    width:650px;	
+}
+
+form {
+
+    font: Georgia, "Times New Roman", Times, serif;
+    /*background:#eee;*/
+    padding:10px 230px;
+    width:650px;	
+}
+
+
+.form.show{
+    font:13px Georgia, "Times New Roman", Times, serif;
+    /*background:#eee;*/
+    margin-left: 90px;
+    width: 700px;	
+}
+
+form ol {
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+form li {
+    padding:6px;
+    /*background:#e1e1e1;*/
+    margin-bottom:1px;
+}
+
+form li#send {
+    width: 200px;
+    margin-left: 190px;
+    margin-top:6px;
+}
+
+
+.noFloat{
+    float: none;
+}
+
+form label {
+    float:left;
+    width:130px;
+    text-align:right;	
+    margin-right:7px;
+    /*color:#0066CC;*/
+    text-shadow:2px 2px 2px #111C20;
+    color:white;
+    line-height:28px; /* This will make the labels vertically centered with the inputs */
+}
+
+form label.descritor-item {
+    float:none;
+    width:130px;
+    text-align:right;	
+    margin-right:7px;
+    text-shadow:2px 2px 2px #111C20;
+    color:white;
+    line-height:28px; /* This will make the labels vertically centered with the inputs */
+}
+
+form label.radioOptions {
+    /*color:#0066CC;*/
+    text-shadow:2px 2px 2px #111C20;
+    color:white;
+    line-height:28px; /* This will make the labels vertically centered with the inputs */
+    float:none;
+    width:130px;
+    text-align:right;	
+    margin-right:7px;
+    line-height:28px; /* This will make the labels vertically centered with the inputs */
+}
+
+.inputDisabled, .inputDisabled:hover{
+    opacity:0.1;
+}
+
+.inputDisabled, .inputDisabled:hover{
+    opacity:0.1;
+}
+
+form textarea{
+
+    height: 80px;
+}
+
+form input,
+
+form textarea {
+    padding:4px;
+    font:13px Georgia, "Times New Roman", Times, serif;
+    border:1px solid #999999;
+}
+
+/*form li#send button {
+    background:#003366 url(images/css-form-send.gif) no-repeatbu 8px 50%;
+    border:none;
+    padding:4px 8px 4px 28px;
+    border-radius:15%;  Don't expect this to work on IE6 or 7 
+    -moz-border-radius:15%;
+    -webkit-border-radius:15%;			
+    color:#fff;
+    margin-left:140px;  Total width of the labels + their right margin 
+    cursor:pointer;*/
+/*}*/
+
+/*form li#send button:hover { 
+    background-color:#006633;
+}*/
+
+
+
+form input:hover, textarea:hover{
+    opacity:.9;
+    -webkit-box-shadow:0 -1px 0 rgba(0,0,0,.4),inset 0 1px 2px rgba(0,0,0,.3);
+    -moz-box-shadow:0 -1px 0 rgba(0,0,0,.4),inset 0 1px 2px rgba(0,0,0,.3);
+    box-shadow:0 -1px 0 rgba(0,0,0,.4),inset 0 1px 2px rgba(0,0,0,.3);
+}
+
+form input:focus, textarea:focus {
+    -webkit-box-shadow:0 -1px 0 rgba(0,0,0,.3),inset 0 1px 2px rgba(0,0,0,.1),0 0 10px rgba(255,255,255,.9) -moz-box-shadow:0 -1px 0 rgba(0,0,0,.3),inset 0 1px 2px rgba(0,0,0,.1),0 0 10px rgba(255,255,255,.9);
+    box-shadow:0 -1px 0 rgba(0,0,0,.3),inset 0 1px 2px rgba(0,0,0,.1),0 0 10px rgba(255,255,255,.9);
+
+    opacity:1;
+    outline:none;
+    -webkit-transition:opacity 1s, width 1s;
+    -moz-transition:opacity 1s, width 1s;
+    -o-transition:opacity 1s, width 1s;
+    width: 270px;  
+
+
+}
+
+form .hasError:focus{
+    -webkit-box-shadow:0 -1px 0 rgba(255,0,0,.3),inset 0 1px 2px rgba(255,0,0,.1),0 0 10px rgba(255,0,0,.9);
+    -moz-box-shadow:0 -1px 0 rgba(255,0,0,.3),inset 0 1px 2px rgba(255,0,0,.1),0 0 10px rgba(255,0,0,.9);
+    box-shadow:0 -1px 0 rgba(255,0,0,.3),inset 0 1px 2px rgba(255,0,0,.1),0 0 10px rgba(255,0,0,.9);
+
+    opacity:1;
+    -webkit-transition:opacity 1s, width 1s;
+    -moz-transition:opacity 1s, width 1s;
+    -o-transition:opacity 1s, width 1s;
+    width: 270px;  
+}
+
+
+
+form input, textarea {
+
+
+    -webkit-box-shadow:0 -1px 0 rgba(0,0,0,.3),inset 0 1px 2px rgba(0,0,0,.2);
+    -moz-box-shadow:0 -1px 0 rgba(0,0,0,.3),inset 0 1px 2px rgba(0,0,0,.2);
+    box-shadow:0 -1px 0 rgba(0,0,0,.3),inset 0 1px 2px rgba(0,0,0,.2);
+    background-color:white;
+    color:black;
+    opacity:.7;
+    -moz-border-radius:3px;
+    -webkit-border-radius:3px;
+    border-radius:3px;
+    border:1px solid #CCC;
+    font:13px Arial,sans-serif;
+    -webkit-transition:opacity 1s;
+    -moz-transition:opacity 1s;
+    -o-transition:opacity 1s;
+    width: 250px;  
+
+
+}
+
+form input[type="checkbox"]{
+    background: #e2e2e2;
+    width: 20px;  
+    -webkit-transition: background 1s ease;
+    -moz-transition: background 1s ease;
+    -o-transition: background 1s ease;
+    -ms-transition: background 1s ease;
+    transition: background 1s ease;
+}
+
+form .noAnimated:focus{
+    width: 250px;  
+}
+
+form .noAnimated{
+    width: 250px;  
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input[type="search"]:-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    cursor: pointer;
+    -webkit-appearance: button;
+}
+
+input[type=checkbox], input[type=radio] {
+    width: auto;
+    height: auto;
+    margin: 3px 0;
+    margin-top: 0;
+    /* IE6-7 */
+
+    line-height: normal;
+    border: none;
+}
+
+.form label.descritor{
+    font-size: 16px; 
+    font-weight: bold; 
+    width: 180px;
+}
+
+
+
+/*form input:hover{
+    opacity:.9;
+    -webkit-box-shadow:0 -1px 0 rgba(0,0,0,.4),inset 0 1px 2px rgba(0,0,0,.3);
+    -moz-box-shadow:0 -1px 0 rgba(0,0,0,.4),inset 0 1px 2px rgba(0,0,0,.3);
+    box-shadow:0 -1px 0 rgba(0,0,0,.4),inset 0 1px 2px rgba(0,0,0,.3);
+    -webkit-transition:opacity 1s;
+    -moz-transition:opacity 1s;
+    -o-transition:opacity 1s;
+}*/
+
+/*.front-page form.signup .holding input{
+    padding:9px 7px 10px 7px;width:296px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
+    margin-bottom:8px;
+    opacity:1!important;*/
+/*}*/
+
+.hasError {
+    outline: none;
+    border-color: red;
+    background-color:  pink;
+}
+
+.hasErrorImage {
+    padding-left: 15px;
+    background:url('../images/fieldError.png') no-repeat;
+    background-position:2px -1px;
+}
+
+.warningImage {
+    padding-left: 15px;
+    background:url('../images/warning16x16.png') no-repeat;
+
+    background-position:2px -1px;
+}
+
+.error {
+    text-shadow:1px 1px 5px black;
+    color: red;
+    padding:12px 0px 5px 10px;
+    /*    margin:0 0 10px 0;*/
+}
+
+.warningMsg {
+    text-shadow:1px 1px 5px black;
+    color: orange;
+    padding:12px 0px 5px 10px;
+    /*    margin:0 0 10px 0;*/
+}
+
+.acao{
+    border: none;
+    margin: 10px;
+    padding-right:  10px;
+    padding-left:  10px;
+    cursor: pointer;
+    /*    background:url('../images/fieldError.png') no-repeat;*/
+}
+
+.adicionar{
+    line-height: 20px;
+    padding-left: 20px;
+    padding-bottom: 5px;
+    margin: -3px;
+    background:url('../images/add.png') no-repeat;
+    background-position:2px 1px;
+}
+
+.adicionar:hover:active{
+    background:url('../images/add.png') no-repeat;
+    background-position:2px -46px;
+}
+
+
+.adicionar:hover,
+.adicionar:focus{
+    background:url('../images/add.png') no-repeat;
+    background-position:2px -20px;
+}
+
+.apagar{
+    background-color: red;
+    background:url('../images/cancel.png') no-repeat;
+    background-position:2px -1px;
+}
+
+.adicionar:hover:active{
+    background:url('../images/add.png') no-repeat;
+    background-position:2px -60px;
+}
+
+.apagar:hover,
+.apagar:focus{
+    background-color: red;
+    background:url('../images/cancel.png') no-repeat;
+    background-position:2px -40px;
+}
+
+
+.editar{
+    background-color: red;
+    background:url('../images/edit.png') no-repeat;
+    background-position:2px -1px;
+}
+
+.editar:hover:active{
+    background:url('../images/edit.png') no-repeat;
+    background-position:2px -53px;
+}
+
+.editar:hover,
+.editar:focus{
+    background-color: red;
+    background:url('../images/edit.png') no-repeat;
+    background-position:2px -26px;
+}

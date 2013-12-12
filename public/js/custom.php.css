@@ -1,0 +1,130 @@
+/* COLORS */
+
+
+body { background:#; }
+
+
+header,
+a.es-button,
+#ctas article h3,
+.colored-block,
+#searchform input.es-button,
+#wp-calendar caption,
+.widget-button,
+p.tribe-events-widget-link a,
+#respond input#submit,
+ol.commentlist li.comment div.reply a,
+nav#main-nav .dropdown,
+#cancel-comment-reply-link,
+.slicknav_nav .slicknav_item:hover,
+.slicknav_nav a:hover,
+.slicknav_btn,
+#pagination ul li a,
+.gform_wrapper .gform_footer input.button,
+.gform_wrapper .gform_footer input[type=submit] { background:#2f9acc !important; color:#fff; }
+a, #homepage-events article small span, #footer-widgets article.hours-block p.right, #respond span.required, #page-post article.page-content h3, section.social-search .search form input[type=submit] { color:#2f9acc; }
+nav#main-nav.full ul li a:hover { background:rgba(47, 154, 204, 0.25); }
+#footer-widgets .overlay, #mobile-slider .colored-wrap { background:rgba(47, 154, 204, 0.40) !important; }
+.gform_wrapper .gsection { border-bottom:5px solid #2f9acc !important; }
+.gform_wrapper input, .gform_wrapper select { color:#2f9acc !important; }
+.gform_wrapper input[type=button], .gform_wrapper input[type=submit] { color:#fff !important; }
+
+/* Dark Color */
+nav#main-nav.full,
+section#ctas,
+#top,
+.slicknav_menu,
+footer { background:# !important; }
+
+
+
+
+/* Tribe Events - Main Color */
+.tribe-events-calendar td.tribe-events-present div[id*="tribe-events-daynum-"],
+.tribe-events-calendar td.tribe-events-present div[id*="tribe-events-daynum-"]>a,
+#tribe_events_filters_wrapper input[type=submit],
+.tribe-events-button,
+.entry-content .tribe-events-button,
+.tribe-events-button.tribe-inactive,
+.entry-content .tribe-events-button:hover,
+.tribe-events-button:hover,
+.tribe-events-button.tribe-active:hover,
+.tribe-events-read-more,
+.tribe-events-calendar thead th,
+.tribe-events-grid .tribe-grid-header .tribe-grid-content-wrap .column,
+.tribe-grid-header { background:#2f9acc !important; color:#fff; }
+
+.tribe-events-calendar thead th,
+.tribe-events-grid .tribe-grid-header .tribe-grid-content-wrap .column,
+.tribe-grid-header,
+.es-views-list ul li.tribe-bar-active a { border-color:#2f9acc !important; }
+
+#tribe-events-content .tribe-events-tooltip h4,
+#tribe_events_filters_wrapper .tribe_events_slider_val,
+.single-tribe_events a.tribe-events-ical,
+.single-tribe_events a.tribe-events-gcal { color:#2f9acc; }
+
+/* Tribe Events - Dark Color */
+#tribe-bar-form #tribe-bar-views,
+#tribe-bar-views.tribe-bar-views-open .tribe-bar-views-list,
+#tribe-bar-form #tribe-bar-views .tribe-bar-views-inner,
+#tribe-bar-views .tribe-bar-views-list .tribe-bar-views-option a { background:# !important; border-color:# !important; }
+
+.tribe-mini-calendar-nav td { background:#2f9acc !important; border-color:#2f9acc !important; }
+.tribe-mini-calendar th, .tribe-mini-calendar-event .list-date { background:# !important; border-color:# !important; }
+.tribe-mini-calendar td.tribe-events-has-events { background:#2f9acc !important; }
+
+/* Tribe Events - Black */
+a.tribe-events-read-more:hover,
+p.tribe-events-widget-link a:hover { background:#000 !important; }
+
+.tribe-grid-allday .hentry.vevent > div,
+.tribe-grid-body div[id*="tribe-events-event-"] .hentry.vevent { border:1px solid # !important; background:rgba(0, 0, 0, 0.75) !important; }
+
+.tribe-grid-allday .hentry.vevent > div:hover,
+.tribe-grid-body div[id*="tribe-events-event-"] .hentry.vevent:hover { background:# !important; color:#fff; }
+
+.tribe-mini-calendar td.tribe-events-has-events a:hover { background:rgba(0, 0, 0, 0.40) !important; }
+.tribe-mini-calendar td.tribe-events-has-events.tribe-mini-calendar-today a:hover { background:# !important; }
+
+.tribe-mini-calendar td.tribe-events-has-events.tribe-events-present a { border: 4px solid #; padding: 1px 5px 11px 5px; }
+.tribe-mini-calendar td.tribe-events-has-events.tribe-mini-calendar-today a { background:# !important; border:none; padding: 5px 5px 15px 5px; }
+
+@media only screen and (max-width: 767px) {
+
+	.tribe-events-sub-nav li a { background:#2f9acc !important; color:#fff; }
+	
+}
+
+section.social-search .search form input[type=submit]:hover { background:#fff !important; color:#000; }
+
+
+
+a.es-button:hover,
+a.es-button.black,
+input[type=button]:hover, input[type=submit]:hover,
+#footer-widgets,
+.widget-button:hover { background:#000 !important; }
+
+a:hover { color:#000; }
+
+a.es-button.black:hover { background:rgba(0,0,0,0.5); }
+
+/* FONT */
+body, input, select, textarea { font-family:'', sans-serif; }
+
+
+/* Responsive Coloring */
+@media only screen and (max-width: 723px) {
+
+	.carousel { background:#000; }
+
+	.secondary-wrap {
+		background:rgba(47, 154, 204, 0.40);
+	}
+	
+}
+
+
+
+

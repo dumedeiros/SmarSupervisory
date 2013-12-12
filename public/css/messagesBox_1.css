@@ -1,0 +1,76 @@
+.informe,.success,.warning,.erroneous,.validation{
+    display:table;
+    width: 50%;
+    margin-left: 350px;
+    background-repeat:no-repeat;
+    background-position:15px 50%;
+    border-radius: 5px;
+}
+
+/*tem que estar nesta ordem*/
+.erroLogin{
+    display: none;
+    margin-left: 80px;
+    width: 75%;
+}
+
+.informe{
+    color:#00529B;
+    border:1px solid #38AEE5;
+    background-color:#BDE5F8;
+    background:-moz-linear-gradient(center top , #FFFFFF, #BDE5F8);
+    background:-webkit-gradient(linear, center top, center bottom, from(#FFFFFF), to(#BDE5F8))
+}
+.informe .msg-box-icon{
+    background:transparent url('../images/info.png') no-repeat scroll 4px 50%;
+    display:block;
+    margin-left:15px;
+    padding:18px 10px 18px 50px
+}
+.success{
+    color:#4F8A10;
+    border:1px solid #A0CF4C;
+    background-color:#DFF2BF;
+    background:-moz-linear-gradient(center top , #FFFFFF, #DFF2BF);
+    background:-webkit-gradient(linear, center top, center bottom, from(#FFFFFF), to(#DFF2BF))
+}
+.success .msg-box-icon{
+    background:transparent url('../images/success.png') no-repeat scroll 4px 50%;
+    display:block;
+    margin-left:15px;
+    padding:18px 10px 18px 50px
+}
+.warning{
+    color:#9F6000;
+    border:1px solid #E5BC3B;
+    background-color:#FEEFB3;
+    background:-moz-linear-gradient(center top , #FFFFFF, #FEEFB3);
+    background:-webkit-gradient(linear, center top, center bottom, from(#FFFFFF), to(#FEEFB3))
+}
+.warning .msg-box-icon{
+    background:transparent url('../images/warning.png') no-repeat scroll 4px 50%;
+    display:block;
+    margin-left:15px;
+    padding:18px 10px 18px 50px
+}
+.erroneous{
+    color:#D8000C;
+    border:1px solid #FF7878;
+    background-color:#FFBABA;
+    background:-moz-linear-gradient(center top , #FFFFFF, #FFBABA);
+    background:-webkit-gradient(linear, center top, center bottom, from(#FFFFFF), to(#FFBABA))
+}
+
+.erroneous .msg-box-icon{
+    background:transparent url('../images/error.png') no-repeat scroll 4px 50%;
+    display:block;
+    margin-left:15px;
+    padding:18px 10px 18px 50px
+}
+
+.erroLogin .msg-box{
+    background:transparent url('../images/error.png') no-repeat scroll 4px 50%;
+    margin-left:15px;
+    padding:18px 10px 18px 50px
+}
+

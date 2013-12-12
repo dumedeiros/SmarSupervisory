@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>Highstock Example</title>
+
+
+    <input type="text" id="num1" value="10">
+
+    <input type="text" id="num2">
+
+
+    <script type="text/javascript" src="@{'public/javascripts/jquery-1.7.1.min.js'}"></script>
+
+    <script type="text/javascript">
+        
+                            
+        function feedGraph()
+        {
+//            $("num1").val("resultado[0]");
+            $.ajax({
+                type : 'GET',
+                url: '/lerOnda', 
+                dataType : 'json',
+                data : {kp : "10", ki : "50", kd : ""},
+                success : function(resultado){
+                    $("#onda").val(resultado[0]);
+                    $("#tanque").val(resultado[1]);
+                    var p1 = resultado[0];
+                    $("#num1").val(resultado[0]);
+                    $("#num2").val(resultado[1]);
+                }
+            });
+        }
+        
+        $(function() {
+	
+            Highcharts.setOptions({
+                global : {
+                    useUTC : false
+                }
+            });
+            
+            tanque = new Highcharts.StockChart({
+                chart: {
+                    renderTo: 'tanque',
+                    alignTicks: false
+                },
+
+                rangeSelector: {
+                    selected: 1
+                },
+
+                title: {
+                    text: 'AAPL Stock Volume'
+                },
+
+                series: [{
+                        type: 'column',
+                        name: 'AAPL Stock Volume',
+                        data: [20, 100, 150, -10]
+                    }]
+            });
+                
+	
+            // Create the chart
+            chart = new Highcharts.StockChart({
+                chart : {
+                    renderTo : 'container',
+                    events : {
+
+                        // set up the updating of the chart each second
+                          
+                    }
+                },
+		
+                rangeSelector: {
+                    buttons: [{
+                            count: 1,
+                            type: 'minute',
+                            text: '1M'
+                        }, {
+                            count: 5,
+                            type: 'minute',
+                            text: '5M'
+                        }, {
+                            type: 'all',
+                            text: 'All'
+                        }],
+                    inputEnabled: false,
+                    selected: 0
+                },
+		
+                title : {
+                    text : 'Live random data'
+                },
+		
+                exporting: {
+                    enabled: false
+                },
+		
+                series : [{
+                        name : 'Random data',
+                        data : (function() {
+                            // generate an array of random data
+                            var data = [], time = (new Date()).getTime(), i;
+
+                            for( i = -999; i <= 0; i++) {
+                                data.push([
+                                    time + i * 1000,
+                                    0
+                                ]);
+                            }
+                            return data;
+                        })()
+                    },
+                    {
+                        name : 'Random data',
+                        data : (function() {
+                            // generate an array of random data
+                            var data = [], time = (new Date()).getTime(), i;
+
+                            for( i = -999; i <= 0; i++) {
+                                data.push([
+                                    time + i * 1000,
+                                    0
+                                ]);
+                            }
+                            return data;
+                        })()
+                    }   
+                    ]
+            });
+            
+            var series = chart.series[0];
+            var series1 = chart.series[1];
+            setInterval(function() {
+            
+                feedGraph();
+//                var x = (new Date()).getTime(), // current time
+//                y = Math.round(Math.random() * 100);
+//                a = $("#num1").val()/1;
+//                b = $("#num2").val()/1;
+//                series.addPoint([x, a], true, true);
+//                series1.addPoint([x, b], true, true);
+                
+                //----------------------------------------------------
+                
+                tanque.series[0].setData([b], false)
+                tanque.redraw();
+            }, 600);
+
+        });
+
+                    
+       
+
+    </script>
+</head>
+<body>
+    <script type="text/javascript" src="@{'public/javascripts/Highstock-1.2.2/js/highstock.js'}"></script>
+    <script type="text/javascript" src="@{'public/javascripts/Highstock-1.2.2/js/modules/exporting.js'}"></script>
+
+    <div id="container" style="height: 500px"></div>
+    <div id="tanque" style="height: 500px"></div>
+</body>
+</html>

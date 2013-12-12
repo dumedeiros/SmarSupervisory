@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>ws:combo Live Preview 1.0.2</title>
+<!-- Note: This stylesheet is for this document only and is not part of the ws:combo control! -->
+<style type="text/css">
+html,body{background:#fff}html,body,form,a img{padding:0;margin:0;border:0}
+html{background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAQAAACR313BAAAAMklEQVQY02P4z4APAtHv/5/+f8CAn/7/+g+W/vgfu86PEOkPOKQ/jGxpAqH2C3+Y44MAApYNZC2G9E8AAAAASUVORK5CYII=)}
+body{background-color:transparent}html,body,table,th,td,p,li,div.p{font-family:"Segoe UI",Tahoma,Arial,Helvetica,sans-serif;font-size:14px;line-height:140%;color:#555;}
+a{text-decoration:underline;color:#c41}a:hover{text-decoration:underline;color:maroon}
+p,div.p{padding:0;margin:0}h1 em, h2 em{color:#c41;font-style:normal}
+div.p{clear:both;line-height:30px;margin-top:.2em}div.p p{display:inline-block;width:320px;*float:left;*line-height:30px}
+h1 {padding:0 6px;margin:0 0 .2em 0;font-size:28px;line-height:28px;}
+h1 small{display:block;font-size:16px;line-height:16px;font-weight:normal;color:#777;padding-left:47px}
+h1 sup{display:block;float:right;font-size:10px;color:#999;margin-top:-10px}
+#wrap{width:820px;margin:0 auto;padding:1em 0 2em 0}
+#comboId4 option{padding-left:20px;background-repeat:no-repeat !important}
+/* STYLING COMBO */
+#comboId5.dropdown-txt{/*font*/font-family:"Trebuchet MS","Helvetica Neue",Arial,sans-serif;font-size:13px;color:#476896}
+#comboId5.combo-sel{color:#476896 !important;opacity:.5 !important}
+#comboId5::selection{color:#476896 !important}
+#comboId5::-moz-selection{color:#476896 !important}
+.customCombo1 div.ws-combo-items li{/*item*/font-family:"Trebuchet MS",sans-serif;font-size:13px;color:#476896;background:#fff}
+.customCombo1 div.ws-combo-items li.ws-combo-in{/*selected item*/background-color:#476896;color:#fff}
+.customCombo1 div.ws-combo-items li.ws-combo-separator s{/*separator*/background-color:#476896}
+.customCombo1 div.ws-dropdown{/*borders/background*/border:1px solid #476896;background:#eaf1fa}
+.customCombo1 div.ws-dropdown-above div.ws-dropdown-popup{border:1px solid #476896;border-bottom:0}
+.customCombo1 div.ws-dropdown-below div.ws-dropdown-popup{border:1px solid #476896;border-top:0}
+.customCombo1 div.ws-dropdown-below .dropdown-btn,
+.customCombo1 div.ws-dropdown-above .dropdown-btn{border-left:1px solid #476896}
+.customCombo1 div.ws-dropdown-popup{background-color:#476896}
+.customCombo1 div.ws-combo-footer{/*combo area*/background:#dae1ea;font-family:"Trebuchet MS",sans-serif;color:#476896}
+.customCombo1 div.ws-combo-footer input{/*combo textfield*/font-family:"Trebuchet MS",sans-serif}
+form {
+	display: block;
+	margin: 0;
+	padding: 20px 30px;
+	border: 1px solid #ccc;
+	background: #fff;
+	border-radius: 8px;
+	box-shadow: 1px 1px 8px rgba(0,0,0,.15);
+}
+div.sep {
+	height: 1px;
+	clear: both;
+	margin: 10px 0;
+	border-top: 1px dashed #f0f0f0;	
+}
+select {
+	vertical-align: middle;
+}
+.ws-button {
+	font-family: Verdana, Arial,sans-serif;
+	font-size: 11px;
+	line-height: 13px;
+	height: 13px;
+	outline: 0;
+	margin: 0;
+	padding: 5px 8px;
+	border: 1px solid #cacdc3;
+	color: #777;
+	background: url(ws/ws-combo.png) repeat-x 0 -143px #f2f2f2;
+	cursor: default;	
+	display: inline-block;
+	text-decoration: none;
+	vertical-align: middle;
+	border-radius: 3px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.10);
+}
+.ws-button:hover, .ws-button:focus {
+	text-decoration: none;
+	color: #c41;
+	box-shadow: 1px 1px 2px rgba(79,73,66,.25);
+}
+</style>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="ws/ws-combo.js"></script>
+</head>
+<body>
+	<div id="wrap">
+		<h1>ws:<em>combo</em> <small>live preview<br /></small><sup>ws:combo version 1.0.2</sup></h1>
+		<br />
+		<form action="#preview" method="get">
+		<div class="p">
+			<p><b>Example 1:</b> basic standalone select:</p>
+			<script type="text/javascript">$.wscombo({id:'cb1',items:[{t:'United States',v:'US'},{t:'United Kingdom',v:'GB'},'-',{t:'Albania'},{t:'Alpha Centauri',d:1},{t:'Czech Republic'},{t:'Russia'}]});</script>
+		</div>
+		<div class="sep"></div>
+		<div class="p">
+			<p><b>Example 2:</b> advanced standalone combo:</p>
+<script type="text/javascript">
+//<![CDATA[
+$.wscombo({
+	id:'comboId3',  // unique combo id
+	name:'combo3',  // form element name
+	img:'http://ws-cdn.appspot.com/lib/countries.gif', // path to main image file
+	reset:'Clear',  // allow user to reset the control plus specify custom reset title
+	combo:'or enter a new country:', // allow user to add custom values plus specify a custom combo text
+	text:'(select country)', // hint text
+	width:140,		// width of the control input field in pixels
+	maxHeight:280,	// max height of scrollable area with items
+	maxLength:20,   // max 20 chars for the custom combo text
+	validate:/^[^0-9]+$/, // combo validate regexp - text cannot contain numbers
+	onselect:function(i){$('#spComboId3').text(i?'You have selected '+(i.t||i.combo):'');}, // onselect handler
+	items:[
+		{l:'EN Countries'},
+		{v:'AU',h:'<b>Australia</b>',i:{x:0,y:-208}},
+		{h:'<b>United Kingdom</b>',v:'GB',i:{x:0,y:-3744}},
+		{
+			t:'United States',
+			v:'US',
+			i:{x:0,y:-3760},
+			h:'<b style="display:inline-block;margin-top:5px;*margin:0 0 3px 0;line-height:120%">United States<br /><i style="font-weight:normal;font-size:10px;color:#999">(including minor outlying islands)</i></b>'
+		},		
+		{l:'Other Countries'},
+		{v:'AF',t:'Afghanistan',i:'http://ws-cdn.appspot.com/lib/countries.gif'},
+		{v:'AX',t:'\u00C5land Islands',i:{x:0,y:-16}},
+		{v:'AL',t:'Albania',i:{x:0,y:-32}},
+		{v:'DZ',t:'Algeria',i:{x:0,y:-48}},
+		{v:'AS',t:'American Samoa',i:{x:0,y:-64}},
+		{v:'AD',t:'Andorra',i:{x:0,y:-80}},
+		{v:'AO',t:'Angola',i:{x:0,y:-96}},
+		{v:'AI',t:'Amguilla',i:{x:0,y:-112}},
+		{v:'AG',t:'Antigua and Barbuda',i:{x:0,y:-144}},
+		{v:'AR',t:'Argentina',i:{x:0,y:-160}},
+		{v:'AM',t:'Armenia',i:{x:0,y:-176}},
+		{v:'AW',t:'Aruba',i:{x:0,y:-192}},		
+		{v:'AT',t:'Austria',i:{x:0,y:-224}},
+		{v:'AZ',t:'Azerbaijan',i:{x:0,y:-240}},
+		'-',
+		{v:'BS',t:'Bahamas',i:{x:0,y:-256}},
+		{v:'BH',t:'Bahrain',i:{x:0,y:-272}}
+	]
+});
+//]]>
+</script>
+&nbsp; <span id="spComboId3"></span>
+		</div>
+		<div class="sep"></div>
+		<div class="p">
+			<p><b>Example 3:</b> converting a &lt;select /&gt; control:</p>
+			<select id="comboId2">
+				<option value="US">United States</option>
+				<option value="GB">United Kingdom</option>
+				<option disabled="disabled">-</option>
+				<option>Albania</option>
+				<option disabled="disabled">Alpha Centauri</option>
+				<option selected="selected">Czech Republic</option>
+				<option>Russia</option>
+			</select> &nbsp; <a href="#convert" onclick="$('#comboId2').wscombo();$(this).remove();return false;" class="ws-button">Convert</a>
+		</div>
+		<div class="sep"></div>
+		<div class="p">
+			<p><b>Example 4:</b> converting + advanced combo:</p>
+			<select name="states" id="comboId4">
+				<optgroup label="EN Countries">
+					<option value="US" style="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -3760px">United States</option>
+					<option value="GB" style="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -3744px">United Kingdom</option>
+				</optgroup>
+				<optgroup label="Other Countries">
+					<option value="AL" style="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -32px">Albania</option>
+					<option value="DZ" style="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -48px">Algeria</option>
+					<option value="AS" style="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -64px">American Samoa</option>
+				</optgroup>
+				<option disabled="disabled">-</option>
+				<option value="BS" style="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -256px">Bahamas</option>
+				<option value="BH" style="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -272px">Bahrain</option>
+			</select> &nbsp; <a href="#convert" onclick="$('#comboId4').wscombo({img:1,combo:1,reset:1});$(this).remove();return false;" class="ws-button">Convert</a>
+		</div>
+		<div class="sep"></div>
+		<div class="p customCombo1">
+			<p><b>Example 5:</b> custom styling:</p>
+			<select id="comboId5">
+				<option value="US" style="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -3760px">United States</option>
+				<option value="GB" style="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -3744px">United Kingdom</option>
+				<option disabled="disabled">-</option>
+				<option value="AL" style="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -32px">Albania</option>
+				<option value="DZ" style="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -48px">Algeria</option>
+				<option value="AS" style="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -64px">American Samoa</option>
+			</select>
+		</div><script type="text/javascript">$('#comboId5').wscombo({img:1,combo:1,reset:1,selectedIndex:-1});</script>
+		<div class="sep"></div>
+		<div class="p">
+			<p><b>Example 6:</b> onselect handler / 2nd level combo:</p>
+<script type="text/javascript">
+//<![CDATA[
+$.wscombo({
+	id:'comboId6',  // unique combo id
+	img:'http://ws-cdn.appspot.com/lib/countries.gif', // path to main image file
+	text:'(select country)', // hint text
+	reset: 1,
+	maxHeight:280,	// max height of scrollable area with items
+	onselect:function(i){
+		if(!i){ // reset
+			Ws.Combo.comboId7.set({text:'(select city)',items:[]}).reset(1).disable(1);
+			return;
+		}
+		var items;
+		if(i.v=='AU')items=[{t:'Sydney'},{t:'Melbourne'},{t:'Brisbane'},{t:'Perth'}];
+		else if (i.v=='GB')items=[{t:'Birmingham'},{t:'Leeds'},{t:'Sheffield'},{t:'Bradford'},'-',{t:'Kingston upon Hull'}];
+		else if (i.v=='US')items=[{l:'Alabama'},{t:'Birmingham'},{t:'Huntsville'},{t:'Motgomery'},{l:'Alaska'},{t:'Anchorage'},{l:'Arizona'},{t:'Mesa'},{t:'Phoenix'},{t:'Tucson'},{l:'Colorado'},{t:'Colorado Springs'}];
+		else items=[{t:'No entries for '+i.v,d:1}];
+		Ws.Combo.comboId7.set({text:'(select '+i.v+' city)',disabled:0,items:items});
+	}, // onselect handler
+	items:[
+		{v:'AU',h:'<b>Australia</b>',i:{x:0,y:-208}},
+		{v:'GB',h:'United Kingdom',i:{x:0,y:-3744}},
+		{v:'US',t:'United States',i:{x:0,y:-3760}}
+	]
+});
+document.write(' &nbsp; ');
+$.wscombo({
+	id:'comboId7',  // unique combo id
+	text:'(select city)', // hint text
+	disabled: 1,
+	items:[]
+});
+var $c6_added=0;
+//]]>
+</script>
+		</div>
+		<div class="sep"></div>
+		<div class="p">
+			<p style="display:block;float:left;padding-top:4px"><b>Example 7:</b> combo methods:<br /><br />&nbsp;</p>
+			<a href="#Select" onclick="Ws.Combo.comboId6.select(1);return false;" title="">Select Item</a> &nbsp; &middot; &nbsp;
+			<a href="#Reset" onclick="Ws.Combo.comboId6.reset();return false;">Reset</a> &nbsp; &middot; &nbsp;			
+			<a href="#Disable" onclick="Ws.Combo.comboId6.disable();return false;">Disable</a> &nbsp; &middot; &nbsp;
+			<a href="#Enable" onclick="Ws.Combo.comboId6.enable();return false;">Enable</a> &nbsp; &middot; &nbsp;
+			<a href="#Show" onclick="Ws.Combo.comboId6.show().input.focus();return false;">Show</a> &nbsp; &middot; &nbsp;
+			<a href="#Hide" onclick="Ws.Combo.comboId6.hide();return false;">Hide</a><br />
+			<a href="#Add" onclick="if(!$c6_added){$c6_added=1;Ws.Combo.comboId6.insert(['-',{v:'CA',t:'Canada',i:{x:0,y:-624}},{v:'NZ',t:'New Zealand',i:{x:0,y:-2528}}]);}return false;">Add Items</a> &nbsp; &middot; &nbsp;
+			<a href="#Remove" onclick="if($c6_added){$c6_added=0;Ws.Combo.comboId6.remove(3,3);}return false;">Remove Items</a><br />
+			<small style="color:#777;font-size:70%">(click the example 6 country to see added / removed items)</small>
+		</div>
+		</form>		
+	</div>
+</body>
+</html>

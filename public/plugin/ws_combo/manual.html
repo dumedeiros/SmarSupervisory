@@ -1,0 +1,733 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>ws:combo Manual</title>
+<!-- Note: This stylesheet is for this document only and is not part of the ws:combo control! -->
+<style type="text/css">
+html,body{background:#fff}html,body,form,a img{padding:0;margin:0;border:0}
+a{text-decoration:underline;color:#c41}a:hover{text-decoration:underline;color:maroon}
+html,body,table,th,td,p,li,div.p{font-family:"Segoe UI",Tahoma,Arial,Helvetica,sans-serif;font-size:14px;line-height:140%;color:#555}
+h1 {padding:0;margin:0 0 1em 0;font-size:28px;line-height:28px}
+h1 small{display:block;font-size:16px;line-height:16px;font-weight:normal;color:#777;padding-left:47px}
+p,div.p{padding:0;margin:1em 0}div.p{margin:1em 0 2em}h1 em, h2 em{color:#c41;font-style:normal}
+code,pre{font-family:Consolas,"Courier New",monospace;font-size:12px;line-height:120%}
+code{background:#fafafa;padding:0 4px;border:1px dashed #ccc;color:#00f}
+pre{background:#fafafa;border:1px dashed #ccc;padding:8px;color:Maroon}
+table{border:0;padding:0;margin:0;border-collapse:separate;border-spacing:0;empty-cells:show}
+#wrap{width:920px;margin:0 auto;padding:1em 0 2em 0}
+#nav {	
+	position:fixed;
+	width:110px;
+	border: 1px solid #ccc;
+	top: -1px;
+	padding: 8px 8px 16px 8px;
+	margin: 0;
+	margin-left: -174px;
+	background: #fafafa;
+	box-shadow: 0 0 4px rgba(0,0,0,.25);
+	font-size: 12px;
+	line-height: 120%;
+	color: #777;
+	overflow: visible;
+	cursor: default;
+	border-radius: 0 0 3px 3px;
+	-moz-border-radius: 0 0 3px 3px;
+	-webkit-border-radius: 0 0 3px 3px;	
+	_display:none; /*ie6*/
+}
+#nav em {
+	display: block;
+	padding: 0 0 8px 13px;
+}
+#nav a {
+	display: block;		
+	overflow: hidden;
+	width: 140px;
+	color: #999;
+	text-decoration: none;
+	padding: 0;
+	margin: 2px 0;
+	cursor: pointer;
+}
+#nav a.active {
+	color: #c41;
+	background: #fff;
+	border-left: 1px solid #ccc;
+}
+#nav a b {
+	padding: 7px 4px 7px 24px;
+	display: block;
+	font-weight: normal;
+	line-height: 12px;
+	width: 101px;
+	margin-left: -10px;
+	cursor: pointer;
+}
+#nav a.active b {
+	padding: 6px 4px 6px 22px;
+	border: 1px solid #ccc;
+	border-right: 0;
+	box-shadow: inset 10px 0 4px rgba(0,0,0,.25);
+}
+#nav:hover a {
+	color: #999;
+	background: transparent;
+	border: 0;
+}
+#nav:hover a b {
+	padding: 7px 4px 7px 24px;
+	border: 0;
+	box-shadow: none;
+}
+#nav a:hover {
+	color: #c41;
+	background: #fff;
+	border-left: 1px solid #ccc;
+}
+#nav a:hover b {
+	padding: 6px 4px 6px 22px;
+	border: 1px solid #ccc;
+	border-right: 0;
+	box-shadow: inset 10px 0 4px rgba(0,0,0,.25);
+}
+#nav small {
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+}
+.c-b{color:#00f}.c-r{color:#f00}.c-g{color:#060;font-style:italic}.c-js{color:#000}.c-s{color:Maroon}
+#comboId4 option {
+	padding-left: 20px;
+	background-repeat: no-repeat !important;
+}
+.table {
+	border-left: 1px solid #ccc;
+	border-top: 1px solid #ccc;	
+	width: 100%;
+}
+.table th {
+	text-align: left;
+	font-weight: bold;
+	background: #fafafa;	
+}
+.table tbody th {
+	background: #fff;	
+}
+.table th, .table td {
+	padding: 4px;
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	vertical-align: top;
+}
+.table th.small {
+	font-size: 10px;
+	line-height: 10px;
+	font-weight: normal;
+	font-style: italic;
+}
+.table code {background:transparent;padding:0;border:0;color:#333}
+.changelog {font-size:11px}
+/* STYLING COMBO */
+#comboId5.dropdown-txt { /* text field font */
+	font-family: "Trebuchet MS", "Helvetica Neue", Arial, sans-serif;
+	font-size: 13px;
+	color: #476896;
+}
+#comboId5.combo-sel{color:#476896 !important;opacity:.5 !important}
+#comboId5::selection{color:#476896 !important}
+#comboId5::-moz-selection{color:#476896 !important}
+.customCombo1 div.ws-combo-items li{/*item*/font-family:"Trebuchet MS",sans-serif;font-size:13px;color:#476896}
+.customCombo1 div.ws-combo-items li.ws-combo-in{/*selected item*/background-color:#476896;color:#fff}
+.customCombo1 div.ws-combo-items li.ws-combo-separator s{/*separator*/background-color:#476896}
+.customCombo1 div.ws-dropdown{/*borders/background*/border:1px solid #476896;background:#fdfbfa}
+.customCombo1 div.ws-dropdown-above div.ws-dropdown-popup{border:1px solid #476896;border-bottom:0}
+.customCombo1 div.ws-dropdown-below div.ws-dropdown-popup{border:1px solid #476896;border-top:0}
+.customCombo1 div.ws-dropdown-below .dropdown-btn,
+.customCombo1 div.ws-dropdown-above .dropdown-btn{border-left:1px solid #476896}
+.customCombo1 div.ws-dropdown-popup{background-color:#476896}
+.customCombo1 div.ws-combo-footer{/*combo area*/background:#dae1ea;font-family:"Trebuchet MS",sans-serif;color:#476896}
+.customCombo1 div.ws-combo-footer input{/*combo textfield*/font-family:"Trebuchet MS",sans-serif}
+</style>
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="ws/ws-combo.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var a = $('a.bookmark');
+	$(window).scroll(function(){
+		var y=$(window).scrollTop(), si=0;
+		a.each(function(i,e){
+			if(y>=e.offsetTop)
+				si=i;
+		});
+		$('#nav>a').each(function(i,e){
+			e.className=(i==si?'active':'');
+		});
+	});
+	$(window).scroll();
+});
+</script>
+</head>
+<body>	
+	<div id="wrap">
+		<div id="nav">
+			<em style="font-weight:bold">ws:combo<small> 1.0.2<br />January 2 2012</small></em>
+			<a href="#introduction"><b>Introduction</b></a>
+			<a href="#requirements"><b>Requirements</b></a>
+			<a href="#installation"><b>Installation</b></a>
+			<a href="#examples"><b>Examples</b></a>
+			<a href="#documentation"><b>Documentation</b></a>
+			<a href="#styling"><b>Styling &amp; Themes</b></a>
+			<a href="#issues"><b>Known Issues</b></a>
+		</div>		
+		<a class="bookmark" id="introduction"></a>
+		<h1>ws:<em>combo</em> <small>user's manual</small></h1>
+		<div>
+<script type="text/javascript">
+$.wscombo({
+	text:'(select section)',
+	onselect: function(item){
+		if(!item)return;
+		try { window.location.hash = '#'+item.v; }
+		catch (ex) { $(window).scrollTop($('a[name='+item.v+']').offset().top); }
+		item=this;
+		setTimeout(function(){item.reset(1);}, 50);
+	},
+	items:[
+		{v:'examples',t:'Examples'},
+		{v:'documentation',t:'Documentation'}
+	]
+});
+</script></div>
+		<p><b>ws:combo</b> is a replacement for a standard &lt;select /&gt; tag that extends the dropdown control with additional
+		features, such as images, custom CSS styling, and more. It is built on top of popular JavaScript framework jQuery and it
+		is easy to implement and customise.</p>
+		<p>The main aim of this control is to replace the standard <code><span class="c-b">&lt;</span><span class="c-s">select</span> <span class="c-b">/&gt;</span></code>
+			input control due to its lack of styling support. In addition to visual enhancements, ws:combo offers intuitive keyboard control using arrow keys,
+			pg up, pg down and other.</p>
+		<h2 style="font-size:16px"><em>&raquo;</em> Changelog <em>&laquo;</em></h2>
+		<p class="changelog">			
+			<em><b>1.0.2</b> January 02 2012</em><br />				
+			- reorganised code<br />
+			- fixed minor bug related to container scrolling<br />
+			- improved usability<br />
+			- added methods to insert/remove combo items<br />
+			- updated documentation (added methods description, fixed typos)<br />
+			<em><b>1.0.1</b> December 17 2011</em> - initial release
+		</p>
+		<a class="bookmark" id="requirements"></a>
+		<h2><em>1.</em> Requirements</h2>
+		<p>Following requirements must be met to successfully use this control:</p>
+		<ul>
+			<li>A browser with <b>JavaScript support enabled.</b> Following browsers have been tested and are fully supported:
+				<ul>
+					<li>Chrome,</li>
+					<li>Firefox,</li>
+					<li>IE 7+,</li>
+					<li>Opera and Safari.</li>
+				</ul>
+				<i><small>Note: ws:combo has also been successfully tested with IE6 but it is not recommended to use it with this browser as not all features are supported.</small></i>
+			</li>
+			<li>A <b>jQuery framework</b> version 1.6 or newer - this can be downloaded from here:
+				<a href="http://docs.jquery.com/Downloading_jQuery" target="_blank">http://docs.jquery.com/Downloading_jQuery</a>.</li>
+			<li>Good knowledge of JavaScript and JSON.<br /><i><small>Note: The examples below use JSON syntax.</small></i></li>
+		</ul>
+		<a class="bookmark" id="installation"></a>
+		<h2><em>2.</em> Installation</h2>
+		<p>The package contains all necessary files in the <code>ws/</code> folder. Include the <code>ws/ws-combo.js</code> script in your document
+			(make sure to adjust the path to the script). The jQuery library needs to be included in the document before the ws-combo.js script:</p>
+		<pre><span class="c-b">&lt;</span>script <span class="c-r">type</span><span class="c-b">="text/javascript"</span> <span class="c-r">src</span><span class="c-b">="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"&gt;&lt;/</span>script<span class="c-b">&gt;
+&lt;</span>script <span class="c-r">type</span><span class="c-b">="text/javascript"</span> <span class="c-r">src</span><span class="c-b">="ws/ws-combo.js"&gt;&lt;/</span>script<span class="c-b">&gt;</span></pre>
+		<p>The ws-combo.js javascript file will automatically add the required stylesheet to the document. For less data transfer you can use the minified version of the script (~ 40% less size)
+			which is available in <code>ws/ws-combo.min.js</code>.</p>
+		<p><i><small>Note: To properly load the styles, the ws-combo.css and ws-combo.gif files must be placed in the same directory as ws-combo.js!</small></i></p>
+		<a class="bookmark" id="examples"></a>
+		<h2><em>3.</em> Examples</h2>
+		<p><b>3.1</b> The following code demonstrates how to create a simple standalone dropdown:</p>
+		<pre><span class="c-b">&lt;</span>script <span class="c-r">type</span><span class="c-b">="text/javascript"&gt;</span><span class="c-js">
+$.wscombo({
+	id:<span class="c-s">'comboId1'</span>,  <span class="c-g">// unique combo id</span>
+	name:<span class="c-s">'combo1'</span>,  <span class="c-g">// form element name</span>
+	items:[         <span class="c-g">// items</span>
+		{t:<span class="c-s">'United States'</span>,v:<span class="c-s">'US'</span>},
+		{t:<span class="c-s">'United Kingdom'</span>,v:<span class="c-s">'GB'</span>},
+		<span class="c-s">'-'</span>,                      <span class="c-g">// separator</span>
+		{t:<span class="c-s">'Albania'</span>},
+		{t:<span class="c-s">'Alpha Centauri'</span>,d:1}, <span class="c-g">// disabled item</span>
+		{t:<span class="c-s">'Czech Republic'</span>},
+		{t:<span class="c-s">'Russia'</span>}
+	]
+});</span>
+<span class="c-b">&lt;/</span>script<span class="c-b">&gt;</span></pre>
+<div class="p"><em>Example 1:</em> &nbsp;
+<script type="text/javascript">
+$.wscombo({
+	id:'comboId1',  // unique combo id
+	name:'combo1',  // form element name
+	items:[         // items
+		{t:'United States',v:'US'},
+		{t:'United Kingdom',v:'GB'},
+		'-',                      // separator
+		{t:'Albania'},
+		{t:'Alpha Centauri',d:1}, // disabled item
+		{t:'Czech Republic'},
+		{t:'Russia'}
+	]
+});
+</script>
+</div>
+		<p><b>3.2</b> This code demonstrates how to convert existing dropdown into a combobox:</p>
+		<pre><span class="c-b">&lt;</span>select <span class="c-r">name</span><span class="c-b">="states"</span> <span class="c-r">id</span><span class="c-b">="comboId2"&gt;</span>
+	<span class="c-b">&lt;</span>option <span class="c-r">value</span><span class="c-b">="US"&gt;</span><span class="c-js">United States</span><span class="c-b">&lt;/</span>option<span class="c-b">&gt;</span>
+	<span class="c-b">&lt;</span>option <span class="c-r">value</span><span class="c-b">="GB"&gt;</span><span class="c-js">United Kingdom</span><span class="c-b">&lt;/</span>option<span class="c-b">&gt;</span>
+	<span class="c-b">&lt;</span>option <span class="c-r">disabled</span><span class="c-b">="disabled"&gt;</span><span class="c-js">-</span><span class="c-b">&lt;/</span>option<span class="c-b">&gt;</span>
+	<span class="c-b">&lt;</span>option<span class="c-b">&gt;</span><span class="c-js">Albania</span><span class="c-b">&lt;/</span>option<span class="c-b">&gt;</span>
+	<span class="c-b">&lt;</span>option <span class="c-r">disabled</span><span class="c-b">="disabled"&gt;</span><span class="c-js">Alpha Centauri</span><span class="c-b">&lt;/</span>option<span class="c-b">&gt;</span>
+	<span class="c-b">&lt;</span>option <span class="c-r">selected</span><span class="c-b">="selected"&gt;</span><span class="c-js">Czech Republic</span><span class="c-b">&lt;/</span>option<span class="c-b">&gt;</span>
+	<span class="c-b">&lt;</span>option<span class="c-b">&gt;</span><span class="c-js">Russia</span><span class="c-b">&lt;/</span>option<span class="c-b">&gt;</span>
+<span class="c-b">&lt;/</span>select<span class="c-b">&gt;</span>
+<span class="c-b">&lt;</span>script <span class="c-r">type</span><span class="c-b">="text/javascript"&gt;</span><span class="c-js">$(<span class="c-s">'#comboId2'</span>).wscombo();</span><span class="c-b">&lt;/</span>script<span class="c-b">&gt;</span></pre>
+		<div class="p"><em>Example 2:</em> &nbsp;
+<select name="states" id="comboId2">
+	<option value="US">United States</option>
+	<option value="GB">United Kingdom</option>
+	<option disabled="disabled">-</option>
+	<option>Albania</option>
+	<option disabled="disabled">Alpha Centauri</option>
+	<option selected="selected">Czech Republic</option>
+	<option>Russia</option>
+</select> &nbsp; <a href="#convert" onclick="$('#comboId2').wscombo();$(this).hide();return false;">Click to convert</a></div>
+		<p><b>3.3</b> Example of a standalone combo with more features including images and HTML code in the items:</p>
+		<pre><span class="c-b">&lt;</span>script <span class="c-r">type</span><span class="c-b">="text/javascript"&gt;</span><span class="c-js">
+$.wscombo({
+	id:<span class="c-s">'comboId3'</span>,  <span class="c-g">// unique combo id</span>
+	name:<span class="c-s">'combo3'</span>,  <span class="c-g">// form element name</span>
+	img:<span class="c-s">'http://ws-cdn.appspot.com/lib/countries.gif'</span>, <span class="c-g">// path to main image file - if you do not want to use imagemap
+	                                                   // set this to 1 (or true) to enable images</span>
+	reset:<span class="c-s">'Clear'</span>,  <span class="c-g">// allow user to reset the control to an empty state plus specify custom reset title</span>
+	combo:<span class="c-s">'or enter a new country:'</span>, <span class="c-g">// allow user to add custom values plus specify custom combo title</span>
+	text:<span class="c-s">'(select country)'</span>, <span class="c-g">// default text</span>
+	width:110,      <span class="c-g">// fixed width of the control input field</span>
+	maxHeight:280,	<span class="c-g">// max height of scrollable area with items</span>
+	maxLength:20,   <span class="c-g">// max 20 characters for the custom combo text</span>
+	validate:<span style="color:Purple">/^[^0-9]+$/</span>, <span class="c-g">// combo validation regexp sample - combo textbox cannot contain numbers</span>
+	onselect:<span class="c-b">function</span>(i){$(<span class="c-s">'#spComboId3'</span>).text(i?<span class="c-s">'You have selected '</span>+(i.t||i.combo):<span class="c-s">''</span>);}, <span class="c-g">// onselect handler</span>
+	items:[         <span class="c-g">// items</span>
+		{l:<span class="c-s">'Topmost Countries'</span>}, <span class="c-g">// label</span>
+		{
+			t:<span class="c-s">'United States'</span>, <span class="c-g">// text (also used as a display value)</span>
+			v:<span class="c-s">'US'</span>,            <span class="c-g">// field value (if omitted then text will be used)</span>
+			i:{x:0,y:-3760},   <span class="c-g">// offset of the icon within the main image file</span>
+			<span class="c-g">// html code to be used instead of the text displayed</span>
+			h:<span class="c-s">'&lt;b style="display:inline-block;margin-top:5px;line-height:120%"&gt;United States&lt;br /&gt;'</span>
+			 +<span class="c-s">'&lt;i style="font-weight:normal;font-size:10px;color:#999"&gt;(including minor outlying islands)&lt;/i&gt;&lt;/b&gt;'</span>
+		},
+		{
+			h:<span class="c-s">'&lt;b&gt;United Kingdom&lt;/b&gt;'</span>, <span class="c-g">// html code - note that we have omitted text property,
+									   // this will be extracted from the html code !</span>
+			v:'GB',
+			i:{x:0,y:-3744}
+		},
+		{l:<span class="c-s">'Other Countries'</span>}, <span class="c-g">// label</span>
+		{
+			v:<span class="c-s">'AF'</span>,
+			t:<span class="c-s">'Afghanistan'</span>,
+			<span class="c-g">// if you want to use single image then specify the url</span>
+			i:<span class="c-s">'http://ws-cdn.appspot.com/lib/countries.gif'</span>
+		},
+		{v:<span class="c-s">'AL'</span>,t:<span class="c-s">'Albania'</span>,i:{x:0,y:-32}}
+		<span class="c-g">/*...*/</span>
+	]
+});</span>
+<span class="c-b">&lt;/</span>script<span class="c-b">&gt;</span>
+<span class="c-r">&amp;nbsp;</span> <span class="c-b">&lt;</span>span <span class="c-r">id</span><span class="c-b">="spComboId3"&gt;&lt;/</span>span<span class="c-b">&gt;</span></pre>
+<div class="p"><em>Example 3:</em> &nbsp;
+<script type="text/javascript">
+//<![CDATA[
+$.wscombo({
+	id:'comboId3',  // unique combo id
+	name:'combo3',  // form element name
+	img:'http://ws-cdn.appspot.com/lib/countries.gif', // path to main image file
+	reset:'Clear',  // allow user to reset the control plus specify custom reset title
+	combo:'or enter a new country:', // allow user to add custom values plus specify a custom combo text
+	text:'(select country)', // hint text
+	width:140,		// width of the control input field in pixels
+	maxHeight:280,	// max height of scrollable area with items
+	maxLength:20,   // max 20 chars for the custom combo text
+	validate:/^[^0-9]+$/, // combo validate regexp - text cannot contain numbers
+	onselect:function(i){$('#spComboId3').text(i?'You have selected '+(i.t||i.combo):'');}, // onselect handler
+	items:[
+		{l:'Topmost Countries'},
+		{
+			t:'United States',
+			v:'US',
+			i:{x:0,y:-3760},
+			h:'<b style="display:inline-block;margin-top:5px;*margin:0 0 3px 0;line-height:120%">United States<br /><i style="font-weight:normal;font-size:10px;color:#999">(including minor outlying islands)</i></b>'
+		},
+		{h:'<b>United Kingdom</b>',v:'GB',i:{x:0,y:-3744}},
+		{l:'Other Countries'},
+		{v:'AF',t:'Afghanistan',i:'http://ws-cdn.appspot.com/lib/countries.gif'},
+		{v:'AX',t:'\u00C5land Islands',i:{x:0,y:-16}},
+		{v:'AL',t:'Albania',i:{x:0,y:-32}},
+		{v:'DZ',t:'Algeria',i:{x:0,y:-48}},
+		{v:'AS',t:'American Samoa',i:{x:0,y:-64}},
+		{v:'AD',t:'Andorra',i:{x:0,y:-80}},
+		{v:'AO',t:'Angola',i:{x:0,y:-96}},
+		{v:'AI',t:'Amguilla',i:{x:0,y:-112}},
+		{v:'AG',t:'Antigua and Barbuda',i:{x:0,y:-144}},
+		{v:'AR',t:'Argentina',i:{x:0,y:-160}},
+		{v:'AM',t:'Armenia',i:{x:0,y:-176}},
+		{v:'AW',t:'Aruba',i:{x:0,y:-192}},
+		{v:'AU',t:'Australia',i:{x:0,y:-208}},
+		{v:'AT',t:'Austria',i:{x:0,y:-224}},
+		{v:'AZ',t:'Azerbaijan',i:{x:0,y:-240}},
+		'-',
+		{v:'BS',t:'Bahamas',i:{x:0,y:-256}},
+		{v:'BH',t:'Bahrain',i:{x:0,y:-272}}
+	]
+});
+//]]>
+</script>
+&nbsp; <span id="spComboId3"></span>
+</div>
+		<p><b>3.4</b> Converting a select element into a combo with images with forcing the selectedIndex parameter:</p>
+		<pre><span class="c-b">&lt;</span>select <span class="c-r">name</span><span class="c-b">="states"</span> <span class="c-r">id</span><span class="c-b">="comboId4"&gt;</span>
+	<span class="c-b">&lt;</span>option <span class="c-r">value</span><span class="c-b">="US"</span> <span class="c-r">style</span><span class="c-b">="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -3760px"&gt;</span><span class="c-js">United States</span><span class="c-b">&lt;/</span>option<span class="c-b">&gt;</span>
+	<span class="c-b">&lt;</span>option <span class="c-r">value</span><span class="c-b">="GB"</span> <span class="c-r">style</span><span class="c-b">="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -3744px"&gt;</span><span class="c-js">United Kingdom</span><span class="c-b">&lt;/</span>option<span class="c-b">&gt;</span>
+	<span class="c-b">&lt;</span>option <span class="c-r">disabled</span><span class="c-b">="disabled"&gt;</span><span class="c-js">-</span><span class="c-b">&lt;/</span>option<span class="c-b">&gt;</span>
+	<span class="c-b">&lt;</span>option <span class="c-r">value</span><span class="c-b">="AL"</span> <span class="c-r">style</span><span class="c-b">="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -32px"&gt;</span><span class="c-js">Albania</span><span class="c-b">&lt;/</span>option<span class="c-b">&gt;</span>
+	<span class="c-b">&lt;</span>option <span class="c-r">value</span><span class="c-b">="DZ"</span> <span class="c-r">style</span><span class="c-b">="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -48px"&gt;</span><span class="c-js">Algeria</span><span class="c-b">&lt;/</span>option<span class="c-b">&gt;</span>
+	<span class="c-b">&lt;</span>option <span class="c-r">value</span><span class="c-b">="AS"</span> <span class="c-r">style</span><span class="c-b">="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -64px"&gt;</span><span class="c-js">American Samoa</span><span class="c-b">&lt;/</span>option<span class="c-b">&gt;</span>
+<span class="c-b">&lt;/</span>select<span class="c-b">&gt;</span>
+<span class="c-b">&lt;</span>script <span class="c-r">type</span><span class="c-b">="text/javascript"&gt;</span><span class="c-js">$(<span class="c-s">'#comboId4'</span>).wscombo({img:1,combo:1,reset:1,selectedIndex:-1});</span><span class="c-b">&lt;/</span>script<span class="c-b">&gt;</span>
+		</pre>
+		<div class="p"><em>Example 4:</em> &nbsp;
+<select name="states" id="comboId4">
+	<option value="US" style="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -3760px">United States</option>
+	<option value="GB" style="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -3744px">United Kingdom</option>
+	<option disabled="disabled">-</option>
+	<option value="AL" style="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -32px">Albania</option>
+	<option value="DZ" style="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -48px">Algeria</option>
+	<option value="AS" style="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -64px">American Samoa</option>
+</select> &nbsp; <a href="#convert" onclick="$('#comboId4').wscombo({img:1,combo:1,reset:1,selectedIndex:-1});$(this).hide();return false;">Click to convert</a></div>	
+		<p id="example_3_5"><b>3.5</b> Various combo methods:</p>
+		<pre><span class="c-js">$.wscombo({id:<span class="c-s">'comboId5m'</span>, ...}); <span class="c-g">// create the combo</span>
+Ws.Combo.comboId5m.select(1);     <span class="c-g">// select item at index 1</span>
+Ws.Combo.comboId5m.reset();       <span class="c-g">// reset control</span>
+Ws.Combo.comboId5m.disable();     <span class="c-g">// disable control</span>
+Ws.Combo.comboId5m.enable();      <span class="c-g">// enable control</span>
+Ws.Combo.comboId5m.show();        <span class="c-g">// show control</span>
+Ws.Combo.comboId5m.hide();        <span class="c-g">// hide control</span>
+Ws.Combo.comboId5m.insert([<span class="c-s">'-'</span>,{v:<span class="c-s">'CA'</span>,t:<span class="c-s">'Canada'</span>,i:{x:0,y:-624}},{v:<span class="c-s">'NZ'</span>,t:<span class="c-s">'New Zealand'</span> ,i:{x:0,y:-2528}}]); <span class="c-g">// append items</span>
+Ws.Combo.comboId5m.remove(3,2);   <span class="c-g">// remove 2 items, start at index 3</span></span></pre>
+		<div class="p"><em>Example 5:</em> &nbsp;
+<script type="text/javascript">
+//<![CDATA[
+$.wscombo({
+	id:'comboId5m',
+	img:'http://ws-cdn.appspot.com/lib/countries.gif',
+	text:'(select country)',
+	reset: 1,
+	onselect:function(i){
+		if(!i){ // reset
+			Ws.Combo.comboId5c.set({text:'(select city)',items:[]}).reset(1).disable(1);
+			return;
+		}
+		var items;
+		if(i.v=='AU')items=[{t:'Sydney'},{t:'Melbourne'},{t:'Brisbane'},{t:'Perth'}];
+		else if (i.v=='GB')items=[{t:'Birmingham'},{t:'Leeds'},{t:'Sheffield'},{t:'Bradford'},'-',{t:'Kingston upon Hull'}];
+		else if (i.v=='US')items=[{l:'Alabama'},{t:'Birmingham'},{t:'Huntsville'},{t:'Motgomery'},{l:'Alaska'},{t:'Anchorage'},{l:'Arizona'},{t:'Mesa'},{t:'Phoenix'},{t:'Tucson'},{l:'Colorado'},{t:'Colorado Springs'}];
+		else items=[{t:'No entries for '+i.v,d:1}];
+		Ws.Combo.comboId5c.set({text:'(select '+i.v+' city)',disabled:0,items:items});
+	}, // onselect handler
+	items:[
+		{v:'AU',h:'<b>Australia</b>',i:{x:0,y:-208}},
+		{v:'GB',h:'United Kingdom',i:{x:0,y:-3744}},
+		{v:'US',t:'United States',i:{x:0,y:-3760}}
+	]
+});
+document.write(' &nbsp; ');
+$.wscombo({
+	id:'comboId5c',  // unique combo id
+	text:'(select city)', // hint text
+	disabled: 1,
+	items:[]
+});
+var $c5_added=0;
+//]]>
+</script>
+			<br /><br />
+			<a href="#Select" onclick="Ws.Combo.comboId5m.select(1);return false;" title="">Select Item</a> &nbsp; &middot; &nbsp;
+			<a href="#Reset" onclick="Ws.Combo.comboId5m.reset();return false;">Reset</a> &nbsp; &middot; &nbsp;			
+			<a href="#Disable" onclick="Ws.Combo.comboId5m.disable();return false;">Disable</a> &nbsp; &middot; &nbsp;
+			<a href="#Enable" onclick="Ws.Combo.comboId5m.enable();return false;">Enable</a> &nbsp; &middot; &nbsp;
+			<a href="#Show" onclick="Ws.Combo.comboId5m.show().input.focus();return false;">Show</a> &nbsp; &middot; &nbsp;
+			<a href="#Hide" onclick="Ws.Combo.comboId5m.hide();return false;">Hide</a> &nbsp; &middot; &nbsp;
+			<a href="#Add" onclick="if(!$c5_added){$c5_added=1;Ws.Combo.comboId5m.insert(['-',{v:'CA',t:'Canada',i:{x:0,y:-624}},{v:'NZ',t:'New Zealand',i:{x:0,y:-2528}}]);}return false;">Add Items</a> &nbsp; &middot; &nbsp;
+			<a href="#Remove" onclick="if($c5_added){$c5_added=0;Ws.Combo.comboId5m.remove(3,4);}return false;">Remove Items</a>
+		</div>
+		<a class="bookmark" id="documentation"></a>	
+		<h2><em>4.</em> Documentation</h2>
+		<p>The <code>wscombo()</code> method accepts a JSON object with following parameters:</p>
+		<table class="table">
+		<thead>
+			<tr>
+				<th style="width:1%">Parameter</th>
+				<th style="width:1%">Type</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th rowspan="2"><code>combo</code></th>
+				<td style="white-space:nowrap"><code>Bool</code> (or <code>Number</code>)</td>
+				<td>Default <b><em>false (or 0)</em></b>. True (or 1) to allow user to enter custom text; false (or 0) otherwise.
+					If the combo option is allowed, the default text is <code><span class="c-s">'Enter a new value:'</span></code>. See below how to override this.</td>
+			</tr>
+			<tr>
+				<td><code>String</code></td>
+				<td>If the combo parameter is string, it is used as a title for the custom combo text option. In this case the combo option is always present.</td>
+			</tr>
+			<tr>
+				<th><code>id</code></th>
+				<td><code>String</code></td>
+				<td>Default <b><em>null</em></b>. Unique combo identifier. If this parameter is null or not provided, a random id will be used instead. If you provide this parameter, you can later
+					access the combo instance using <code>Ws.Combo.<i>your_combo_id</i></code>.</td>
+			</tr>
+			<tr>
+				<th rowspan="2"><code>img</code></th>
+				<td><code>Bool</code> (or <code>Number</code>)</td>
+				<td>Default <b><em>false (or 0)</em></b>. True (or 1) to display the image box and image icons in the items; false otherwise.</td>
+			</tr>
+			<tr>
+				<td><code>String</code></td>
+				<td>Path to main image file. Once the path has been set, user can use xy-offset within the main image file for the single combo items.</td>
+			</tr>
+			<tr>
+				<th><code id="documentation_items">items</code>&nbsp;<sup>*</sup></th>
+				<td><code>Array</code></td>
+				<td>Array of the combo items. An item can be a dash character <code><span class="c-s">'-'</span></code> (specifies a separator) or a JSON object with following parameters:
+					<ul>
+						<li><code>disabled</code> or <code>d</code> - specifies that the item is disabled and cannot be selected.</li>
+						<li><code>html</code> or <code>h</code> - html code to be displayed instead of the text.</li>
+						<li><code>label</code> or <code>l</code> - label title; suitable for grouping the items. Label is unselectable.</li>
+						<li><code>separator</code> or <code>s</code> - if set to true, item acts as a separator. Separator is unselectable.</li>
+						<li><code>text</code> or <code>t</code> - text (if html not used); this is also used for displaying the currently selected item. If not provided then text is extracted from the html option above.</li>						
+						<li><code>value</code> or <code>v</code> - value returned for the form element. If not used the text is returned instead.</li>
+					</ul>
+					<sup>* this options is required for a standalone combo!</sup>
+				</td>
+			</tr>
+			<tr>
+				<th><code>maxHeight</code></th>
+				<td><code>Number</code></td>
+				<td>Default <b><em>200</em></b>. Maximum height in pixels the items area can take. If the items area is over this height, the scrollbar is added.</td>
+			</tr>
+			<tr>
+				<th><code>maxLength</code></th>
+				<td><code>Number</code></td>
+				<td>Default <b><em>0 (unlimited)</em></b>. The maximum number of characters of the custom combo text. If zero is specified the number is unlimited.</td>
+			</tr>
+			<tr>
+				<th><code>name</code></th>
+				<td><code>String</code></td>
+				<td>Optional form element name.</td>
+			</tr>
+			<tr>
+				<th rowspan="2"><code>reset</code></th>
+				<td style="white-space:nowrap"><code>Bool</code> (or <code>Number</code>)</td>
+				<td>Default <b><em>false (or 0)</em></b>. True (or 1) to allow user to reset the combo; false (or 0) otherwise.
+					If the reset option is turned on, the default text is <code><span class="c-s">'Reset'</span></code>. See below how to override this.</td>
+			</tr>
+			<tr>
+				<td><code>String</code></td>
+				<td>If the reset parameter is string, it is used as a title for the custom reset option. In this case the reset option is always present.</td>
+			</tr>
+			<tr>
+				<th><code>selectedIndex</code></th>
+				<td><code>Number</code></td>
+				<td>Specifies the initial selected item index. If this parameter is not specified the value is used to determine the selectedIndex (see below).</td>
+			</tr>
+			<tr>
+				<th><code>text</code></th>
+				<td><code>String</code></td>
+				<td>Default <b><em>'(select)'</em></b>. The placeholder text. Used if selectedIndex=-1.</td>
+			</tr>
+			<tr>
+				<th rowspan="2"><code>validate</code></th>
+				<td><code>Function</code></td>
+				<td>User defined validation function for the custom combo text. This function returns a boolean value. True if the text is valid; false otherwise.</td>
+			</tr>
+			<tr>
+				<td><code>RegExp</code></td>
+				<td>A regular expression object used to validate the custom combo text.</td>
+			</tr>
+			<tr>
+				<th><code>value</code></th>		
+				<td><code>Object</code></td>
+				<td>The selected value.</td>
+			</tr>
+			<tr>
+				<th><code>width</code></th>		
+				<td><code>Number</code></td>
+				<td>Default <b><em>'auto'</em></b>. The width, in pixels, of the inner textfield area that shows the currently selected item. If set to auto, the width is calculated automatically based on the items content.</td>
+			</tr>
+			<tr>
+				<th colspan="3" style="background:#fafafa">Handlers</th>
+			</tr>
+			<tr>
+				<th><code>onselect(e)</code></th>
+				<td colspan="2">Occurs on several circumstances:
+					<ul>
+						<li>when an item is selected (parameter e is the item),</li>
+						<li>or the combo is reset (parameter is empty),</li>
+						<li>or a custom text has been selected (e.combo is the text).</li>
+					</ul>
+				</td>
+			</tr>
+		</tbody>
+		</table>
+		<p>You can access the combo instance using <code style="color:#000">Ws.Combo.<i>your_combo_id</i></code>. See <a href="#example_3_5">example 3.5</a> for more details. The following methods are available to manipulate the control:</p>
+		<table class="table">
+		<thead>
+			<tr>
+				<th style="width:1%">Method</th>
+				<th style="width:1%">Returns</th>
+				<th>Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th><code>select(index[,keepOpen])</code></th>
+				<td><code>object</code></td>
+				<td>
+					Manually select an item.
+					<ul>
+						<li><code><b>index</b></code> - zero based index of the item to select</li>
+						<li><code><b>keepOpen</b></code> - optional boolean parameter; if set to true the popupbox will stay opened; otherwise it will be hidden.</li>
+					</ul>
+					Returns the self-reference (current Ws.Combo instance).
+				</td>
+			</tr>
+			<tr>
+				<th><code>reset([keepOpen])</code></th>
+				<td><code>object</code></td>
+				<td>
+					Manualy reset the combo.
+					<ul>
+						<li><code><b>keepOpen</b></code> - optional boolean parameter; if set to true the popupbox will stay opened; otherwise it will be hidden.</li>
+					</ul>
+					Returns the self-reference.
+				</td>
+			</tr>
+			<tr>
+				<th><code>enable()</code></th>
+				<td><code>object</code></td>
+				<td>Enable the control. Returns the self-reference.</td>
+			</tr>
+			<tr>
+				<th><code>disable()</code></th>
+				<td><code>object</code></td>
+				<td>Disable the control. Returns the self-reference.</td>
+			</tr>
+			<tr>
+				<th><code>show()</code></th>
+				<td><code>object</code></td>
+				<td>Show the popupbox. Returns the self-reference.</td>
+			</tr>
+			<tr>
+				<th><code>hide()</code></th>
+				<td><code>object</code></td>
+				<td>Hide the popupbox. Returns the self-reference.</td>
+			</tr>
+			<tr>
+				<th><code>set(params)</code></th>
+				<td><code>object</code></td>
+				<td>
+					Set's the combobox parameters. This method is commonly used to set the items of the control after the combo has been created.
+					<ul>
+						<li><code><b>params</b></code> - dictionary of combo parameters - these use the same format as parameters used to create the combo - see <a href="#documentation">parameters documentation</a>.</li>
+					</ul>
+					Returns the self-reference.
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<b><code>insert([index,]item1,item2,...)</code></b><br />
+					<b><code>insert([index,]items)</code></b>
+				</td>
+				<td><code>object</code></td>
+				<td>
+					Insert items to the combo.
+					<ul>
+						<li><code><b>index</b></code> - index to insert the item(s) at. If not provided the items will be appended.</li>
+						<li><code><b>item1, item2, ...</b> or <b>items</b> (Array)</code> - the items to insert. The format of the item is described <a href="#documentation_items">here</a>.</li>
+					</ul>
+					Returns the self-reference.
+				</td>
+			</tr>
+			<tr>
+				<th><code>remove(index[,count])</code></th>
+				<td><code>object</code></td>
+				<td>
+					Removes items from the combo.
+					<ul>
+						<li><code><b>index</b></code> - the index to start removing at.</li>
+						<li><code><b>count</b></code> - The number of items to remove. If not set then this is equal to 1.</li>
+					</ul>
+					Returns the self-reference.
+				</td>
+			</tr>
+		</tbody>
+		</table>
+		<a class="bookmark" id="styling"></a>
+		<h2><em>5.</em> Styling &amp; Themes</h2>
+		<p>ws:combo comes with predefined default styles in <code>ws/ws-combo.css</code>. If you want to use your own styles, simply edit the stylesheet file
+			and change the appropriate styles. Note that intermediate knowledge of CSS is required for this. There are no additional themes available
+			with the release of the current version. This is planned with the release of the next major version.</p>
+		<p>You can also override the default styles by adding a class to a parent container and creating the styles for that class:</p>		
+		<pre><span class="c-g">/* Styles for the following combo declaration: &lt;div class="customCombo1"&gt;&lt;select id="comboId5"&gt;...&lt;/select&gt;&lt;/div&gt; */</span>
+#comboId5.dropdown-txt<span class="c-js">{<span class="c-g">/* text field font */</span>
+	<span class="c-r">font-family</span>: <span class="c-b">"Trebuchet MS", "Helvetica Neue", Arial, sans-serif</span>;
+	<span class="c-r">font-size</span>: <span class="c-b">13px</span>;
+	<span class="c-r">color</span>: <span class="c-b">#476896</span>
+}</span>
+#comboId5.combo-sel<span class="c-js">{<span class="c-r">color</span>:<span class="c-b">#758eb0 !important</span>;<span class="c-r">opacity</span>:<span class="c-b">.5 !important</span>}</span>
+#comboId5::selection<span class="c-js">{<span class="c-r">color</span>:<span class="c-b">#476896 !important</span>}</span>
+#comboId5::-moz-selection<span class="c-js">{<span class="c-r">color</span>:<span class="c-b">#476896 !important</span>}</span>
+.customCombo1 div.ws-combo-items li<span class="c-js">{<span class="c-g">/*item*/</span><span class="c-r">font-family</span>:<span class="c-b">"Trebuchet MS",sans-serif</span>;<span class="c-r">font-size</span>:<span class="c-b">13px</span>;<span class="c-r">color</span>:<span class="c-b">#476896</span>}</span>
+.customCombo1 div.ws-combo-items li.ws-combo-in<span class="c-js">{<span class="c-g">/*selected item*/</span><span class="c-r">background-color</span>:<span class="c-b">#476896</span>;<span class="c-r">color</span>:<span class="c-b">#fff</span>}</span>
+.customCombo1 div.ws-combo-items li.ws-combo-separator s<span class="c-js">{<span class="c-g">/*separator*/</span><span class="c-r">background-color</span>:<span class="c-b">#476896</span>}</span>
+.customCombo1 div.ws-dropdown<span class="c-js">{<span class="c-g">/*borders-background*/</span><span class="c-r">border</span>:<span class="c-b">1px solid #476896</span>;<span class="c-r">background</span>:<span class="c-b">#fdfbfa</span>}</span>
+.customCombo1 div.ws-dropdown-above div.ws-dropdown-popup<span class="c-js">{<span class="c-r">border</span>:<span class="c-b">1px solid #476896</span>;<span class="c-r">border-bottom</span>:<span class="c-b">0</span>}</span>
+.customCombo1 div.ws-dropdown-below div.ws-dropdown-popup<span class="c-js">{<span class="c-r">border</span>:<span class="c-b">1px solid #476896</span>;<span class="c-r">border-top</span>:<span class="c-b">0</span>}</span>
+.customCombo1 div.ws-dropdown-below .dropdown-btn<span class="c-js">,</span>
+.customCombo1 div.ws-dropdown-above .dropdown-btn<span class="c-js">{<span class="c-r">border-left</span>:<span class="c-b">1px solid #476896</span>}</span>
+.customCombo1 div.ws-dropdown-popup<span class="c-js">{<span class="c-r">background-color</span>:<span class="c-b">#476896</span>}</span>
+.customCombo1 div.ws-combo-footer<span class="c-js">{<span class="c-g">/*combo area*/</span><span class="c-r">background</span>:<span class="c-b">#dae1ea</span>;<span class="c-r">font-family</span>:<span class="c-b">"Trebuchet MS",sans-serif</span>;<span class="c-r">color</span>:<span class="c-b">#476896</span>}</span>
+.customCombo1 div.ws-combo-footer input<span class="c-js">{<span class="c-g">/*combo textfield*/</span><span class="c-r">font-family</span>:<span class="c-b">"Trebuchet MS",sans-serif</span>}</span></pre>
+		<div class="p customCombo1"><em>Example 5:</em> &nbsp;
+<select id="comboId5">
+	<option value="US" style="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -3760px">United States</option>
+	<option value="GB" style="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -3744px">United Kingdom</option>
+	<option disabled="disabled">-</option>
+	<option value="AL" style="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -32px">Albania</option>
+	<option value="DZ" style="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -48px">Algeria</option>
+	<option value="AS" style="background:url(http://ws-cdn.appspot.com/lib/countries.gif) 0 -64px">American Samoa</option>
+</select>
+		</div><script type="text/javascript">$('#comboId5').wscombo({img:1,combo:1,reset:1,selectedIndex:-1});</script>
+		<a class="bookmark" id="issues"></a>
+		<h2><em>6.</em> Known Issues and Limitations</h2>		
+		<p><i><b>01</b> Container Overflow Hidden</i> - if the combo is placed within a DIV container with fixed height and overflow hidden, the popup items might not be visible. The workaround is to place the combo outside the container.</p>
+		<p><i><b>02</b> Z-Index</i> - if, for some reason, the combo/popup div is not visible, try adjusting the z-indexes in the stylesheet.</p>
+		<p><i><b>03</b> Shadows</i> - combo shadows are not available on older browsers that do not support css 3.</p>
+		<p><i><b>04</b> CSS Hacks</i> - ws-combo.css will not validate as it contains browser specific hacks to make this component work on older browsers. A plan to fix this is in the roadmap for the next major version.</p>
+		<p><i><b>05</b> Touch Support</i> - support for touch enabled devices is not fully implemented.</p>
+		<br />
+		<div style="border-top:1px dashed #e2e2e2;font-size:10px;font-family:Arial,Helvetica,sans-serif">
+			ws:combo &copy; 2011-2012 Ondrej Urik, <a href="mailto:ondrej.urik@gmail.com">ondrej.urik@gmail.com</a>
+		</div>
+	</div>
+</body>
+</html>

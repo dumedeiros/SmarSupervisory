@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="iso-8859-1"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head> <meta name="viewport" content="width=996px"/>
+        <title>Real-time Line Chart</title>
+        <link rel="stylesheet" media="screen" href="@{'public/javascripts/FusionWidgets/Gallery/assets/ui/css/style.css'}"/>
+        <link rel="stylesheet" media="screen" href="@{'public/javascripts/FusionWidgets/Gallery/assets//prettify/prettify.css'}"/>
+
+        <script type="text/javascript" src="@{'public/javascripts/FusionWidgets/Charts/jquery.min.js'}"></script>
+        <script type="text/javascript" src="@{'public/javascripts/FusionWidgets/Charts/FusionCharts.js'}"></script>
+        <script type="text/javascript" src="@{'public/javascripts/FusionWidgets/Gallery/assets/prettify/prettify.js'}"></script>
+        <script type="text/javascript" src="@{'public/javascripts/FusionWidgets/Gallery/assets/ui/js/json2.js'}"></script>
+        <script type="text/javascript" src="@{'public/javascripts/FusionWidgets/Gallery/assets/ui/js/lib.js'}"></script>
+        <script type="text/javascript" src="@{'public/javascripts/FusionWidgets/Gallery/assets/ui/js/date.js'}"></script>
+        <script type="text/javascript" src="@{'public/javascripts/FusionWidgets/Gallery/Data/String/js/RTLine.js'}"></script>
+
+        <script type="text/javascript">
+            var isJSChartNotAvailable = false;
+        </script>
+    </head>
+
+    <textarea id="ttty">${json}</textarea>
+
+    <body>
+
+        <div id="chartdiv" align="center">Chart will load here/</div>
+        <div id="chartTanque" align="center">Chart will load here/</div>
+        <script type="text/javascript">
+            
+            $(document).ready(function(){
+                alert($("#ttty").html());
+            });
+
+            var chart = new FusionCharts("@{'public/javascripts/charts/Cylinder.swf'}", "150", "200", "0", "1");
+            chart.setJSONData($("#ttty").val());		   
+            chart.render("chartdiv");
+
+            //            FusionCharts.addEventListener("Rendered", function(e,a) {
+            //                setInterval(function() {
+            //                    feedGraph(e.sender);
+            //                }, 400);
+            //                
+            //            });			
+            //				
+            //            function feedGraph(sender)
+            //            {
+            //                $.ajax({
+            //                    type : 'GET',
+            //                    url: '/teste3', 
+            //                    dataType : 'json',
+            //                    success : function(g){
+            //                        var updater = sender.feedData? sender : null;
+            //                        var p1 = g+3;
+            //                        var p2 = g+3-1;
+            //                        var p3 = g+3-2;
+            //                        var dateTimeLabel = new Date().toString("HH:mm:ss");
+            //                        if(updater) updater.feedData("&label=" + dateTimeLabel + "&value=" + p1 + "|" + p2 + "|" + p3 );
+            //                    }
+            //                });
+            //                
+            //            }
+
+			
+        </script>
+
+        <div class="qua-button-holder"></div>
+        <div class="show-code-block"></div>
+
+    </body>
+</html>
