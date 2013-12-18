@@ -5,7 +5,7 @@
 # Home page
 GET     /                                       Application.index
 GET    /login                                   Ajax.login
-GET     /home                           Application.redirectHomeLogin
+GET     /home                           AdminSupervisory.redirectHomeLoginSuccess
 
 
 # Ignore favicon requests

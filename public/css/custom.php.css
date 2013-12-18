@@ -166,9 +166,6 @@ body, input, select, textarea { font-family:'Lato', sans-serif; }
 
 .data-container{
     position: absolute;
-    -webkit-border-radius: 4px;
-    border-radius: 4px;
-    border-style: solid;
 }
 
 .desl{
@@ -176,11 +173,12 @@ body, input, select, textarea { font-family:'Lato', sans-serif; }
 }
 
 .dataBox{
+    padding: 4px;
     background-color: black;  
     color: white;
-    font-weight: 500;
+    font-weight: 300;
     text-align: right;
-    width: 55px;
+    width: 64px;
     height: 25px;
     -webkit-appearance: none;
     -webkit-border-radius: 6px;
@@ -242,4 +240,5 @@ body, input, select, textarea { font-family:'Lato', sans-serif; }
     border-color: white;
     border-width: 1px;
 }
+
 

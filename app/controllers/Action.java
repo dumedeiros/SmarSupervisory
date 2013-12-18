@@ -14,7 +14,6 @@ public class Action extends Controller {
     }
 
     public static void conectar(Usuario usuario) {
-        JOptionPane.showMessageDialog(null, "Dentro");
         session.put("login", usuario.login);
     }
 

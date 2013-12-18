@@ -8,6 +8,7 @@ import Connnector.RDAConnection;
 import Utilities.ExecThread;
 import java.util.HashMap;
 import java.util.Map;
+import models.TagVars;
 import play.mvc.Controller;
 
 /**
@@ -16,11 +17,11 @@ import play.mvc.Controller;
  */
 public class Supervisory extends Controller {
 
+    public static TagVars tagVars = new TagVars();
     public static ExecutionTrhead thread = new ExecutionTrhead(false);
 //    private static RDAConnection conn = new RDAConnection();
     private static String d = "";
     private static int i = 0;
-    
 
     public static void a() {
         thread.doResume();

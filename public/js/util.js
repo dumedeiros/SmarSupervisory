@@ -14,7 +14,7 @@ function showWarning(msg){
 }
 
 function hideMessage(){
-    jQuery('#centralMessage').hide();
+    jQuery('#centralMessage').hide(500);
 }
 
 function disableButton(id){

@@ -1,4 +1,4 @@
-ø<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html>
     <head>
@@ -7,18 +7,244 @@
         <link rel="stylesheet" media="screen" href="@{'/public/css/main.css'}">
         #{get 'moreStyles' /}
         <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
-        <!--<script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>-->
         #{get 'moreScripts' /}
+        <link rel='stylesheet'  href="@{'public/plugin/revslider/css/settings.css'}" />
+        <link rel='stylesheet'  href="@{'public/plugin/revslider/css/dynamic-captions.css'}" />
+        <link rel='stylesheet'  href="@{'public/plugin/revslider/css/static-captions.css'}" />
+        <link rel='stylesheet'  href="@{'public/css/slicknav.css'}" />
+        <link rel='stylesheet'  href="@{'public/css/custom.php.css'}" />
+        <link rel='stylesheet'  href="@{'public/css/style.css'}" />
+        <link rel='stylesheet'  href="@{'public/css/css.css'}" />
+        <link rel='stylesheet'  href="@{'public/css/transitions.css'}" />
+
+        <link rel="stylesheet" media="screen" href="@{'public/plugin/uLoginBox/css/uLoginbox.css'}" />
+        <link rel="stylesheet" media="screen" href="@{'public/css/main.css'}"/>
+        <link rel="stylesheet" media="screen" href="@{'public/css/messagesBox.css'}"/>
+        <link rel="stylesheet" media="screen" href="@{'public/css/css-form.css'}"/>
+        <link rel='stylesheet'  href="@{'public/plugin/bootstrap/css/bootstrap.css'}" />
+        <link rel='stylesheet'  href="@{'public/plugin/bootstrap-switch/css/bootstrap-switch.css'}" />
+
+
+
+        <script type="text/javascript" src="@{'public/js/jquery1.10.2.js'}"></script> 
+        <script type="text/javascript" src="@{'public/js/jquery-migrate.min.js'}"></script> 
+        <script type="text/javascript" src="@{'public/js/comment-reply.min.js'}"></script> 
+        <script type="text/javascript" src="@{'public/plugin/revslider/js/jquery.themepunch.plugins.min.js'}"></script> 
+        <script type="text/javascript" src="@{'public/plugin/revslider/js/jquery.themepunch.revolution.min.js'}"></script> 
+        <script type="text/javascript" src="@{'public/js/html5.js'}"></script> 
+        <script type="text/javascript" src="@{'public/js/modernizr.js'}"></script> 
+        <script type="text/javascript" src="@{'public/plugin/bootstrap/js/bootstrap.js'}"></script>
+        <script type="text/javascript" src="@{'public/plugin/bootstrap-switch/js/bootstrap-switch.js'}"></script>
+        <script type="text/javascript" src="@{'public/js/util.js'}"></script>
+        <script type="text/javascript" src="@{'public/plugin/uLoginBox/js/uLoginBox.js'}"></script>
+
+        <!--<link rel='stylesheet'  href="@{'public/css/styles.css'}" />-->
+
+
+
+        <!--[if gte IE 9]>
+        <style>
+        .video-js video { display:none; }
+        .video-js .vjs-poster { display:block !important; }
+        </style>
+        <![endif]-->
+
     </head>
-    <body>
-        #{doLayout /}
-    </body>
+    <body class="home">
+        <header class="def header">
+            <div class="shell">
+                <section class="left location"><span class="iconed-address">Place1</span><span class="iconed-phone">Ph1</span></section>		
+                <a href=""><img src="@{'public/img/logo.png'}" class="logo-image" alt="" /></a>
+                #{if session.login}
+                <a id="login" class="logout-place" href="@{Action.logout}">Logout</a>
+                #{/if}
+                #{else}
+                <a id="login" class="login-place">Login</a>
+                #{/else}
+            </div>
+        </header>
+
+        #{if usuarioLogado}
+        <nav id="main-nav" class="full">
+            <div class="shell">
+                <ul id="menu-main-menu" class="menu">
+                    <li class="menu-item "><a href="#" >Menu 1</a>
+                        <section class="dropdown"><ul>
+                                <li class="menu-item"><a href="@{AdminSupervisory.index()}">Sub-1</a></li>
+                                <li class="menu-item" "><a href="#">Sub-2</a></li>
+                                <li class="menu-item"><a href="#">Sub-3</a></li>
+                            </ul>
+                        </section>
+                    </li>
+                    <li class="menu-item" id="login2"><a href="#">Menu 2</a>
+                        <section class="dropdown"><ul>
+                                <li class="menu-item"><a href="#">Sub-1</a></li>
+                                <li class="menu-item"><a href="#">Sub-2</a></li>
+                            </ul></section>
+                    </li>
+                    <li class="menu-item " id="ta"><a href="#">Menu-3</a>
+                    </li>
+                </ul>	
+            </div>
+        </nav>
+        #{/if}
+
+        <div id="centralMessage" style=" 
+
+             z-index: 2; position: absolute;height: 40px; width: 100%;;
+             color: white; font-weight: bold;
+
+
+             line-height: 50%;
+             text-align: center;
+             background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNhOTAzMjkiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI0NCUiIHN0b3AtY29sb3I9IiM4ZjAyMjIiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNmQwMDE5IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+             background: -moz-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%); /* FF3.6+ */
+             background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(169,3,41,1)), color-stop(44%,rgba(143,2,34,1)), color-stop(100%,rgba(109,0,25,1))); /* Chrome,Safari4+ */
+             background: -webkit-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Chrome10+,Safari5.1+ */
+             background: -o-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Opera 12+ */
+             background: -ms-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* IE10+ */
+             background: radial-gradient(ellipse at center,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* W3C */
+             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */" class="" id="tt">
+
+            <span style="font-family: Garamond, serif;
+                  letter-spacing: 1px;
+                  font-weight:bold;
+                  font-size: 18px;
+                  line-height: 40px; 
+                  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+                  ">ø${flash.error}asasdkasdaskdasd  andand  asdas</span>
+        </div>
+    </div>
+    #{doLayout /}
+</body>
+<div class="bottom-spacer"></div>
+<section id="footer-widgets">
+    <div class="overlay">
+        <div class="shell clearfix">
+
+
+        </div>
+    </div>
+</section><footer class="clearfix">
+    <div class="shell">
+        <section class="left">
+            Copyright &copy;2013 Eduardo Medeiros.
+        </section>
+    </div>
+</footer><div class="customizer-style-main"></div><div class="customizer-style-alt"></div>
+
+<script type='text/javascript' src='../../public/js/jquery.slicknav.min.js'></script>
+<script type='text/javascript' src='../../public/js/jquery.easing.js'></script>
+<script type='text/javascript' src='../../public/js/fitvids.js'></script>
+<script type='text/javascript' src='../../public/js/jquery.main.js'></script>
 </html>
 
 <script>
     
        
+    //    jQuery(document).ready(function(){
+    //        if("${flash.error}"){
+    //            //            alert("${flash.error}");
+    //            showErro("Eduardo");
+    //
+    //        }
+    //    });
+    
+    initLoginBox();
+    
+    jQuery(document).keyup(function(e) {
+        
+        if (e.keyCode == KEYCODE_ESC) { uLoginBox.clear() } 
+    });
+    
+    jQuery('#login').click(function(){
+        //        if("{session.login}"){
+        showLoginBox();
+        //
+        //        }
+        //        jQuery("#tt").show(400);
+        //        showErro("adad");
+    });
+    
+    jQuery('#ta').click(function(){
+        //        if("{session.login}"){
+        //            showLoginBox();
+        //
+        //        }
+        //        jQuery("#tt").show(400);
+//        showErro("adad");
+        jQuery('#centralMessage').slideDown("100");;
 
+    });
+    
+    jQuery('#login2').click(function(){
+        //    hideMessage()
+        //        showLoginBox();
+        jQuery('#centralMessage').slideUp("100");;
+//        jQuery("#centralMessage").toogle(400);
+    });
+    
+    function submetence(){
+        jQuery('#loginForm').submit(function() {
+            jQuery("#botao").focus();
+            jQuery('#ajaxMessage').hide(500);
+            jQuery('#loginWaiting').show();
+            disableButton("#botao");
+            disableInput("#login-input, #senha-input");
+            if (jQuery(this).data('shouldSubmit')) {
+                return true;
+            }
+
+            jQuery.ajax({
+                url: '/login',
+                type: 'get',
+                dataType: 'json',
+                context: this,
+                data: {
+                    login : jQuery('#login-input').val(),
+                    senha : jQuery('#senha-input').val()
+                },
+                success: function (erro) {
+                    jQuery('#loginWaiting').hide();
+                    if (erro) {
+                        jQuery('#senha-input').val("");
+                        //                        jQuery('#loginMessage').html(erro.msg)
+                        jQuery('#ajaxMessage').show(500);
+                        enableButton("#botao, #cancelar");
+                        enableInput("#matricula, #senha");
+                        jQuery("#matricula").focus();
+                    }else{
+                        jQuery(this)
+                        .data('shouldSubmit', true)
+                        .submit();
+                    }
+                }
+            });
+            return false;
+        });
+    }
+    
+    function showLoginBox(){
+        
+        submetence();
+    
+        uLoginBox.alert({
+            width: '500px',
+            opened: function() {
+                jQuery("#login-input").focus();
+                jQuery("#login-input, #senha").keypress(function(event) {
+                    if ( event.which == KEYCODE_ENTER ) {
+                    }
+                });
+                jQuery('#loginCancel').click(function(){
+                    uLoginBox.clear(); 
+                });
+                jQuery('#botao').click(function(){
+                });
+            }
+        });
+    }
+    
       
 
 </script>
