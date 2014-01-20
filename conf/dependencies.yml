@@ -7,6 +7,6 @@ require:
 repositories: 
     - provided: 
         type:       local 
-        artifact:   "${application.path}/lib/[module]-[revision].jar" 
+        artifact:   "${application.path}/mylib/[module]-[revision].jar" 
         contains: 
             - provided -> * 
