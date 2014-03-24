@@ -4,18 +4,19 @@
  */
 package models;
 
+import java.util.Map;
+
 /**
  *
- * @author dumedeiros
+ * @author Eduardo Medeiros
  */
 public class TagVars {
 
+    Map<String, Map<String, Object>> a;
     public double fi31;//vazao 1
     public double fi31Tot; //vazao total 1
     public double fy31; //posicionador vazao 1
-    
     public double tic31Sp; //posicionador vazao 1
-    
     public double controlOutput;
     public double percenOvshoot;
     public double tOvershoot;

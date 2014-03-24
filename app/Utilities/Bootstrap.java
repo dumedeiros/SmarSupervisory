@@ -1,5 +1,7 @@
 package Utilities;
 
+import Connnector.RDAConnection;
+import controllers.Supervisory;
 import models.Usuario;
 import play.jobs.Job;
 import play.jobs.OnApplicationStart;
@@ -12,11 +14,13 @@ public class Bootstrap extends Job {
     @Override
     public void doJob() {
 
+        Fixtures.deleteAllModels();
         if (Usuario.count() == 0) {
             Fixtures.loadModels("data.yml");
 
         }
-//        Supervisory.thread.start();
+//        Supervisory.conn = new RDAConnection();
+        Supervisory.thread.start();
 
 //        Application.quanserController = new QuanserController();
 //

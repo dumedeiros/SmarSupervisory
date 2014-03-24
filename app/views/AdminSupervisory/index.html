@@ -1,106 +1,266 @@
+
 #{extends 'main.html' /}    
 #{set title:'Home' /}
 
+<div id="slider-wrap" class="loader-block top-loader"><!-- START REVOLUTION SLIDER 4.1 fullwidth mode -->
 
-<div style="height: 550px; background: rgb(30,87,153); /* Old browsers */
-     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-     background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFlNTc5OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQ5JSIgc3RvcC1jb2xvcj0iIzIwN2NjYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijg0JSIgc3RvcC1jb2xvcj0iIzI5ODlkOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3ZGI5ZTgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-     background: -moz-linear-gradient(top,  rgba(30,87,153,1) 0%, rgba(32,124,202,1) 49%, rgba(41,137,216,1) 84%, rgba(125,185,232,1) 100%); /* FF3.6+ */
-     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,87,153,1)), color-stop(49%,rgba(32,124,202,1)), color-stop(84%,rgba(41,137,216,1)), color-stop(100%,rgba(125,185,232,1))); /* Chrome,Safari4+ */
-     background: -webkit-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(32,124,202,1) 49%,rgba(41,137,216,1) 84%,rgba(125,185,232,1) 100%); /* Chrome10+,Safari5.1+ */
-     background: -o-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(32,124,202,1) 49%,rgba(41,137,216,1) 84%,rgba(125,185,232,1) 100%); /* Opera 11.10+ */
-     background: -ms-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(32,124,202,1) 49%,rgba(41,137,216,1) 84%,rgba(125,185,232,1) 100%); /* IE10+ */
-     background: linear-gradient(to bottom,  rgba(30,87,153,1) 0%,rgba(32,124,202,1) 49%,rgba(41,137,216,1) 84%,rgba(125,185,232,1) 100%); /* W3C */
-     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-8 */
-     " >
-    <!--                <div  id="malha1" class="malha" >asdasd</div>
-                    <div id="malha2" class="malha">asdasd</div>-->
-    <div style="z-index: 1; position: absolute; top: 200px; left: 0px; width: 100%;  padding-left:140px">
-        <img src="@{'public/img/plantagrande.png'}"/>
-        <div class="data-container" style="top: 60px; left: 470px">
-            <label class="desc">TI-31</label><br/>
-            <label class="arrow up"></label>
-            <input id="tq1Temp" class="dataBox" type="text"  value="123.13">
-            <label class="unid">oC</label>
-        </div>
-        <div class="data-container" style="top: 190px; left: 485px">
-            <label class="desc">TI-32</label><br/>
-            <label class="arrow up"></label>
-            <input id="tq2Temp" class="dataBox" type="text"  value="123.13">
-            <label class="unid">oC</label>
-        </div>
+    <div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" style="margin:0px auto;background-color:#111111;padding:0px;margin-top:0px;margin-bottom:0px;max-height:558px;">
+        <div id="rev_slider_1_1" class="rev_slider fullwidthabanner" style="display:none;max-height:558px;height:558;">
+            <ul>	<!-- SLIDE  -->
+                <li data-transition="random" data-slotamount="7" data-masterspeed="300" >
+                    <!-- MAIN IMAGE -->
+                    <img src="@{'public/img/logo.png'}"  alt="slide_image_01.883b834b5c"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+                    <!-- LAYERS -->
 
-        <div class="data-container" style="top: 130px; left: 460px">
-            <label class="desc">LI-31</label><br/>
-            <label class="arrow down"></label>`
-            <input id="tq1Niv" class="dataBox" type="text"  value="161.16">
-            <label class="unid">oC</label>
-        </div>
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption tp-fade fadeout fullscreenvideo"
+                         data-x="0"
+                         data-y="0"
+                         data-speed="800"
+                         data-start="200"
+                         data-easing="Power3.easeInOut"
+                         data-endspeed="800"
+                         data-autoplay="true"
+                         data-autoplayonlyfirsttime="false"
+                         data-dottedoverlay="" style="z-index: 2"><video class="video-js vjs-default-skin" loop preload="none" width="100%" height="100%" 
+                                                                    poster=@{'public/img/mainback.png'} data-setup="{}"> 
+                            <!--                                    <source src='http://demo.scheetzdesigns.com/espresso_assets/espresso_slider_video.mp4' type='video/mp4' />
+                                                                <source src='http://demo.scheetzdesigns.com/espresso_assets/espresso_slider_video.webm' type='video/webm' />
+                                                                <source src='http://demo.scheetzdesigns.com/espresso_assets/espresso_slider_video.png.ogv' type='video/ogg' />-->
+                        </video>
 
-        <div class="data-container" style="top: 10øpx; left: 700px">
-            <label class="desc">LI-32</label><br/>
-            <label class="arrow down"></label>
-            <input id="tq2Niv" class="dataBox" type="text"  value="161.16">
-            <label class="unid">oC</label>
-        </div>
-        <div class="data-container" style="top: 90px; left: 140px">
-            <label class="desc">FI-31</label><br/>
-            <input id="tq1Vaz" class="dataBox desl" type="text"  value="192.1"><label class="unid">L/H</label><br/>
-            <button id="rB1" class="btn btn-mini btn-primary" type="button">R</button>
-            <input id="tq1VazTot" class="dataBox" type="text"  value="1233.8">
-            <label class="unid">L</label>
-        </div>
-        <div class="data-container" style="top: 110px; left: 920px">
-            <label class="desc">FI-32</label><br/>
-            <input id="tq2Vaz" class="dataBox desl" type="text"  value="192.1"><label class="unid">L/H</label><br/>
-            <button id="rB2" class="btn btn-mini btn-primary" type="button">R</button>
-            <input id="tq2VazTot" class="dataBox" type="text"  value="1334.8">
-            <label class="unid">L</label>
-        </div>
-        <div class="data-container custom" style="top: 0px; left: 1100px;">
-            <div><label class="desc-custom">TIC-32</label></div>
-            <div style="margin: 5px;">
-                <input id="tq2Vaz" class="dataBox" type="text"  value="192.1"><label class="unid-b">L/H</label><br/>
-                <input id="tq2VazTot" class="dataBox" type="text"  value="1334.8"><label class="unid-b">L</label><br/>
-                <input id="tq2VazTot" class="dataBox" type="text"  value="1334.8"><label class="unid-b">L</label><br/>
-                <div class="make-switch switch-mini" data-on="primary" data-off="success" data-on-label="A" data-off-label="M">
-                    <input type="checkbox" checked>
-                </div>
-            </div>
-        </div>
-        <div class="data-container custom" style="top: 0px; left: 50px;">
-            <div><label class="desc-custom">TIC-31</label></div>
-            <div style="margin: 5px;">
-                <input id="tq2Vaz" class="dataBox" type="text"  value="192.1"><label class="unid-b">L/H</label><br/>
-                <input id="tq2VazTot" class="dataBox" type="text"  value="1334.8"><label class="unid-b">L</label><br/>
-                <input id="tq2VazTot" class="dataBox" type="text"  value="1334.8"><label class="unid-b">L</label><br/>
-                <div class="make-switch switch-mini" data-on="primary" data-off="success" data-on-label="A" data-off-label="M">
-                    <input type="checkbox" checked>
-                </div>
-            </div>
-        </div>
-        <div class="data-container custom" style="top: 130px; left: 240px;">
-            <div><label class="desc-custom">FY-31</label></div>
-            <div style="margin: 5px;">
-                <input id="tq2Vaz" class="dataBox" type="text"  value="192.1"><label class="unid-b">%</label><br/>
-            </div>
-        </div>
-        <div class="data-container custom" style="top: 130px; left: 820px;">
-            <div><label class="desc-custom">FY-32</label></div>
-            <div style="margin: 5px;">
-                <input id="tq2Vaz" class="dataBox" type="text"  value="192.1"><label class="unid-b">%</label><br/>
-            </div>
-        </div>
+                    </div>
 
+                    <!-- LAYER NR. 2 -->
+                    <div class="tp-caption tp-fade"
+                         data-x="center" data-hoffset="0"
+                         data-y="center" data-voffset="0"
+                         data-speed="300"
+                         data-start="250"
+                         data-easing="Power3.easeInOut"
+                         data-endspeed="300"
+                         style="z-index: 3"><img src="http://demo.scheetzdesigns.com/espresso/files/2013/11/grid.png" alt="">
+                    </div>
 
+                    <!-- LAYER NR. 3 -->
+                    <div class="tp-caption espresso_large_white sft stt"
+                         data-x="center" data-hoffset="0"
+                         data-y="bottom" data-voffset="-375"
+                         data-speed="400"
+                         data-start="1000"
+                         data-easing="easeOutExpo"
+                         data-endspeed="400"
+                         data-endeasing="easeOutExpo"
+                         style="z-index: 4">Smar Supervisory.
+                    </div>
 
-    </div>
-</div>
-<div id="page-post">
-</div>
+                    <!-- LAYER NR. 4 -->
+                    <div class="tp-caption medium_text sft stt"
+                         data-x="center" data-hoffset="0"
+                         data-y="center" data-voffset="-45"
+                         data-speed="400"
+                         data-start="1400"
+                         data-easing="easeOutExpo"
+                         data-endspeed="400"
+                         style="z-index: 5">Sistema supervisório da planta da Smar
+                    </div>
 
-<div class="bottom-spacer"></div><section id="ctas" class="no-slider">
-    <div class="shell clearfix">
-    </div>
+                    <!-- LAYER NR. 5 -->
+                    <div class="tp-caption sft"
+                         data-x="center" data-hoffset="0"
+                         data-y="325" 
+                         data-speed="300"
+                         data-start="1900"
+                         data-easing="Power3.easeInOut"
+                         data-endspeed="300"
+                         style="z-index: 6"><a href="http://demo.scheetzdesigns.com/espresso/events/upcoming/"><img src="http://demo.scheetzdesigns.com/espresso/files/2013/11/button_events.jpg" alt=""></a>
+                    </div>
+
+                    <!-- LAYER NR. 6 -->
+                    <div class="tp-caption sft"
+                         data-x="right" data-hoffset="-836"
+                         data-y="325" 
+                         data-speed="300"
+                         data-start="1800"
+                         data-easing="Power3.easeInOut"
+                         data-endspeed="300"
+                         style="z-index: 7"><a href="http://demo.scheetzdesigns.com/espresso/espresso-menus/coffees/"><img src="http://demo.scheetzdesigns.com/espresso/files/2013/11/button_menu.jpg" alt=""></a>
+                    </div>
+
+                    <!-- LAYER NR. 7 -->
+                    <div class="tp-caption sft"
+                         data-x="836"
+                         data-y="325" 
+                         data-speed="300"
+                         data-start="2000"
+                         data-easing="Power3.easeInOut"
+                         data-endspeed="300"
+                         style="z-index: 8"><a href="http://demo.scheetzdesigns.com/espresso/reservation/"><img src="http://demo.scheetzdesigns.com/espresso/files/2013/11/button_book.jpg" alt=""></a>
+                    </div>
+                </li>
+                <!-- SLIDE  -->
+                <li data-transition="fade" data-slotamount="7" data-masterspeed="600" >
+                    <!-- MAIN IMAGE -->
+                    <img src="@{'public/img/mainback.png'}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+                    <!-- LAYERS -->
+
+                    <!-- LAYER NR. 1 -->
+                    <div class="tp-caption large_bg_black skewfromleftshort tp-resizeme"
+                         data-x="104"
+                         data-y="bottom" data-voffset="-393"
+                         data-speed="300"
+                         data-start="300"
+                         data-easing="Power3.easeInOut"
+                         data-endspeed="300"
+                         style="z-index: 2">Confiabilidade
+                    </div>
+
+                    <!-- LAYER NR. 2 -->
+                    <div class="tp-caption modern_big_redbg skewfromleftshort tp-resizeme"
+                         data-x="104"
+                         data-y="165" 
+                         data-speed="300"
+                         data-start="500"
+                         data-easing="Power3.easeInOut"
+                         data-endspeed="300"
+                         style="z-index: 3">Precisão
+                    </div>
+
+                    <!-- LAYER NR. 3 -->
+                    <div class="tp-caption large_bg_green skewfromrightshort tp-resizeme"
+                         data-x="right" data-hoffset="-138"
+                         data-y="bottom" data-voffset="-225"
+                         data-speed="300"
+                         data-start="700"
+                         data-easing="Power3.easeInOut"
+                         data-endspeed="300"
+                         style="z-index: 4">Segurança
+                    </div>
+
+                    <!-- LAYER NR. 4 -->
+                    <div class="tp-caption mediumwhitebg skewfromrightshort tp-resizeme"
+                         data-x="right" data-hoffset="-138"
+                         data-y="333" 
+                         data-speed="300"
+                         data-start="900"
+                         data-easing="Power3.easeInOut"
+                         data-endspeed="300"
+                         style="z-index: 5">Controle
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>			
+    <script type="text/javascript">
+
+        var tpj=jQuery;				
+        tpj.noConflict();				
+        var revapi1;
+				
+        tpj(document).ready(function() {
+								
+            if(tpj('#rev_slider_1_1').revolution == undefined)
+                revslider_showDoubleJqueryError('#rev_slider_1_1');
+            else
+                revapi1 = tpj('#rev_slider_1_1').show().revolution(
+            {
+                dottedOverlay:"none",
+                delay:9000,
+                startwidth:1440,
+                startheight:558,
+                hideThumbs:200,
+						
+                thumbWidth:100,
+                thumbHeight:50,
+                thumbAmount:2,
+						
+                navigationType:"bullet",
+                navigationArrows:"solo",
+                navigationStyle:"round",
+						
+                touchenabled:"on",
+                onHoverStop:"on",
+						
+                navigationHAlign:"center",
+                navigationVAlign:"bottom",
+                navigationHOffset:0,
+                navigationVOffset:20,
+
+                soloArrowLeftHalign:"left",
+                soloArrowLeftValign:"center",
+                soloArrowLeftHOffset:20,
+                soloArrowLeftVOffset:0,
+
+                soloArrowRightHalign:"right",
+                soloArrowRightValign:"center",
+                soloArrowRightHOffset:20,
+                soloArrowRightVOffset:0,
+								
+                shadow:0,
+                fullWidth:"on",
+                fullScreen:"off",
+
+                stopLoop:"off",
+                stopAfterLoops:-1,
+                stopAtSlide:-1,
+
+						
+                shuffle:"off",
+						
+                autoHeight:"off",						
+                forceFullWidth:"off",						
+												
+												
+                hideThumbsOnMobile:"off",
+                hideBulletsOnMobile:"off",
+                hideArrowsOnMobile:"off",
+                hideThumbsUnderResolution:0,
+						
+                hideSliderAtLimit:0,
+                hideCaptionAtLimit:0,
+                hideAllCaptionAtLilmit:0,
+                startWithSlide:0,
+                videoJsPath:"http://demo.scheetzdesigns.com/espresso/wp-content/plugins/revslider/rs-plugin/videojs/",
+                fullScreenOffsetContainer: ""	
+            });
+				
+        });	//ready
+				
+    </script>
+
+    <!-- END REVOLUTION SLIDER --></div>
+<section id="ctas">
+    asdasd
 </section>
 
+
+<!--<script type="text/javascript" src="@{'public/js/jquery.slicknav.min.js'}"></script>--> 
+
+<!--<script type='text/javascript' src="@{'public/js/jquery.slicknav.min.js'}" />-->
+<!--<script type='text/javascript' src="@{'public/js/jquery.carouFredSel-6.2.1-packed.js'}" />-->
+<!--<script type='text/javascript' src="@{'public/js/jquery.collagePlus.min.js'}" />-->
+<!--<script type='text/javascript' src="@{'public/js/jquery.collageCaption.min.js'}" />-->
+<!--<script type='text/javascript' src="@{'public/js/jquery.removeWhitespace.min.js'}" />-->
+<!--<script type='text/javascript' src="@{'public/js/jquery.easing.js'}" />-->
+<!--<script type='text/javascript' src="@{'public/js/fitvids.js'}" />-->
+<!--<script type='text/javascript' src="@{'public/js/StackBoxBlur.js'}" />-->
+<!--<script type='text/javascript' src="@{'public/js/magnific.js'}" />-->
+<!--<script type='text/javascript' src="@{'public/js/jquery.blurSlider.js'}" />-->
+<!--<script type='text/javascript' src="@{'public/js/jquery.easing.js'}" />-->
+<!--<script type='text/javascript' src="@{'public/js/jquery.main.js'}" />-->
+
+<!--        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/themes/espresso/js/jquery.slicknav.min.js?ver=1.0'></script>
+        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/themes/espresso/js/jquery.carouFredSel-6.2.1-packed.js?ver=1.0'></script>
+        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/themes/espresso/js/jquery.collagePlus.min.js?ver=1.0'></script>
+        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/themes/espresso/js/jquery.collageCaption.min.js?ver=1.0'></script>
+        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/themes/espresso/js/jquery.removeWhitespace.min.js?ver=1.0'></script>
+        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/themes/espresso/js/jquery.easing.js?ver=1.0'></script>
+        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/themes/espresso/js/fitvids.js?ver=1.0'></script>
+        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/themes/espresso/js/StackBoxBlur.js?ver=1.0'></script>
+        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/themes/espresso/js/magnific.js?ver=0.9.5'></script>
+        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/themes/espresso/js/jquery.blurSlider.js?ver=1.0'></script>
+        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/themes/espresso/js/jquery.main.js?ver=1.0'></script>
+        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=2.0.20'></script>
+        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.60'></script>
+        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/plugins/woocommerce/assets/js/jquery-placeholder/jquery.placeholder.min.js?ver=2.0.20'></script>
+-->

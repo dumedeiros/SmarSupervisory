@@ -39,7 +39,7 @@ public class ExecThread extends Thread {
 
     public void syncronizeAndDoTheRest() {
         try {
-            sleep(500);
+            sleep(5000);
         } catch (InterruptedException ex) {
         }
         synchronized (this) {

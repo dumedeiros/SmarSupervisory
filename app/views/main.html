@@ -52,7 +52,9 @@
     </head>
     <body class="home">
         <header class="def header">
+
             <div class="shell">
+
                 <section class="left location"><span class="iconed-address">Place1</span><span class="iconed-phone">Ph1</span></section>		
                 <a href=""><img src="@{'public/img/logo.png'}" class="logo-image" alt="" /></a>
                 #{if session.login}
@@ -63,12 +65,13 @@
                 #{/else}
             </div>
         </header>
+        <a id="teste" class="">TESTE</a>
 
         #{if usuarioLogado}
         <nav id="main-nav" class="full">
             <div class="shell">
                 <ul id="menu-main-menu" class="menu">
-                    <li class="menu-item "><a href="#" >Menu 1</a>
+                    <li class="menu-item "><a href="#" >Conectar</a>
                         <section class="dropdown"><ul>
                                 <li class="menu-item"><a href="@{AdminSupervisory.index()}">Sub-1</a></li>
                                 <li class="menu-item" "><a href="#">Sub-2</a></li>
@@ -140,8 +143,8 @@
 </html>
 
 <script>
-    
-       
+
+
     //    jQuery(document).ready(function(){
     //        if("${flash.error}"){
     //            //            alert("${flash.error}");
@@ -149,15 +152,15 @@
     //
     //        }
     //    });
-    
+
     initLoginBox();
-    
     jQuery(document).keyup(function(e) {
-        
-        if (e.keyCode == KEYCODE_ESC) { uLoginBox.clear() } 
+
+        if (e.keyCode == KEYCODE_ESC) {
+            uLoginBox.clear()
+        }
     });
-    
-    jQuery('#login').click(function(){
+    jQuery('#login').click(function() {
         //        if("{session.login}"){
         showLoginBox();
         //
@@ -165,26 +168,24 @@
         //        jQuery("#tt").show(400);
         //        showErro("adad");
     });
-    
-    jQuery('#ta').click(function(){
+    jQuery('#ta').click(function() {
         //        if("{session.login}"){
         //            showLoginBox();
         //
         //        }
         //        jQuery("#tt").show(400);
 //        showErro("adad");
-        jQuery('#centralMessage').slideDown("100");;
-
+        jQuery('#centralMessage').slideDown("100");
+        ;
     });
-    
-    jQuery('#login2').click(function(){
+    jQuery('#login2').click(function() {
         //    hideMessage()
         //        showLoginBox();
-        jQuery('#centralMessage').slideUp("100");;
+        jQuery('#centralMessage').slideUp("100");
+        ;
 //        jQuery("#centralMessage").toogle(400);
     });
-    
-    function submetence(){
+    function submetence() {
         jQuery('#loginForm').submit(function() {
             jQuery("#botao").focus();
             jQuery('#ajaxMessage').hide(500);
@@ -201,10 +202,10 @@
                 dataType: 'json',
                 context: this,
                 data: {
-                    login : jQuery('#login-input').val(),
-                    senha : jQuery('#senha-input').val()
+                    login: jQuery('#login-input').val(),
+                    senha: jQuery('#senha-input').val()
                 },
-                success: function (erro) {
+                success: function(erro) {
                     jQuery('#loginWaiting').hide();
                     if (erro) {
                         jQuery('#senha-input').val("");
@@ -213,38 +214,43 @@
                         enableButton("#botao, #cancelar");
                         enableInput("#matricula, #senha");
                         jQuery("#matricula").focus();
-                    }else{
+                    } else {
                         jQuery(this)
-                        .data('shouldSubmit', true)
-                        .submit();
+                                .data('shouldSubmit', true)
+                                .submit();
                     }
                 }
             });
             return false;
         });
     }
-    
-    function showLoginBox(){
-        
+
+    function showLoginBox() {
+
         submetence();
-    
         uLoginBox.alert({
             width: '500px',
             opened: function() {
                 jQuery("#login-input").focus();
                 jQuery("#login-input, #senha").keypress(function(event) {
-                    if ( event.which == KEYCODE_ENTER ) {
+                    if (event.which == KEYCODE_ENTER) {
                     }
                 });
-                jQuery('#loginCancel').click(function(){
-                    uLoginBox.clear(); 
+                jQuery('#loginCancel').click(function() {
+                    uLoginBox.clear();
                 });
-                jQuery('#botao').click(function(){
+                jQuery('#botao').click(function() {
                 });
             }
         });
     }
-    
-      
+
+    jQuery("#teste").click(function() {
+        jQuery.getJSON("@{Supervisory.data()}", function(systemData) {
+            console.log(systemData.get(AI005.OUT010))
+        });
+    });
+
+
 
 </script>
