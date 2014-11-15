@@ -1,0 +1,125 @@
+.Topp {
+    border-radius: 10px 10px 0px 0px;
+    -moz-border-radius: 10px 10px 0px 0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    border: 0px none #000000;
+    word-spacing: 7px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    background-color: darkgreen;
+    font-size: 1rem;
+    position: relative;
+    height: 30px;
+    background-color: #1a82f7;
+    background: url(images/linear_bg_2.png);
+    background-repeat: repeat-x;
+
+    /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1a82f7), to(#2F2727));
+
+    /* Safari 5.1, Chrome 10+ */
+    background: -webkit-linear-gradient(top, #2F2727, #1a82f7);
+
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(top, #2F2727, #1a82f7);
+
+    /* IE 10 */
+    background: -ms-linear-gradient(top, #2F2727, #1a82f7);
+
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(top, #2F2727, #1a82f7);
+
+}
+.Container {
+    background-color: lightsteelblue;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    height: 93%;
+    /*margin-top: -100px;*/ 
+    /*padding-top: 100px;*/
+    position: relative;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: overflow;
+}
+.Left, .Middle, .Right {
+    overflow: auto;
+    height: auto;
+    padding: 0 .5em 0 .5em ;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+}
+.Left::-webkit-scrollbar, .Middle::-webkit-scrollbar, .Right::-webkit-scrollbar {
+    display: none;
+}
+.Left {
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    background-color:white ;
+    width: 19rem;
+}
+.Middle {
+    overflow: scroll;
+    background-color: white;
+    margin-right: 0.5em;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+.Right {
+    width: 12.5rem;
+    background-color: violet;
+
+}
+
+.bottom{
+    height: 30px;
+    background-color: #1a82f7;
+    background: url(images/linear_bg_2.png);
+    background-repeat: repeat-x;
+
+    /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1a82f7), to(#2F2727));
+
+    /* Safari 5.1, Chrome 10+ */
+    background: -webkit-linear-gradient(bottom, #2F2727, #1a82f7);
+
+    /* Firefox 3.6+ */
+    background: -moz-linear-gradient(bottom, #2F2727, #1a82f7);
+
+    /* IE 10 */
+    background: -ms-linear-gradient(bottom, #2F2727, #1a82f7);
+
+    /* Opera 11.10+ */
+    background: -o-linear-gradient(bottom, #2F2727, #1a82f7);
+
+
+    border-radius: 0px 0px 10px 10px;
+    -moz-border-radius: 0px 0px 10px 10px;
+    -webkit-border-radius: 0px 0px 10px 10px;
+    border: 0px none #000000;
+
+}
+
+.fullContainer{
+    border-radius: 10px 10px 0px 0px;
+    -moz-border-radius: 10px 10px 0px 0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    border: 0px none #000000;
+}
+

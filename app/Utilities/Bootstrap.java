@@ -20,7 +20,7 @@ public class Bootstrap extends Job {
 
         }
 //        Supervisory.conn = new RDAConnection();
-        Supervisory.thread.start();
+//        Supervisory.thread.start();
 
 //        Application.quanserController = new QuanserController();
 //

@@ -1,0 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>Example</title>
+        <link rel="stylesheet" type="text/css" href="jquery-explr-1.4.css" />
+        <script type="text/javascript" src="jquery-1.5.2.min.js"></script>
+	    <script type="text/javascript" src="jquery-explr-1.4.min.js"></script>
+	    <script type="text/javascript">
+	        $(document).ready(function() {
+		        $("#tree").explr();
+	        });
+	    </script>
+    </head>
+    <body>
+        <ul id="tree">
+		    <li class="icon-home">
+		        <a href="#">home</a>
+		    </li>
+		    <li class="icon-user">
+		        <a href="about.html" rel="explr-ajax">about</a>
+		    </li>
+			<li class="icon-photo">
+			    <a href="#">portfolio</a>
+			    <ul class="icon-photo">
+				<li>
+				    <a href="http://codecanyon.net/user/amatyr4n/portfolio?ref=amatyr4n" target="_blank">codecanyon</a>
+
+				</li>
+				<li>
+				    <a href="http://themeforest.net/user/amatyr4n/portfolio?ref=amatyr4n">themeforest</a>
+				</li>
+			    </ul>
+			</li>
+			<li>
+			    <a href="mailto:movedgraph@gmail.com">contact</a>
+			</li>
+        </ul>
+    </body>
+</html>

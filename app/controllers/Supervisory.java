@@ -29,7 +29,7 @@ public class Supervisory extends Controller {
     public static Map<String, Entry<TagItem, ProcessData>> supData;
     public static TagVars tagVars = new TagVars();
     public static ExecutionTrhead thread = new ExecutionTrhead(true);
-    public static RDAConnection conn = new RDAConnection();
+    public static RDAConnection conn;
     private static String d = "";
     private static int i = 0;
 

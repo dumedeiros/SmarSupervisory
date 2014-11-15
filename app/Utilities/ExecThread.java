@@ -24,7 +24,7 @@ public class ExecThread extends Thread {
         return executing;
     }
 
-        public void doSuspend() {
+    public void doSuspend() {
         executing = false;
     }
 
@@ -47,6 +47,7 @@ public class ExecThread extends Thread {
                 try {
                     wait();
                 } catch (InterruptedException ex) {
+                    System.err.println(ex.getMessage());
                 }
             }
         }

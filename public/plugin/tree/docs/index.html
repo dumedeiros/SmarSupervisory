@@ -1,0 +1,1514 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Explr v1.4 jQuery Simple Tree Plugin Documentation by amatyr4n</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box, .tree-wrapper, #ajax-content-wrapper { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+		.container { background: url('assets/images/bg-light.jpg') repeat; border: 1px solid #ccc; padding: 20px;}
+		pre { background: #777 url('assets/images/bg-dark.jpg') repeat; color: #fff; overflow: auto;padding: 10px;}
+		#ajax-content-wrapper {height:150px;background: #fff;border: 1px solid #999;overflow: auto;padding:10px;}
+	</style>
+	<link rel="stylesheet" type="text/css" href="jquery-explr-1.3.min.css" />
+	<script type="text/javascript" src="jquery-1.5.2.min.js"></script>
+	<script type="text/javascript" src="jquery-explr-1.4.min.js"></script>
+	<script type="text/javascript">
+	    $(document).ready(function() {
+		    $("#tree").explr({startCollapsed:false});
+		    $("#tree-1").explr();
+		    $("#tree-2").explr({treeHeight:250,treeWidth:400});
+		    $("#tree-3").explr({treeHeight:250,treeWidth:400});
+		    $("#tree-4").explr({startCollapsed:false,treeHeight:400,treeWidth:400});
+		    $("#tree-5").explr({treeHeight:250});
+		    $("#tree-6").explr({ajaxContainerId:'ajax-content-wrapper',treeHeight:150});
+		    $("#tree-7").explr({
+			    ajaxContainerId	: 'ajax-content-wrapper',
+			    ajaxOptions	: {
+				    success	: function(data){
+					    alert(data);
+				    }
+			    },
+			    animDuration    : 0,
+			    folderTooltip	: 'tekan untuk membuka/menutup',
+			    rememberState	: false,
+			    startCollapsed	: false,
+			    treeHeight	: 150,
+			    treeWidth	: 400
+		    });
+	    });
+	</script>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">Explr v1.4 Documentation by amatyr4n</h3>
+		
+		<hr>
+		
+		<h1 class="center">Explr - A jQuery Simple Tree Plugin</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Released under <a href="http://wiki.envato.com/support/legal-terms/licensing-terms/">Envato licenses</a><br>
+					Created: 6 November 2010<br>
+					Last update: 28 June 2011<br>
+					By: amatyr4n<br>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing my plugin. If you have any questions that are beyond the scope of this help file, please feel free to email via my user page contact form <a href="http://codecanyon.net/user/amatyr4n">here</a>. Thanks so much!</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#description">Description</a></li>
+			<li><a href="#features">Features</a></li>
+			<li><a href="#changelog">Changelog</a></li>
+			<li><a href="#usage">Usage</a></li>
+			<li><a href="#faq">FAQ</a></li>
+			<li><a href="#credits">Credits</a></li>
+		</ol>
+		
+		<hr>
+		
+		<h3 id="htmlStructure"><strong>A) Description</strong> - <a href="#toc">top</a></h3>
+		<p>Explr is a jQuery plugin that will create a simple tree from a normal menu list with ul-li-a pattern, such as</p>
+
+<pre>
+	&lt;ul id="tree"&gt;
+	    &lt;li&gt;
+		&lt;a href="#"&gt;1st item 1st level&lt;/a&gt;
+		&lt;ul&gt;
+		    &lt;li&gt;
+			&lt;a href="#"&gt;1st item 2nd level&lt;/a&gt;
+		    &lt;/li&gt;
+		&lt;/ul&gt;
+	    &lt;/li&gt;
+	    &lt;li&gt;
+		&lt;a href="#"&gt;2nd item 1st level&lt;/a&gt;
+	    &lt;/li&gt;
+	&lt;/ul&gt;
+</pre>
+
+	<p>into a hierarchical tree by simply call explr() function in javascript section:</p>
+
+<pre>
+	$('#tree').explrTree();
+</pre>
+
+		<div class="tree-wrapper">
+		    <ul id="tree">
+			<li>
+			    <a href="#">1st item 1st level</a>
+			    <ul>
+				<li>
+				    <a href="#">1st item 2nd level</a>
+				</li>
+			    </ul>
+			</li>
+			<li>
+			    <a href="#">2nd item 1st level</a>
+			</li>
+		    </ul>
+		</div> 
+
+		<hr>
+
+		<h3 id="features"><strong>B) Features</strong> - <a href="#toc">top</a></h3>
+
+		<ul>
+		<li>Simple and lightweight (4KB minified JS+CSS)</li>
+		<li>Each branch could be set to start as expanded/collapsed</li>
+		<li>50+ custom icons ready for individual/multiple menu item(s)</li>
+		<li>Supports AJAX contents to be loaded from each menu item's href destination</li>
+		<li>Supports multiple tree in one page</li>
+		<li>Requires only semantic markups: ul, li, a</li>
+		<li>Styling is customizable via CSS</li>
+		<li>Cross-browser compatible</li>
+		<li>Session cookies (to keep the tree hierarcy state when load new page)</li>
+		</ul>
+
+		<hr>
+
+		<h3 id="changelog"><strong>C) Changelog</strong> - <a href="#toc">top</a></h3>
+
+		<ul>
+		<li>Version 1.5 (upcoming)
+        <ul>
+            <li>Hope for more improvement.. :D</li>
+        </ul>
+        <li>Version 1.4 (28 June 2011)
+        <ul>
+            <li>Some CSS fixes and script refinement</li>
+        </ul>
+        </li>
+        <li>Version 1.3 (17 Apr 2011)
+        <ul>
+            <li>Added: ability to disable or set the duration of sliding animation </li>
+            <li>Fixed: IE7 glitch</li>
+            <li>Improved: pass JSlint test</li>
+        </ul>
+		</li>
+		<li>Version 1.2 (17 Nov 2010)
+		<ul>
+		<li>Added: Session cookies to remember tree state when load new page</li>
+		<li>Fixed: IE support</li>
+		</ul>
+		<li>Version 1.1 (16 Nov 2010)
+		<ul>
+		<li>Added: ability to toggle sub-menu with clicking the parent link as well</li>
+		<li>Added: options to change AJAX loading text and folders' tooltip</li>
+		<li>Fixed: missed dotted lines in every last-child menu</li>
+		<li>Fixed: weird element placement by resetting all margin/padding of tree elements to 0 in the beginning of CSS</li>
+		<li>Fixed: different layout behavior of the tree in IE (still imperfect tough)</li>
+		</ul>
+		</li>
+		<li>Version 1.0 (6 Nov 2010)
+		<ul>
+		<li>First version released</li>
+		</ul>
+		</li>
+		</ul>
+
+		<hr>
+		
+		<h3 id="usage"><strong>D) Usage</strong> - <a href="#toc">top</a></h3>
+
+		<p>
+		    Suppose there is a normal list menu with markup like this:
+		</p>
+
+<pre>
+&lt;ul&gt;
+    &lt;li&gt;
+	&lt;a href="#"&gt;First&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+	&lt;a href="#"&gt;Second&lt;/a&gt;
+	&lt;ul&gt;
+	    &lt;li&gt;
+		&lt;a href="#"&gt;Second First&lt;/a&gt;
+		&lt;ul&gt;
+		    &lt;li&gt;
+			&lt;a href="#"&gt;Second First First&lt;/a&gt;
+		    &lt;/li&gt;
+		    &lt;li&gt;
+			&lt;a href="#"&gt;Second First Second&lt;/a&gt;
+		    &lt;/li&gt;
+		    &lt;li&gt;
+			&lt;a href="#"&gt;Second First Third&lt;/a&gt;
+		    &lt;/li&gt;
+		    &lt;li&gt;
+			&lt;a href="#"&gt;Second First Fourth&lt;/a&gt;
+			&lt;ul&gt;
+			    &lt;li&gt;
+				&lt;a href="#"&gt;Second First Fourth First&lt;/a&gt;
+			    &lt;/li&gt;
+			    &lt;li&gt;
+				&lt;a href="#"&gt;Second First Fourth Second&lt;/a&gt;
+				&lt;ul&gt;
+				    &lt;li&gt;
+					&lt;a href="#"&gt;Second First Fourth Second First&lt;/a&gt;
+					&lt;ul&gt;
+					    &lt;li&gt;
+						&lt;a href="#"&gt;Second First Fourth Second First First&lt;/a&gt;
+						&lt;ul&gt;
+						    &lt;li&gt;
+							&lt;a href="#"&gt;Second First Fourth Second First First First&lt;/a&gt;
+						    &lt;/li&gt;
+						&lt;/ul&gt;
+					    &lt;/li&gt;
+					&lt;/ul&gt;
+				    &lt;/li&gt;
+				    &lt;li&gt;
+					&lt;a href="#"&gt;Second First Fourth Second Second&lt;/a&gt;
+				    &lt;/li&gt;
+				&lt;/ul&gt;
+			    &lt;/li&gt;
+			    &lt;li&gt;
+				&lt;a href="#"&gt;Second First Fourth Third&lt;/a&gt;
+			    &lt;/li&gt;
+			&lt;/ul&gt;
+		    &lt;/li&gt;
+		    &lt;li&gt;
+			&lt;a href="#"&gt;Second First Fifth&lt;/a&gt;
+		    &lt;/li&gt;
+		&lt;/ul&gt;
+	    &lt;/li&gt;
+	    &lt;li&gt;
+		&lt;a href="#"&gt;Second Second&lt;/a&gt;
+		&lt;ul&gt;
+		    &lt;li&gt;
+			&lt;a href="#"&gt;Second Second First&lt;/a&gt;
+			&lt;ul&gt;
+			    &lt;li&gt;
+				&lt;a href="#"&gt;Second Second First First&lt;/a&gt;
+			    &lt;/li&gt;
+			&lt;/ul&gt;
+		    &lt;/li&gt;
+		    &lt;li&gt;
+			&lt;a href="#"&gt;Second Second Second&lt;/a&gt;
+			&lt;ul&gt;
+			    &lt;li&gt;
+				&lt;a href="#"&gt;Second Second Second First&lt;/a&gt;
+				&lt;ul&gt;
+				    &lt;li&gt;
+					&lt;a href="#"&gt;Second Second Second First First&lt;/a&gt;
+				    &lt;/li&gt;
+				&lt;/ul&gt;
+			    &lt;/li&gt;
+			&lt;/ul&gt;
+		    &lt;/li&gt;
+		&lt;/ul&gt;
+	    &lt;/li&gt;
+	&lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+	&lt;a href="#"&gt;Third&lt;/a&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+		<p>
+		    without any CSS styling, it will then rendered to be like this:
+		</p>
+
+		<div>
+		    <ul>
+			<li>
+			    <a href="#">First</a>
+			</li>
+			<li>
+			    <a href="#">Second</a>
+			    <ul>
+				<li>
+				    <a href="#">Second First</a>
+				    <ul>
+					<li>
+					    <a href="#">Second First First</a>
+					</li>
+					<li>
+					    <a href="#">Second First Second</a>
+					</li>
+					<li>
+					    <a href="#">Second First Third</a>
+					</li>
+					<li>
+					    <a href="#">Second First Fourth</a>
+					    <ul>
+						<li>
+						    <a href="#">Second First Fourth First</a>
+						</li>
+						<li>
+						    <a href="#">Second First Fourth Second</a>
+						    <ul>
+							<li>
+							    <a href="#">Second First Fourth Second First</a>
+							    <ul>
+								<li>
+								    <a href="#">Second First Fourth Second First First</a>
+								    <ul>
+									<li>
+									    <a href="#">Second First Fourth Second First First First</a>
+									</li>
+								    </ul>
+								</li>
+							    </ul>
+							</li>
+							<li>
+							    <a href="#">Second First Fourth Second Second</a>
+							</li>
+						    </ul>
+						</li>
+						<li>
+						    <a href="#">Second First Fourth Third</a>
+						</li>
+					    </ul>
+					</li>
+					<li>
+					    <a href="#">Second First Fifth</a>
+					</li>
+				    </ul>
+				</li>
+				<li>
+				    <a href="#">Second Second</a>
+				    <ul>
+					<li>
+					    <a href="#">Second Second First</a>
+					    <ul>
+						<li>
+						    <a href="#">Second Second First First</a>
+						</li>
+					    </ul>
+					</li>
+					<li>
+					    <a href="#">Second Second Second</a>
+					    <ul>
+						<li>
+						    <a href="#">Second Second Second First</a>
+						    <ul>
+							<li>
+							    <a href="#">Second Second Second First First</a>
+							</li>
+						    </ul>
+						</li>
+					    </ul>
+					</li>
+				    </ul>
+				</li>
+			    </ul>
+			</li>
+			<li>
+			    <a href="#">Third</a>
+			</li>
+		    </ul>
+		</div>
+
+		<p>
+		    To make it styled like a tree, you can now use Explr!<br/>
+		    Simply call <code>explrTree()</code> function inside <code>$(document).ready()</code> (#id assumed as the id name of ul):
+		</p>	
+
+<pre>
+	&lt;script type="text/javascript"&gt;
+
+		$(document).ready(function(){
+			<strong>$('#id').explr();</strong>
+		});
+
+	&lt;/script&gt;
+</pre>
+
+		<p>
+		    <strong>Tip:</strong> before you start whenever, don't forget to include all required files in &lt;head&gt; section:
+		</p>	
+
+<pre>
+  &lt;head&gt;
+	&lt;link rel="stylesheet" type="text/css" href="<strong>jquery.explr.css</strong>" /&gt;
+	&lt;script type="text/javascript" src="<strong>jquery-1.4.3.min.js</strong>"&gt;&lt;/script&gt;
+	&lt;script type="text/javascript" src="<strong>jquery.explr-1.1.min.js</strong>"&gt;&lt;/script&gt;
+        ...
+</pre>
+
+		<p>
+		    then the unstyled list menu above will be styled as a tree like this (try to click the 'plus' icon on the left):
+		</p>
+
+		<div class="tree-wrapper">
+		    <ul id="tree-1">
+			<li>
+			    <a href="#">First</a>
+			</li>
+			<li>
+			    <a href="#">Second</a>
+			    <ul>
+				<li>
+				    <a href="#">Second First</a>
+				    <ul>
+					<li>
+					    <a href="#">Second First First</a>
+					</li>
+					<li>
+					    <a href="#">Second First Second</a>
+					</li>
+					<li>
+					    <a href="#">Second First Third</a>
+					</li>
+					<li>
+					    <a href="#">Second First Fourth</a>
+					    <ul>
+						<li>
+						    <a href="#">Second First Fourth First</a>
+						</li>
+						<li>
+						    <a href="#">Second First Fourth Second</a>
+						    <ul>
+							<li>
+							    <a href="#">Second First Fourth Second First</a>
+							    <ul>
+								<li>
+								    <a href="#">Second First Fourth Second First First</a>
+								    <ul>
+									<li>
+									    <a href="#">Second First Fourth Second First First First</a>
+									</li>
+								    </ul>
+								</li>
+							    </ul>
+							</li>
+							<li>
+							    <a href="#">Second First Fourth Second Second</a>
+							</li>
+						    </ul>
+						</li>
+						<li>
+						    <a href="#">Second First Fourth Third</a>
+						</li>
+					    </ul>
+					</li>
+					<li>
+					    <a href="#">Second First Fifth</a>
+					</li>
+				    </ul>
+				</li>
+				<li>
+				    <a href="#">Second Second</a>
+				    <ul>
+					<li>
+					    <a href="#">Second Second First</a>
+					    <ul>
+						<li>
+						    <a href="#">Second Second First First</a>
+						</li>
+					    </ul>
+					</li>
+					<li>
+					    <a href="#">Second Second Second</a>
+					    <ul>
+						<li>
+						    <a href="#">Second Second Second First</a>
+						    <ul>
+							<li>
+							    <a href="#">Second Second Second First First</a>
+							</li>
+						    </ul>
+						</li>
+					    </ul>
+					</li>
+				    </ul>
+				</li>
+			    </ul>
+			</li>
+			<li>
+			    <a href="#">Third</a>
+			</li>
+		    </ul>
+		</div>
+
+		<h4>
+		    <strong>1. Tree Size</strong>
+		</h4>
+		<p>
+		    By default, the height and width of the tree is set to automatically expand, but you can set the custom height and width of your tree, for example we want the tree to be 400 x 200 pixel:
+		</p>
+
+<pre>
+	$('#id').explr({
+		<strong>treeHeight	: 200,</strong>
+		<strong>treeWidth	: 400</strong>
+	});
+</pre>
+
+		<div class="tree-wrapper">
+		    <ul id="tree-2">
+			<li>
+			    <a href="#">First</a>
+			</li>
+			<li>
+			    <a href="#">Second</a>
+			    <ul>
+				<li>
+				    <a href="#">Second First</a>
+				    <ul>
+					<li>
+					    <a href="#">Second First First</a>
+					</li>
+					<li>
+					    <a href="#">Second First Second</a>
+					</li>
+					<li>
+					    <a href="#">Second First Third</a>
+					</li>
+					<li>
+					    <a href="#">Second First Fourth</a>
+					    <ul>
+						<li>
+						    <a href="#">Second First Fourth First</a>
+						</li>
+						<li>
+						    <a href="#">Second First Fourth Second</a>
+						    <ul>
+							<li>
+							    <a href="#">Second First Fourth Second First</a>
+							    <ul>
+								<li>
+								    <a href="#">Second First Fourth Second First First</a>
+								    <ul>
+									<li>
+									    <a href="#">Second First Fourth Second First First First</a>
+									</li>
+								    </ul>
+								</li>
+							    </ul>
+							</li>
+							<li>
+							    <a href="#">Second First Fourth Second Second</a>
+							</li>
+						    </ul>
+						</li>
+						<li>
+						    <a href="#">Second First Fourth Third</a>
+						</li>
+					    </ul>
+					</li>
+					<li>
+					    <a href="#">Second First Fifth</a>
+					</li>
+				    </ul>
+				</li>
+				<li>
+				    <a href="#">Second Second</a>
+				    <ul>
+					<li>
+					    <a href="#">Second Second First</a>
+					    <ul>
+						<li>
+						    <a href="#">Second Second First First</a>
+						</li>
+					    </ul>
+					</li>
+					<li>
+					    <a href="#">Second Second Second</a>
+					    <ul>
+						<li>
+						    <a href="#">Second Second Second First</a>
+						    <ul>
+							<li>
+							    <a href="#">Second Second Second First First</a>
+							</li>
+						    </ul>
+						</li>
+					    </ul>
+					</li>
+				    </ul>
+				</li>
+			    </ul>
+			</li>
+			<li>
+			    <a href="#">Third</a>
+			</li>
+		    </ul>
+		</div>
+
+		<h4>
+		    <strong>2. Start Expanded</strong>
+		</h4>
+		<p>
+		    We can set a sub list to be expanded at start with adding a "explr-expand" class to every ul we want,  for example we want the "Second" and "Second Second" list to be collapsed at start:
+		</p>
+
+<pre>
+	....
+	&lt;li&gt;
+	    &lt;a href="#"&gt;Second&lt;/a&gt;
+	    &lt;ul <strong>class="explr-expand"</strong>&gt;
+	    ...
+		&lt;li&gt;
+		    &lt;a href="#"&gt;Second Second&lt;/a&gt;
+		    &lt;ul <strong>class="explr-expand"</strong>&gt;
+		    ....
+</pre>
+
+		<div class="tree-wrapper">
+		    <ul id="tree-3">
+			<li>
+			    <a href="#">First</a>
+			</li>
+			<li>
+			    <a href="#">Second</a>
+			    <ul class="explr-expand">
+				<li>
+				    <a href="#">Second First</a>
+				    <ul>
+					<li>
+					    <a href="#">Second First First</a>
+					</li>
+					<li>
+					    <a href="#">Second First Second</a>
+					</li>
+					<li>
+					    <a href="#">Second First Third</a>
+					</li>
+					<li>
+					    <a href="#">Second First Fourth</a>
+					    <ul>
+						<li>
+						    <a href="#">Second First Fourth First</a>
+						</li>
+						<li>
+						    <a href="#">Second First Fourth Second</a>
+						    <ul>
+							<li>
+							    <a href="#">Second First Fourth Second First</a>
+							    <ul>
+								<li>
+								    <a href="#">Second First Fourth Second First First</a>
+								    <ul>
+									<li>
+									    <a href="#">Second First Fourth Second First First First</a>
+									</li>
+								    </ul>
+								</li>
+							    </ul>
+							</li>
+							<li>
+							    <a href="#">Second First Fourth Second Second</a>
+							</li>
+						    </ul>
+						</li>
+						<li>
+						    <a href="#">Second First Fourth Third</a>
+						</li>
+					    </ul>
+					</li>
+					<li>
+					    <a href="#">Second First Fifth</a>
+					</li>
+				    </ul>
+				</li>
+				<li>
+				    <a href="#">Second Second</a>
+				    <ul class="explr-expand">
+					<li>
+					    <a href="#">Second Second First</a>
+					    <ul>
+						<li>
+						    <a href="#">Second Second First First</a>
+						</li>
+					    </ul>
+					</li>
+					<li>
+					    <a href="#">Second Second Second</a>
+					    <ul>
+						<li>
+						    <a href="#">Second Second Second First</a>
+						    <ul>
+							<li>
+							    <a href="#">Second Second Second First First</a>
+							</li>
+						    </ul>
+						</li>
+					    </ul>
+					</li>
+				    </ul>
+				</li>
+			    </ul>
+			</li>
+			<li>
+			    <a href="#">Third</a>
+			</li>
+		    </ul>
+		</div>
+
+		<p>
+		    To start with an expanded tree, set the <code>startCollapsed</code> property to false
+		</p>
+
+<pre>
+	$('#id').explr({
+		<strong>startCollapsed	: false,</strong>
+		treeHeight	: 400,
+		treeWidth	: 400
+	});
+</pre>
+
+		<p>
+		    We also can set a sub list to be collapsed at start with adding an "explr-collapse" class to every ul we want, for example we want the "Second First Fourth Second First" list to be collapsed at start:
+		</p>
+
+<pre>
+	...
+	&lt;li&gt;
+	    &lt;a href="#"&gt;Second First Fourth Second First&lt;/a&gt;
+	    &lt;ul <strong>class="explr-collapse"</strong>&gt;
+	    ...
+</pre>
+
+		<div class="tree-wrapper">
+		    <ul id="tree-4">
+			<li>
+			    <a href="#">First</a>
+			</li>
+			<li>
+			    <a href="#">Second</a>
+			    <ul>
+				<li>
+				    <a href="#">Second First</a>
+				    <ul>
+					<li>
+					    <a href="#">Second First First</a>
+					</li>
+					<li>
+					    <a href="#">Second First Second</a>
+					</li>
+					<li>
+					    <a href="#">Second First Third</a>
+					</li>
+					<li>
+					    <a href="#">Second First Fourth</a>
+					    <ul>
+						<li>
+						    <a href="#">Second First Fourth First</a>
+						</li>
+						<li>
+						    <a href="#">Second First Fourth Second</a>
+						    <ul>
+							<li>
+							    <a href="#">Second First Fourth Second First</a>
+							    <ul class="explr-collapse">
+								<li>
+								    <a href="#">Second First Fourth Second First First</a>
+								    <ul>
+									<li>
+									    <a href="#">Second First Fourth Second First First First</a>
+									</li>
+								    </ul>
+								</li>
+							    </ul>
+							</li>
+							<li>
+							    <a href="#">Second First Fourth Second Second</a>
+							</li>
+						    </ul>
+						</li>
+						<li>
+						    <a href="#">Second First Fourth Third</a>
+						</li>
+					    </ul>
+					</li>
+					<li>
+					    <a href="#">Second First Fifth</a>
+					</li>
+				    </ul>
+				</li>
+				<li>
+				    <a href="#">Second Second</a>
+				    <ul>
+					<li>
+					    <a href="#">Second Second First</a>
+					    <ul>
+						<li>
+						    <a href="#">Second Second First First</a>
+						</li>
+					    </ul>
+					</li>
+					<li>
+					    <a href="#">Second Second Second</a>
+					    <ul>
+						<li>
+						    <a href="#">Second Second Second First</a>
+						    <ul>
+							<li>
+							    <a href="#">Second Second Second First First</a>
+							</li>
+						    </ul>
+						</li>
+					    </ul>
+					</li>
+				    </ul>
+				</li>
+			    </ul>
+			</li>
+			<li>
+			    <a rel="#">Third</a>
+			</li>
+		    </ul>
+		</div>
+
+		<h4>
+		    <strong>3. Icons</strong>
+		</h4>
+		<p>
+		    To change the icon of an item individually, add an icon class name to it's &lt;li&gt; tag. Or add to a &lt;ul&gt; tag to change multiple icons of its descendant. The icons along with their class names are:
+		</p>
+		
+		<table>
+		    <tbody>
+			<tr>
+			    <td>
+				<img src="img/pc.de/address.png">
+			    </td>
+			    <td>
+				icon-address
+			    </td>
+			    <td>
+				<img src="img/pc.de/archives.png">
+			    </td>
+			    <td>
+				icon-archives
+			    </td>
+			    <td>
+				<img src="img/pc.de/bestseller.png">
+			    </td>
+			    <td>
+				icon-badge
+			    </td>
+			    <td>
+				<img src="img/pc.de/bank.png">
+			    </td>
+			    <td>
+				icon-bank
+			    </td>
+			    <td>
+				<img src="img/pc.de/basket.png">
+			    </td>
+			    <td>
+				icon-basket
+			    </td>
+			    <td>
+				<img src="img/pc.de/order.png">
+			    </td>
+			    <td>
+				icon-board
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				<img src="img/pc.de/order-1.png">
+			    </td>
+			    <td>
+				icon-board2
+			    </td>
+			    <td>
+				<img src="img/pc.de/library.png">
+			    </td>
+			    <td>
+				icon-book
+			    </td>
+			    <td>
+				<img src="img/pc.de/bookmark.png">
+			    </td>
+			    <td>
+				icon-bookmark
+			    </td>
+			    <td>
+				<img src="img/pc.de/business-contact.png">
+			    </td>
+			    <td>
+				icon-business
+			    </td>
+			    <td>
+				<img src="img/pc.de/calendar.png">
+			    </td>
+			    <td>
+				icon-calendar
+			    </td>
+			    <td>
+				<img src="img/pc.de/credit-card.png">
+			    </td>
+			    <td>
+				icon-card
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				<img src="img/pc.de/my-account.png">
+			    </td>
+			    <td>
+				icon-card2
+			    </td>
+			    <td>
+				<img src="img/pc.de/link.png">
+			    </td>
+			    <td>
+				icon-chain
+			    </td>
+			    <td>
+				<img src="img/pc.de/statistics.png">
+			    </td>
+			    <td>
+				icon-chart
+			    </td>
+			    <td>
+				<img src="img/pc.de/lock.png">
+			    </td>
+			    <td>
+				icon-lock
+			    </td>
+			    <td>
+				<img src="img/pc.de/check.png">
+			    </td>
+			    <td>
+				icon-check
+			    </td>
+			    <td>
+				<img src="img/pc.de/full-time.png">
+			    </td>
+			    <td>
+				icon-clock
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				<img src="img/pc.de/comment.png">
+			    </td>
+			    <td>
+				icon-comment
+			    </td>
+			    <td>
+				<img src="img/pc.de/config.png">
+			    </td>
+			    <td>
+				icon-config
+			    </td>
+			    <td>
+				<img src="img/pc.de/customers.png">
+			    </td>
+			    <td>
+				icon-customers
+			    </td>
+			    <td>
+				<img src="img/pc.de/cv.png">
+			    </td>
+			    <td>
+				icon-cv
+			    </td>
+			    <td>
+				<img src="img/pc.de/milestone.png">
+			    </td>
+			    <td>
+				icon-direction
+			    </td>
+			    <td>
+				<img src="img/pc.de/flag.png">
+			    </td>
+			    <td>
+				icon-flag
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				<img src="img/pc.de/folder.png">
+			    </td>
+			    <td>
+				icon-folder
+			    </td>
+			    <td>
+				<img src="img/pc.de/finished-work.png">
+			    </td>
+			    <td>
+				icon-folder2
+			    </td>
+			    <td>
+				<img src="img/pc.de/upcoming-work.png">
+			    </td>
+			    <td>
+				icon-folder3
+			    </td>
+			    <td>
+				<img src="img/pc.de/freelance.png">
+			    </td>
+			    <td>
+				icon-hand
+			    </td>
+			    <td>
+				<img src="img/pc.de/heart.png">
+			    </td>
+			    <td>
+				icon-heart
+			    </td>
+			    <td>
+				<img src="img/pc.de/consulting.png">
+			    </td>
+			    <td>
+				icon-help
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				<img src="img/pc.de/home.png">
+			    </td>
+			    <td>
+				icon-home
+			    </td>
+			    <td>
+				<img src="img/pc.de/lightbulb.png">
+			    </td>
+			    <td>
+				icon-lamp
+			    </td>
+			    <td>
+				<img src="img/pc.de/sign-out.png">
+			    </td>
+			    <td>
+				icon-left
+			    </td>
+			    <td>
+				<img src="img/pc.de/login.png">
+			    </td>
+			    <td>
+				icon-left2
+			    </td>
+			    <td>
+				<img src="img/pc.de/contact.png">
+			    </td>
+			    <td>
+				icon-mail
+			    </td>
+			    <td>
+				<img src="img/pc.de/email.png">
+			    </td>
+			    <td>
+				icon-mail2
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				<img src="img/pc.de/drawings.png">
+			    </td>
+			    <td>
+				icon-palette
+			    </td>
+			    <td>
+				<img src="img/pc.de/edit.png">
+			    </td>
+			    <td>
+				icon-pencil
+			    </td>
+			    <td>
+				<img src="img/pc.de/pencil.png">
+			    </td>
+			    <td>
+				icon-pencil2
+			    </td>
+			    <td>
+				<img src="img/pc.de/phone.png">
+			    </td>
+			    <td>
+				icon-phone
+			    </td>
+			    <td>
+				<img src="img/pc.de/photography.png">
+			    </td>
+			    <td>
+				icon-photo
+			    </td>
+			    <td>
+				<img src="img/pc.de/print.png">
+			    </td>
+			    <td>
+				icon-print
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				<img src="img/pc.de/project.png">
+			    </td>
+			    <td>
+				icon-project
+			    </td>
+			    <td>
+				<img src="img/pc.de/refresh.png">
+			    </td>
+			    <td>
+				icon-refresh
+			    </td>
+			    <td>
+				<img src="img/pc.de/sign-in.png">
+			    </td>
+			    <td>
+				icon-right
+			    </td>
+			    <td>
+				<img src="img/pc.de/logout.png">
+			    </td>
+			    <td>
+				icon-right2
+			    </td>
+			    <td>
+				<img src="img/pc.de/star.png">
+			    </td>
+			    <td>
+				icon-star
+			    </td>
+			    <td>
+				<img src="img/pc.de/tag.png">
+			    </td>
+			    <td>
+				icon-tag
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				<img src="img/pc.de/attibutes.png">
+			    </td>
+			    <td>
+				icon-text
+			    </td>
+			    <td>
+				<img src="img/pc.de/issue.png">
+			    </td>
+			    <td>
+				icon-text2
+			    </td>
+			    <td>
+				<img src="img/pc.de/future-projects.png">
+			    </td>
+			    <td>
+				icon-text3
+			    </td>
+			    <td>
+				<img src="img/pc.de/old-versions.png">
+			    </td>
+			    <td>
+				icon-text4
+			    </td>
+			    <td>
+				<img src="img/pc.de/user.png">
+			    </td>
+			    <td>
+				icon-user
+			    </td>
+			    <td>
+				<img src="img/pc.de/world.png">
+			    </td>
+			    <td>
+				icon-world
+			    </td>
+			</tr>
+			<tr>
+			    <td>
+				<img src="img/pc.de/zoom.png">
+			    </td>
+			    <td>
+				icon-zoom
+			    </td>
+			</tr>
+		    </tbody>
+		</table>
+
+		<p>
+		    Usage example:
+		</p>
+
+<pre>
+&lt;ul&gt;
+    &lt;li class="icon-home"&gt;
+	&lt;a href="#"&gt;home&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="icon-user"&gt;
+	&lt;a href="#"&gt;about&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li class="icon-photo"&gt;
+	&lt;a href="#"&gt;portfolio&lt;/a&gt;
+	&lt;ul&gt;
+	    &lt;li&gt;
+		&lt;a href="#"&gt;full width&lt;/a&gt;
+	    &lt;/li&gt;
+	    &lt;li&gt;
+		&lt;a href="#"&gt;with sidebar&lt;/a&gt;
+	    &lt;/li&gt;
+	&lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+	&lt;a href="#"&gt;services&lt;/a&gt;
+	&lt;ul class="icon-bank"&gt;
+	    &lt;li&gt;
+		&lt;a href="#"&gt;free&lt;/a&gt;
+	    &lt;/li&gt;
+	    &lt;li&gt;
+		&lt;a href="#"&gt;premium&lt;/a&gt;
+	    &lt;/li&gt;
+	&lt;/ul&gt;
+    &lt;/li&gt;
+    &lt;li class="icon-contact"&gt;
+	&lt;a href="#"&gt;contact&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+	&lt;a href="#"&gt;default menu&lt;/a&gt;
+	&lt;ul&gt;
+	    &lt;li&gt;
+		&lt;a href="#"&gt;default item&lt;/a&gt;
+	    &lt;/li&gt;
+	    &lt;li&gt;
+		&lt;a href="#"&gt;default item&lt;/a&gt;
+	    &lt;/li&gt;
+	&lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;
+</pre>
+
+		<p>
+		    Then the result will be:
+		</p>
+
+
+		<div class="tree-wrapper">
+		    <ul id="tree-5">
+			<li class="icon-home">
+			    <a href="#">home</a>
+			</li>
+			<li class="icon-user">
+			    <a href="#">about</a>
+			</li>
+			<li class="icon-photo">
+			    <a href="#">portfolio</a>
+			    <ul>
+				<li>
+				    <a href="#">full width</a>
+				</li>
+				<li>
+				    <a href="#">with sidebar</a>
+				</li>
+			    </ul>
+			</li>
+			<li>
+			    <a href="#">services</a>
+			    <ul class="icon-bank">
+				<li>
+				    <a href="#">free</a>
+				</li>
+				<li>
+				    <a href="#">premium</a>
+				</li>
+			    </ul>
+			</li>
+			<li class="icon-mail2">
+			    <a href="#">contact</a>
+			</li>
+			<li>
+			    <a href="#">default menu</a>
+			    <ul>
+				<li>
+				    <a href="#">default item</a>
+				</li>
+				<li>
+				    <a href="#">default item</a>
+				</li>
+			    </ul>
+			</li>
+		    </ul>
+		</div>
+
+		<h4>
+		    <strong>4. Load AJAX Content</strong>
+		</h4>
+		<p>
+		    With AJAX feature, when we click a link within the tree, the browser wont need to refresh to load a new page we requested, instead it will load asynchronously and placing the content inside an existent one of selected element. For example, we want to load all HTML content of a clicked link within tree to a div with id="ajax-content-wrapper" beside the tree, then we must set the ajaxContainerId value to 'ajax-content-wrapper'.
+		</p>
+
+<pre>
+	$('#id').explr({
+		<strong>ajaxContainerId	: 'ajax-content-wrapper',</strong>
+		treeHeight	: 200,
+		treeWidth	: 400
+	});
+</pre>
+
+		<p>
+		    Then don't forget to add rel="explr-ajax" to every anchor link elements you wanted to be AJAXified.
+		</p>
+
+<pre>
+	&lt;div class="tree-wrapper"&gt;
+	    &lt;ul id="id"&gt;
+		&lt;li&gt;
+		    &lt;a href="#"&gt;External content loaded with AJAX&lt;/a&gt;
+		    &lt;ul&gt;
+			&lt;li&gt;
+			    &lt;a href="test.html" rel="explr-ajax"&gt;load test.html&lt;/a&gt;
+			&lt;/li&gt;
+			&lt;li&gt;
+			    &lt;a href="test.php?getdata=hello" rel="explr-ajax"&gt;load test.php along with a GET data&lt;/a&gt;
+			&lt;/li&gt;
+		    &lt;/ul&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+		    &lt;a href="#"&gt;Internal content&lt;/a&gt;
+		    &lt;ul&gt;
+			&lt;li&gt;
+			    &lt;a href="#toc"&gt;go to top of page&lt;/a&gt;
+			&lt;/li&gt;
+		    &lt;/ul&gt;
+		&lt;/li&gt;
+	    &lt;/ul&gt;
+	&lt;/div&gt;
+	&lt;div id="ajax-content-wrapper"&gt;&lt;/div&gt;
+</pre>
+
+		<div class="tree-wrapper">
+		    <ul id="tree-6">
+			<li>
+			    <a href="#">External content loaded with AJAX</a>
+			    <ul>
+				<li>
+				    <a href="test.html" rel="explr-ajax">load test.html</a>
+				</li>
+				<li>
+				    <a href="test.php?getdata=hello" rel="explr-ajax">load test.php with a GET data</a>
+				</li>
+			    </ul>
+			</li>
+			<li>
+			    <a href="#">Internal content</a>
+			    <ul>
+				<li>
+				    <a href="#toc">go to top of page</a>
+				</li>
+			    </ul>
+			</li>
+		    </ul>
+		</div>
+		<div id="ajax-content-wrapper">Here is where the AJAX loaded contents will be appear</div>
+
+		<h4>
+		    <strong>5. A Note on Session Cookies</strong>
+		</h4>
+		<p>
+		    Please test cookie feature from a webserver or localhost, as if its accessed from local folder could result fail. Also, thats the reason why this help file is not featuring this feature (rememberState option is set to false) as I think this will be accessed from your local folder.
+		</p>
+
+		<h4>
+		    <strong>6. All Available Options</strong>
+		</h4>
+
+		<p>
+		    So then, from examples above we can sum up all available options to be passed to an explrTree() function: 
+		</p>
+
+		<table>
+		    <thead>
+			<tr>
+			    <td>Option</td>
+			    <td>Default value</td>
+			    <td>Description</td>
+			</tr>
+		    <thead>
+		    <tbody>
+			<tr>
+			    <td><strong>ajaxContainerId</strong></td>
+			    <td>'explr-content'</td>
+			    <td>Set this value to the id of an element which you want to be as the container of every contents of links that will be loaded through AJAX</td>
+			</tr>
+			<tr>
+			    <td><strong>ajaxLoadingText</strong></td>
+			    <td>'&lt;p&gt;loading data..&lt;/p&gt;'</td>
+			    <td>Set alternative HTML to be displayed when loading AJAX request</td>
+			</tr>
+			<tr>
+			    <td><strong>ajaxOptions</strong></td>
+			    <td>{}</td>
+			    <td>Set your custom $.ajax() function to overriden default function when a link with rel="explr-ajax" clicked. For any arguments available see <a href="http://api.jquery.com/jQuery.ajax/">$.ajax() API reference</a></td>
+			</tr>
+			<tr>
+			    <td><strong>animDuration</strong></td>
+			    <td>'fast'</td>
+			    <td>Set the duration of toggle animation. To disable animation effect when collapsing/expanding tree, set this value to 0</td>
+			</tr>
+			<tr>
+			    <td><strong>folderTooltip</strong></td>
+			    <td>'click to expand/collapse'</td>
+			    <td>Set the tooltip to be displayed when mouse is hover over the folders</td>
+			</tr>
+			<tr>
+			    <td><strong>rememberState</strong></td>
+			    <td>true</td>
+			    <td>Set to false if you don't want the tree to remember it's state when load new page that contain same tree</td>
+			</tr>
+			<tr>
+			    <td><strong>startCollapsed</strong></td>
+			    <td>true</td>
+			    <td>Set to false only if you want the tree to be expanded at start</td>
+			</tr>
+			<tr>
+			    <td><strong>treeHeight</strong></td>
+			    <td>'auto'</td>
+			    <td>Set the height property of tree in number (of pixels) or 'auto' to adjust automatically</td>
+			</tr>
+			<tr>
+			    <td><strong>treeWidth</strong></td>
+			    <td>'auto'</td>
+			    <td>Set the width property of tree in number (of pixels) or 'auto' to adjust automatically</td>
+			</tr>
+		    </tbody>
+		</table>
+
+
+		<p>
+		    For example: 
+		</p>
+
+<pre>
+	$('#id').explr({
+		ajaxContainerId	: 'ajax-content-wrapper-2',
+		ajaxLoadingText	: '&lt;img src="preloader.gif" alt="please wait" /&gt;'	
+		ajaxOptions	: {
+			success	: function(data){
+				alert(data);
+			}
+		},
+		animDuration    : 0,    // disable animation effect
+		folderTooltip	: 'tekan untuk membuka/menutup',
+		rememberState	: false,
+		startCollapsed	: false,
+		treeHeight	: 200,
+		treeWidth	: 400
+	});
+</pre>
+
+		<div class="tree-wrapper">
+		    <ul id="tree-7">
+			<li>
+			    <a href="#">This</a>
+			    <ul>
+				<li>
+				    <a href="#" rel="explr-ajax">is</a>
+				</li>
+				<li>
+				    <a href="#" rel="explr-ajax">a</a>
+				</li>
+			    </ul>
+			</li>
+			<li>
+			    <a href="#">demo</a>
+			    <ul>
+				<li>
+				    <a href="#">tree</a>
+				</li>
+			    </ul>
+			</li>
+		    </ul>
+		</div>
+
+		<hr>
+
+		<h3 id="faq"><strong>D) FAQ</strong> - <a href="#toc">top</a></h3>
+		
+		<p>Reserved for future needs</p>
+		
+		<hr>
+		
+		
+		<h3 id="credits"><strong>E) Credits</strong> - <a href="#toc">top</a></h3>
+		
+		<ul>
+			<li>jQuery JavaScript library from <a href="http://jquery.com/">jQuery</a></li>
+			<li>Stuttgart icon set from <a href="http://pc.de/icons/">PC.DE</a></li>
+		</ul>
+		
+		<hr>
+		
+		<p>Once again, thank you so much for purchasing this plugin. As I said at the beginning, I'd be glad to help you if you have any questions relating to this plugin. No guarantees, but I'll do my best to assist. If you have a more general question relating to the plugin on CodeCanyon, you might consider visiting the forums and asking your question in the "Item Discussion" section.</p> 
+		
+		<p class="append-bottom alt large"><strong>amatyr4n</strong></p>
+		<p><a href="#toc">Go To Table of Contents</a></p>
+		
+		<hr class="space">
+	</div><!-- end div .container -->
+</body>
+</html>

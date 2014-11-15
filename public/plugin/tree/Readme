@@ -1,0 +1,44 @@
+# Explr
+jQuery Simple Tree Plugin
+
+jQuery plugin to create a simple hierarchical tree from a normal menu list.
+
+## Author: 
+amatyr4n
+
+## Link: 
+http://codecanyon.net/item/explr-jquery-simple-tree-plugin-/136839
+
+## Features:
+        Simple and lightweight (4KB minified JS+CSS)
+        Each branch could be set to start as expanded/collapsed
+        50+ custom icons ready for individual/multiple menu item(s)
+        Supports AJAX contents to be loaded from each menu item’s href destination
+        Supports multiple tree in one page
+        Requires only semantic markups: ul, li, a
+        Styling is customizable via CSS
+        Cross-browser compatible
+        Session cookies (to keep the tree hierarcy state when load new page)
+
+## Changelog:
+        Version 1.4 (28 June 2011)
+            Some CSS fixes and script refinements
+        Version 1.3 (17 Apr 2011)
+            Added: ability to disable or set the duration of sliding animation effect
+            Fixed: IE7 glitch
+            Improved: pass JSlint test
+        Version 1.2 (17 Nov 2010)
+            Added: Session cookies to remember tree state when load new page
+            Fixed: IE support
+        Version 1.1 (16 Nov 2010)
+            Added: ability to toggle sub-menu with clicking the parent link as well
+            Added: options to change AJAX loading text and folders’ tooltip
+            Fixed: missed dotted lines in every last-child menu
+            Fixed: weird element placement by resetting all margin/padding of tree elements to 0 in the beginning of CSS
+            Improved: strange behavior of the tree in IE
+        Version 1.0 (6 Nov 2010)
+            First version, with all its glory, released
+
+## Credits:
+        jQuery JavaScript library from jQuery
+        Stuttgart icon set from PC.DE
