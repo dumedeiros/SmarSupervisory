@@ -11,11 +11,6 @@ public class Util {
         }
     }
 
-    public static boolean isFlagged(String text) {
-        return text.startsWith("#!");
-
-    }
-
     public static Long fixedValue(String text) {
         return new Long(text.substring(2));
     }

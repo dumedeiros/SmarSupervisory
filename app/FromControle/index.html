@@ -646,6 +646,11 @@
         
         myTimer = setInterval(function() {
             feedGraph();
+            
+            var setPoint = chart.series[0];//HighStockChart
+        var nvTq1 = chart.series[1];//HighStockChart
+        var nvTq2 = chart.series[2];//HighStockChart
+        
             var x = (new Date()).getTime(),
             //                    y = Math.round
             //            (Math.random() * 100);

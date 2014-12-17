@@ -1,627 +1,84 @@
-#{extends 'imports.html' /}    
+
+#{extends 'main.html' /}    
 #{set title:'Home' /}
 
-<body style="overflow: hidden   ">
+<div id="slider-wrap" class="loader-block top-loader"><!-- START REVOLUTION SLIDER 4.1 fullwidth mode -->
 
-    <header class="def header">
-        <div class="shell" style="text-align: left">
-            <a href="#"><img src="@{'public/img/logo.png'}" class="logo-image" alt="" /></a>
-            #{if session.login}
-            <a id="login" class="logout-place" href="@{Action.logout}">Logout</a>
-            #{/if}
-            #{else}
-            <a id="login" class="login-place">Login</a>
-            #{/else}
-        </div>
-        <div class="menu">
-            <div class="item blue tagbutton">
-                <a class="link icon_help"></a>
-                <div class="item_content">
-                    <h2>Tags</h2>
-                </div>
-            </div>
-            <div class="item blue">
-                <a class="link icon_find"></a>
-                <div class="item_content">
-                    <h2>Alertas</h2>
-                </div>
-            </div> 
-            <div class="item blue">
-                <a class="link icon_trend"></a>
-                <div class="item_content">
-                    <h2>Grafico</h2>
-                </div>
-            </div>
-            <div  class="item blue homebutton">
-                <a  class="link icon_home "></a>
-                <div class="item_content ">
-                    <h2>Home</h2>
-                </div>
+    <div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" style="margin:0px auto;background-color:#111111;padding:0px;margin-top:0px;margin-bottom:0px;max-height:558px;">
+        <div id="rev_slider_1_1" class="rev_slider fullwidthabanner" style="display:none;max-height:558px;height:558;">
+            <div style="margin-left: 280px; position: absolute; margin-top: 60px">
+                <img src="@{'public/img/smarSuperv.png'}">
             </div>
         </div>
-    </header>
+    </div>			
+    <script type="text/javascript">
 
-    <div style="height: 91%; background: rgb(30,87,153); /* Old browsers */
-         /* IE9 SVG, needs conditional override of 'filter' to 'none' */
-         background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFlNTc5OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQ5JSIgc3RvcC1jb2xvcj0iIzIwN2NjYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijg0JSIgc3RvcC1jb2xvcj0iIzI5ODlkOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3ZGI5ZTgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
-         background: -moz-linear-gradient(top,  rgba(30,87,153,1) 0%, rgba(32,124,202,1) 49%, rgba(41,137,216,1) 84%, rgba(125,185,232,1) 100%); /* FF3.6+ */
-         background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,87,153,1)), color-stop(49%,rgba(32,124,202,1)), color-stop(84%,rgba(41,137,216,1)), color-stop(100%,rgba(125,185,232,1))); /* Chrome,Safari4+ */
-         background: -webkit-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(32,124,202,1) 49%,rgba(41,137,216,1) 84%,rgba(125,185,232,1) 100%); /* Chrome10+,Safari5.1+ */
-         background: -o-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(32,124,202,1) 49%,rgba(41,137,216,1) 84%,rgba(125,185,232,1) 100%); /* Opera 11.10+ */
-         background: -ms-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(32,124,202,1) 49%,rgba(41,137,216,1) 84%,rgba(125,185,232,1) 100%); /* IE10+ */
-         background: linear-gradient(to bottom,  rgba(30,87,153,1) 0%,rgba(32,124,202,1) 49%,rgba(41,137,216,1) 84%,rgba(125,185,232,1) 100%); /* W3C */
-         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-8 */
-         " >
-        <!--                <div  id="malha1" class="malha" >asdasd</div>
-                        <div id="malha2" class="malha">asdasd</div>-->
-        <!--PLANTA DIV-->
-        <div id="home-ctx" class="notDisplayable ctx" style="z-index: 1; position: absolute; top: 82 px; left: 0px; width: 100%;  padding-left:140px">
-            <div style="margin-left: -140px; top: 0px;" >
-                <img src="@{'public/img/pplantaFinal.jpg'}"/>
+        var tpj = jQuery;
+        tpj.noConflict();
+        var revapi1;
 
-            </div>
-            <div class="data-container" style="top: 160px; left: 475px">
-                <label class="desc labelfont">TI-31</label><br/>
-                <label class="arrow up"></label>
-                <input id="tq1Temp" class="dataBox" type="text"  value="123.13">
-                <label class="unid labelfont">˚C</label>
-            </div>
-            <div class="data-container" style="top: 250px; left: 595px">
-                <label class="desc labelfont">TI-32</label><br/>
-                <label class="arrow up"></label>
-                <input id="tq2Temp" class="dataBox" type="text"  value="123.13">
-                <label class="unid labelfont">˚C</label>
-            </div>
+        tpj(document).ready(function() {
 
-            <div class="data-container" style="top: 220px; left: 475px">
-                <label class="desc labelfont">LI-31</label><br/>
-                <label class="arrow down"></label>
-                <input id="tq1Niv" class="dataBox" type="text"  value="161.16">
-                <label class="unid labelfont">˚C</label>
-            </div>
+            if (tpj('#rev_slider_1_1').revolution == undefined)
+                revslider_showDoubleJqueryError('#rev_slider_1_1');
+            else
+                revapi1 = tpj('#rev_slider_1_1').show().revolution(
+                        {
+                            dottedOverlay: "none",
+                            delay: 9000,
+                            startwidth: 1440,
+                            startheight: 558,
+                            hideThumbs: 200,
+                            thumbWidth: 100,
+                            thumbHeight: 50,
+                            thumbAmount: 2,
+                            navigationType: "bullet",
+                            navigationArrows: "solo",
+                            navigationStyle: "round",
+                            touchenabled: "on",
+                            onHoverStop: "on",
+                            navigationHAlign: "center",
+                            navigationVAlign: "bottom",
+                            navigationHOffset: 0,
+                            navigationVOffset: 20,
+                            soloArrowLeftHalign: "left",
+                            soloArrowLeftValign: "center",
+                            soloArrowLeftHOffset: 20,
+                            soloArrowLeftVOffset: 0,
+                            soloArrowRightHalign: "right",
+                            soloArrowRightValign: "center",
+                            soloArrowRightHOffset: 20,
+                            soloArrowRightVOffset: 0,
+                            shadow: 0,
+                            fullWidth: "on",
+                            fullScreen: "off",
+                            stopLoop: "off",
+                            stopAfterLoops: -1,
+                            stopAtSlide: -1,
+                            shuffle: "off",
+                            autoHeight: "off",
+                            forceFullWidth: "off",
+                            hideThumbsOnMobile: "off",
+                            hideBulletsOnMobile: "off",
+                            hideArrowsOnMobile: "off",
+                            hideThumbsUnderResolution: 0,
+                            hideSliderAtLimit: 0,
+                            hideCaptionAtLimit: 0,
+                            hideAllCaptionAtLilmit: 0,
+                            startWithSlide: 0,
+                            videoJsPath: "http://demo.scheetzdesigns.com/espresso/wp-content/plugins/revslider/rs-plugin/videojs/",
+                            fullScreenOffsetContainer: ""
+                        });
 
-            <div class="data-container" style="top: 230px; left: 840px">
-                <label class="desc labelfont">LI-32</label><br/>
-                <label class="arrow down"></label>
-                <input id="tq2Niv" class="dataBox" type="text"  value="161.16">
-                <label class="unid labelfont">˚C</label>
-            </div>
-            <div class="data-container" style="top: 210px; left: 118px">
-                <label class="desc labelfont">FI-31</label><br/>
-                <input id="tq1Vaz" class="dataBox desl" type="text"  value="192.1"><label class="unid labelfont">L/H</label><br/>
-                <button id="rB1" class="btn btn-mini btn-primary" type="button">R</button>
-                <input id="tq1VazTot" class="dataBox" type="text"  value="1233.8">
-                <label class="unid labelfont">L</label>
-            </div>
-            <div class="data-container" style="top: 210px; left: 1060px">
-                <label class="desc labelfont">FI-32</label><br/>
-                <input id="tq2Vaz" class="dataBox desl" type="text"  value="192.1"><label class="unid labelfont">L/H</label><br/>
-                <button id="rB2" class="btn btn-mini btn-primary" type="button">R</button>
-                <input id="tq2VazTot" class="dataBox" type="text"  value="1334.8">
-                <label class="unid labelfont">L</label>
-            </div>
-            <div class="data-container custom" style="top: 40px; left: 970px;">
-                <div><label class="desc-custom">LIC-32</label></div>
-                <div style="margin: 5px;">
-                    <input id="tq2Vaz" class="dataBox" type="text"  value="192.1"><label class="unid-b labelfont">SP</label><br/>
-                    <input id="tq2VazTot" class="dataBox" type="text"  value="1334.8"><label class="unid-b labelfont">PV</label><br/>
-                    <input id="tq2VazTot" class="dataBox" type="text"  value="1334.8"><label class="unid-b labelfont">MV</label><br/>
-                    <div class="make-switch switch-mini" data-on="primary" data-off="success" data-on-label="A" data-off-label="M">
-                        <input type="checkbox" checked>
-                    </div>
-                </div>
-            </div>
-            <div class="data-container custom" style="top: 40px; left: 180px;">
-                <div><label class="desc-custom">LIC-31</label></div>
-                <div style="margin: 5px;">
-                    <input id="tq2Vaz" class="dataBox" type="text"  value="192.1"><label class="unid-b labelfont">SP</label><br/>
-                    <input id="tq2VazTot" class="dataBox" type="text"  value="1334.8"><label class="unid-b labelfont">PV</label><br/>
-                    <input id="tq2VazTot" class="dataBox" type="text"  value="1334.8"><label class="unid-b labelfont">MV</label><br/>
-                    <div class="make-switch switch-mini" data-on="primary" data-off="success" data-on-label="A" data-off-label="M">
-                        <input type="checkbox" checked>
-                    </div>
-                </div>
-            </div>
-            <div class="data-container custom" style="top: 230px; left: 250px;">
-                <div><label class="desc-custom">FY-31</label></div>
-                <div style="margin: 5px;">
-                    <input id="tq2Vaz" class="dataBox" type="text"  value="192.1"><label class="unid-b">%</label><br/>
-                </div>
-            </div>
-            <div class="data-container custom" style="top: 230px; left: 950px;">
-                <div><label class="desc-custom">FY-32</label></div>
-                <div style="margin: 5px;">
-                    <input id="tq2Vaz" class="dataBox" type="text"  value="192.1"><label class="unid-b">%</label><br/>
-                </div>
-            </div>
-        </div>
+        });	//ready
 
-        <!--TAGS DIV-->
-        <div id="tag-ctx" class="fullContainer ctx "style="
-             position: absolute;
-             top: 14%;
-             bottom: 0;
-             left: 4%;
-             right: 0;
-             width: 92%;
-             height: 80%;
-             background-color: #f3f3f3;">
-            <div class="Topp"><label class="labelfont">TagList OPC</label></div>
-            <div class="Container">
-                <div class="Left">
-                    <ul id="tree">
-                        <li>
-                            <a href="#">StatusConnection_ETH </a>
-                            <ul>
-                                <li>
-                                    <a href="#">1st item 2nd levelaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">StatusDevice_NAME</a>
-                            <ul>
-                                <li>
-                                    <a href="#">1st item 2nd level</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">NAME</a>
-                            <ul>
-                                <li>
-                                    <a href="#">1st item 2nd level</a>
-                                </li>
-                                <li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li><li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li><li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li>
-                                <li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li>
-                                <li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li><li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li><li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li><li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li><li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li><li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li><li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li><li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li><li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li><li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li><li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li><li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li><li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li><li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li><li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li><li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li><li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li><li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li><li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li><li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li>
-
-                                <li>
-                                    <a href="#">2nd item 1st level</a>
-                                </li>
-                            </ul>
-                        </li>
-
-
-                    </ul>
-                </div>
-                <div class="Middle" style="overflow: hidden">
-                    <div id="wrapper">
-
-                        <table  class="flexy" id="keywords" cellspacing="0" cellpadding="0" >
-                            <thead>
-                                <tr>
-                                    <th style="width: 400px;background-color: red"><span style="width: 200px">Item sdID</span></th>
-                                    <th><span>Valor</span></th>
-                                    <th><span>Tipo de dado</span></th>
-                                    <th><span>Direito de Acesso</span></th>
-                                    <th><span>TimeStamp</span></th>
-                                    <th><span>Quality</span></th>
-                                    <th><span>Update Count</span></th>
-                                    <th><span>Valor</span></th>
-                                    <th><span>Tipo de dado</span></th>
-                                    <th><span>Direito de Acesso</span></th>
-                                    <th><span>TimeStamp</span></th>
-                                    <th><span>Quality</span></th>
-                                    <th><span>Update Count</span></th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="lalign">silly tshirts</td>
-                                    <td><input></td>
-                                    <td>2,200</td>
-                                    <td>500</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>8.9</td>
-                                    <td>110</td>
-                                    <td>1.8%</td>
-                                    <td>22.2</td>
-                                    <td>22.2</td>
-                                    <td>22.2</td>
-                                </tr>
-                                <tr>
-                                    <td class="lalign">desktop workspace photos</td>
-                                    <td>2,200</td>
-                                    <td>500</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>8.9</td>
-                                    <td>2,200</td>
-                                    <td>500</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>8.9</td>
-                                </tr>
-                                <tr>
-                                    <td class="lalign">arrested development quotes</td>
-                                    <td>13,500</td>
-                                    <td>900</td>
-                                    <td>6.7%</td>
-                                    <td>6.7%</td>
-                                    <td>6.7%</td>
-                                    <td>2,200</td>
-                                    <td>500</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>8.9</td>
-                                    <td>12.0</td>
-                                </tr>
-                                <tr>
-                                    <td class="lalign">popular web series</td>
-                                    <td>8,700</td>
-                                    <td>350</td>
-                                    <td>4%</td>
-                                    <td>4%</td>
-                                    <td>4%</td>
-                                    <td>2,200</td>
-                                    <td>500</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>8.9</td>
-                                    <td>7.0</td>
-                                </tr>
-                                <tr>
-                                    <td class="lalign">2013 webapps</td>
-                                    <td>9,900</td>
-                                    <td>460</td>
-                                    <td>4.6%</td>
-                                    <td>4.6%</td>
-                                    <td>4.6%</td>
-                                    <td>2,200</td>
-                                    <td>500</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>8.9</td>
-                                    <td>11.5</td>
-                                </tr>
-                                <tr>
-                                    <td class="lalign">ring bananaphone</td>
-                                    <td>10,500</td>
-                                    <td>748</td>
-                                    <td>7.1%</td>
-                                    <td>7.1%</td>
-                                    <td>2,200</td>
-                                    <td>500</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>8.9</td>
-                                    <td>7.1%</td>
-                                    <td>17.3</td>
-                                </tr>
-
-                                <tr>
-                                    <td class="lalign">ring bananaphone</td>
-                                    <td>10,500</td>
-                                    <td>748</td>
-                                    <td>7.1%</td>
-                                    <td>7.1%</td>
-                                    <td>2,200</td>
-                                    <td>500</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>8.9</td>
-                                    <td>7.1%</td>
-                                    <td>17.3</td>
-                                </tr>
-                                <tr>
-                                    <td class="lalign">ring bananaphone</td>
-                                    <td>10,500</td>
-                                    <td>748</td>
-                                    <td>7.1%</td>
-                                    <td>7.1%</td>
-                                    <td>2,200</td>
-                                    <td>500</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>8.9</td>
-                                    <td>7.1%</td>
-                                    <td>17.3</td>
-                                </tr>
-                                <tr>
-                                    <td class="lalign">ring bananaphone</td>
-                                    <td>10,500</td>
-                                    <td>748</td>
-                                    <td>7.1%</td>
-                                    <td>7.1%</td>
-                                    <td>2,200</td>
-                                    <td>500</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>8.9</td>
-                                    <td>7.1%</td>
-                                    <td>17.3</td>
-                                </tr>
-                                <tr>
-                                    <td class="lalign">ring bananaphone</td>
-                                    <td>10,500</td>
-                                    <td>748</td>
-                                    <td>7.1%</td>
-                                    <td>7.1%</td>
-                                    <td>2,200</td>
-                                    <td>500</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>8.9</td>
-                                    <td>7.1%</td>
-                                    <td>17.3</td>
-                                </tr>
-                                <tr>
-                                    <td class="lalign">ring bananaphone</td>
-                                    <td>10,500</td>
-                                    <td>748</td>
-                                    <td>7.1%</td>
-                                    <td>7.1%</td>
-                                    <td>2,200</td>
-                                    <td>500</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>8.9</td>
-                                    <td>7.1%</td>
-                                    <td>17.3</td>
-                                </tr>
-                                <tr>
-                                    <td class="lalign">ring bananaphone</td>
-                                    <td>10,500</td>
-                                    <td>748</td>
-                                    <td>7.1%</td>
-                                    <td>7.1%</td>
-                                    <td>2,200</td>
-                                    <td>500</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>8.9</td>
-                                    <td>7.1%</td>
-                                    <td>17.3</td>
-                                </tr>
-                                <tr>
-                                    <td class="lalign">ring bananaphone</td>
-                                    <td>10,500</td>
-                                    <td>748</td>
-                                    <td>7.1%</td>
-                                    <td>7.1%</td>
-                                    <td>2,200</td>
-                                    <td>500</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>8.9</td>
-                                    <td>7.1%</td>
-                                    <td>17.3</td>
-                                </tr>
-                                <tr>
-                                    <td class="lalign">ring bananaphone</td>
-                                    <td>10,500</td>
-                                    <td>748</td>
-                                    <td>7.1%</td>
-                                    <td>7.1%</td>
-                                    <td>2,200</td>
-                                    <td>500</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>8.9</td>
-                                    <td>7.1%</td>
-                                    <td>17.3</td>
-                                </tr>
-                                <tr>
-                                    <td class="lalign">ring bananaphone</td>
-                                    <td>10,500</td>
-                                    <td>748</td>
-                                    <td>7.1%</td>
-                                    <td>7.1%</td>
-                                    <td>2,200</td>
-                                    <td>500</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>22%</td>
-                                    <td>8.9</td>
-                                    <td>7.1%</td>
-                                    <td>17.3</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div> 
-                </div>
-            </div>
-            <div class="bottom" >
-                aasdasd
-            </div>
-        </div>
-
-
-    </div>
-    <div id="page-post">
-    </div>
-
-    <div class="bottom-spacer"></div><section id="ctas" class="no-slider">
-        <div class="shell clearfix">
-        </div>
-    </section>
-
-
-
-
-    <script>
-
-
-        //    jQuery(document).ready(function(){
-        //        if("jQuery{flash.error}"){
-        //            //            alert("jQuery{flash.error}");
-        //            showErro("Eduardo");
-        //
-        //        }
-        //    });
-
-        initLoginBox();
-        jQuery(document).keyup(function(e) {
-
-            if (e.keyCode == KEYCODE_ESC) {
-                uLoginBox.clear()
-            }
-        });
-        jQuery('#login').click(function() {
-            //        if("{session.login}"){
-            showLoginBox();
-            //
-            //        }
-            //        jQuery("#tt").show(400);
-            //        showErro("adad");
-        });
         jQuery('#ta').click(function() {
             //        if("{session.login}"){
             //            showLoginBox();
             //
             //        }
             //        jQuery("#tt").show(400);
-            //        showErro("adad");
+//        showErro("adad");
             jQuery('#centralMessage').slideDown("100");
             ;
         });
@@ -630,141 +87,20 @@
             //        showLoginBox();
             jQuery('#centralMessage').slideUp("100");
             ;
-            //        jQuery("#centralMessage").toogle(400);
+//        jQuery("#centralMessage").toogle(400);
         });
-        function submetence() {
-            jQuery('#loginForm').submit(function() {
-                jQuery("#botao").focus();
-                jQuery('#ajaxMessage').hide(500);
-                jQuery('#loginWaiting').show();
-                disableButton("#botao");
-                disableInput("#login-input, #senha-input");
-                if (jQuery(this).data('shouldSubmit')) {
-                    return true;
-                }
-
-                jQuery.ajax({
-                    url: '/login',
-                    type: 'get',
-                    dataType: 'json',
-                    context: this,
-                    data: {
-                        login: jQuery('#login-input').val(),
-                        senha: jQuery('#senha-input').val()
-                    },
-                    success: function(erro) {
-                        jQuery('#loginWaiting').hide();
-                        if (erro) {
-                            jQuery('#senha-input').val("");
-                            //                        jQuery('#loginMessage').html(erro.msg)
-                            jQuery('#ajaxMessage').show(500);
-                            enableButton("#botao, #cancelar");
-                            enableInput("#matricula, #senha");
-                            jQuery("#matricula").focus();
-                        } else {
-                            jQuery(this)
-                                    .data('shouldSubmit', true)
-                                    .submit();
-                        }
-                    }
-                });
-                return false;
-            });
-        }
-
-        function showLoginBox() {
-
-            submetence();
-            uLoginBox.alert({
-                width: '500px',
-                opened: function() {
-                    jQuery("#login-input").focus();
-                    jQuery("#login-input, #senha").keypress(function(event) {
-                        if (event.which == KEYCODE_ENTER) {
-                        }
-                    });
-                    jQuery('#loginCancel').click(function() {
-                        uLoginBox.clear();
-                    });
-                    jQuery('#botao').click(function() {
-                    });
-                }
-            });
-        }
-
-        jQuery("#teste").click(function() {
-            jQuery.getJSON("@{Supervisory.data()}", function(systemData) {
-                console.log(systemData.get(AI005.OUT010))
-            });
-        });
-
 
 
     </script>
 
-    <script>
-        var temp = "#home-ctx";
+    <!-- END REVOLUTION SLIDER --></div>
+<section id="ctas">
+    .
+</section>
 
-        jQuery('.item').hover(
-                function() {
-                    var $this = jQuery(this);
-                    expand($this);
-                },
-                function() {
-                    var $this = jQuery(this);
-                    collapse($this);
-                }
-        );
-        function expand($elem) {
-            var angle = 0;
-            var t = setInterval(function() {
-                if (angle == 1440) {
-                    clearInterval(t);
-                    return;
-                }
-                angle += 40;
-                jQuery('.link', $elem).stop().animate({rotate: '+=-40deg'}, 0);
-            }, 10);
-            $elem.stop().animate({width: '150px'}, 1000)
-                    .find('.item_content').fadeIn(400, function() {
-                jQuery(this).find('p').stop(true, true).fadeIn(600);
-            });
-        }
-        function collapse($elem) {
-            var angle = 1440;
-            var t = setInterval(function() {
-                if (angle == 0) {
-                    clearInterval(t);
-                    return;
-                }
-                angle -= 40;
-                jQuery('.link', $elem).stop().animate({rotate: '+=40deg'}, 0);
-            }, 10);
-            $elem.stop().animate({width: '52px'}, 1000)
-                    .find('.item_content').stop(true, true).fadeOut().find('p').stop(true, true).fadeOut();
-        }
+<section id="footer-widgets">
+    <div class="overlay">
+    </div>
+</section>
 
-        jQuery('#tree').explrTree();
 
-        jQuery('.homebutton').click(function() {
-            jQuery(temp).fadeOut('slow', function() {
-                jQuery('#home-ctx').fadeIn('slow');
-                temp = "#home-ctx";
-            });
-        });
-
-        jQuery('.tagbutton').click(function() {
-            jQuery(temp).fadeOut('slow', function() {
-                jQuery('#tag-ctx').fadeIn('slow');
-                temp = "#tag-ctx";
-            });
-        });
-
-        jQuery(function() {
-            jQuery('#keywords').tablesorter();
-        });
-
-        jQuery('#keywords').on('scroll', function() {
-            jQuery("#keywords > *").width(jQuery("#keywords").width() + jQuery("#keywords").scrollLeft());
-        });
-    </script>

@@ -59,10 +59,10 @@
 .Left, .Middle, .Right {
     overflow: auto;
     height: auto;
-    padding: 0 .5em 0 .5em ;
     -webkit-overflow-scrolling: touch;
     -ms-overflow-style: none;
 }
+
 .Left::-webkit-scrollbar, .Middle::-webkit-scrollbar, .Right::-webkit-scrollbar {
     display: none;
 }
@@ -73,6 +73,7 @@
     width: 19rem;
 }
 .Middle {
+    background-color: red;
     overflow: scroll;
     background-color: white;
     margin-right: 0.5em;
@@ -123,3 +124,154 @@
     border: 0px none #000000;
 }
 
+
+
+/*TABLE*/ 
+
+.tagtable{
+    height: 100%;
+    border-collapse: collapse;
+    overflow-x: scroll;
+    display: block;
+}
+.tagtable thead, .tagtable th{
+    height: 35px
+}
+
+.tagtable thead, .tagtable  tbody {
+    display: block;
+}
+.tagtable tbody {
+    font-size: 10pt;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 90%;
+}
+
+.tagtable td, .tagtable  th {
+    min-width: 120px;
+    border: solid 1px lightblue;
+}
+
+.tagtable  td {
+    height: 25px;
+}
+
+.tagtable thead th:first-child{
+    min-width: 500px
+}
+
+.tagtable tbody td:first-child{
+    min-width: 480px;
+    text-align: left;
+}   
+
+.tagtable tr{
+    width: 400px
+}
+
+.tagtable tbody tr td {
+    text-align: center;
+}
+
+.tagtable tbody tr td.lalign {
+    text-align: left;
+}
+
+.tagtable tbody tr:nth-child(odd){
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(229,229,229,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(229,229,229,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(229,229,229,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e5e5e5',GradientType=0 ); /* IE6-9 */
+}
+
+.tagtable tbody tr:nth-child(even)
+{
+    /*background-color: ffff88*/
+    background: rgb(255,255,255); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(221,237,255,1) 3%, rgba(188,218,221,1) 45%, rgba(221,237,255,1) 97%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(3%,rgba(221,237,255,1)), color-stop(45%,rgba(188,218,221,1)), color-stop(97%,rgba(221,237,255,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(221,237,255,1) 3%,rgba(188,218,221,1) 45%,rgba(221,237,255,1) 97%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(221,237,255,1) 3%,rgba(188,218,221,1) 45%,rgba(221,237,255,1) 97%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(221,237,255,1) 3%,rgba(188,218,221,1) 45%,rgba(221,237,255,1) 97%,rgba(255,255,255,1) 100%); /* IE10+ */
+    background: linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(221,237,255,1) 3%,rgba(188,218,221,1) 45%,rgba(221,237,255,1) 97%,rgba(255,255,255,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+    color:#000000;
+
+}
+
+
+
+#tagtable thead {   
+    font-size: 10pt;
+    cursor: pointer;
+}
+#tagtable thead tr th { 
+    font-weight: bold;
+}
+
+#tagtable thead tr th span { 
+    padding-right: 20px;
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+}
+
+
+
+#tagtable tbody tr { 
+    color: #555;
+}
+
+.tagtable tbody tr:hover { 
+    background: rgba(173,215,255,1);
+    background: -moz-linear-gradient(left, rgba(173,215,255,1) 0%, rgba(95,159,227,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(173,215,255,1)), color-stop(100%, rgba(95,159,227,1)));
+    background: -webkit-linear-gradient(left, rgba(173,215,255,1) 0%, rgba(95,159,227,1) 100%);
+    background: -o-linear-gradient(left, rgba(173,215,255,1) 0%, rgba(95,159,227,1) 100%);
+    background: -ms-linear-gradient(left, rgba(173,215,255,1) 0%, rgba(95,159,227,1) 100%);
+    background: linear-gradient(to right, rgba(173,215,255,1) 0%, rgba(95,159,227,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#add7ff', endColorstr='#5f9fe3', GradientType=1 );
+}
+
+
+
+
+#tagtable tbody tr.highlight  {
+    color: white;
+    background: rgba(73,155,234,1);
+    background: -moz-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(73,155,234,1)), color-stop(100%, rgba(32,124,229,1)));
+    background: -webkit-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 100%);
+    background: -o-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 100%);
+    background: -ms-linear-gradient(left, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 100%);
+    background: linear-gradient(to right, rgba(73,155,234,1) 0%, rgba(32,124,229,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#499bea', endColorstr='#207ce5', GradientType=1 );
+}
+.tagTable input{
+    border: none;
+    background-color: transparent;
+    text-align: center;
+    width: 120px; 
+    height: 25px;
+    font: inherit
+}
+
+.tagTable input:focus{
+    background-color: #ffffff;
+  border: 1px solid #cccccc;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
+     -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
+      -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
+       -o-transition: border linear 0.2s, box-shadow linear 0.2s;
+          transition: border linear 0.2s, box-shadow linear 0.2s;
+}

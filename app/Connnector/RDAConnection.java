@@ -5,10 +5,12 @@
 package Connnector;
 
 import Utilities.Util;
+import br.ufrn.lii.brcollector.callback.AbstractRealtimeProcessCallback;
 import br.ufrn.lii.brcollector.connection.CollectorConnectionProvider;
 import br.ufrn.lii.brcollector.connection.exception.AlreadyMappedException;
 import br.ufrn.lii.brcollector.connection.rmi.Request;
 import br.ufrn.lii.brcollector.connection.rmi.RequestRDA;
+import br.ufrn.lii.commonsdomain.ProcessVariableSubscription;
 import br.ufrn.lii.commonsdomain.TagItemGroup;
 import br.ufrn.lii.commonsdomain.exception.UnregisteredGroupException;
 import br.ufrn.lii.commonsdomain.process.ProcessData;
@@ -175,6 +177,7 @@ public class RDAConnection {
         }
     }
 
+    
     private Map<TagItem, ProcessData> getGroupValues(TagItemGroup group) {
         try {
             Map<TagItem, ProcessData> currentValues = requestRDA.getCurrentValues(group);
@@ -217,7 +220,7 @@ public class RDAConnection {
         }
         return null;
     }
-}
+
 //    private void removeTagItemsFromGroup(RequestRDA requestRDA, TagItemGroup tagItemGroup, List<TagItem> tagItems) {
 //        try {
 //            requestRDA.removeItemsFromGroup(tagItemGroup, tagItems.toArray(new TagItem[tagItems.size()]));
@@ -225,15 +228,13 @@ public class RDAConnection {
 //            TestExceptionManager.log("Errou ao remover tags do group RDA", new Exception(ex));
 //        }
 //    }
-//    private void createSubscription(RequestRDA requestRDA, List<TagItem> tagItems) {
+//    private void createSubscription(RequestRDA requestRDA, List<TagItem> tagItems) throws AlreadyMappedException {
 //        try {
 //            ProcessVariableSubscription processVariableSubscription = requestRDA.createSubscription("Subscription teste RDA", true, 1000, 0.1f, new MyRealtimeProcessCallback());
 //
 //            requestRDA.addItemsToSubscription(processVariableSubscription, tagItems.toArray(new TagItem[tagItems.size()]));
 //        } catch (RemoteException ex) {
 //            TestExceptionManager.log("Errou no create subscription RDA", ex);
-//        } catch (AlreadyMappedException ex) {
-//            TestExceptionManager.log("Errou no create subscription RDA", new Exception(ex));
 //        }
 //    }
 //class MyRealtimeProcessCallback extends AbstractRealtimeProcessCallback {
@@ -250,4 +251,4 @@ public class RDAConnection {
 //            System.out.println("Variavel " + tagItem.getIdStr() + " = " + hm.get(tagItem).getValue().getStringValue());
 //        }
 //    }
-//}
+}

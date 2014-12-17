@@ -11,6 +11,7 @@ package Utilities;
 public class ExecThread extends Thread {
 
     boolean executing;
+    long sleepTime;
 
     public ExecThread() {
         super();
@@ -39,7 +40,7 @@ public class ExecThread extends Thread {
 
     public void syncronizeAndDoTheRest() {
         try {
-            sleep(5000);
+            sleep(this.sleepTime);
         } catch (InterruptedException ex) {
         }
         synchronized (this) {

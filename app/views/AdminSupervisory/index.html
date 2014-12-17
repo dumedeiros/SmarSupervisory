@@ -1,269 +1,1109 @@
-
-#{extends 'main.html' /}    
+#{extends 'imports.html' /}    
 #{set title:'Home' /}
 
-<div id="slider-wrap" class="loader-block top-loader"><!-- START REVOLUTION SLIDER 4.1 fullwidth mode -->
+<body style="overflow: hidden">
+    <div id="centralMessage"  class='notDisplayable' style=" 
+         z-index: 10; position: absolute;top: 80px; width: 100%; height: 30px;
+         color: white; font-weight: bold;
 
-    <div id="rev_slider_1_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" style="margin:0px auto;background-color:#111111;padding:0px;margin-top:0px;margin-bottom:0px;max-height:558px;">
-        <div id="rev_slider_1_1" class="rev_slider fullwidthabanner" style="display:none;max-height:558px;height:558;">
-            <ul>	<!-- SLIDE  -->
-                <li data-transition="random" data-slotamount="7" data-masterspeed="300" >
-                    <!-- MAIN IMAGE -->
-                    <img src="@{'public/img/logo.png'}"  alt="slide_image_01.883b834b5c"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
-                    <!-- LAYERS -->
 
-                    <!-- LAYER NR. 1 -->
-                    <div class="tp-caption tp-fade fadeout fullscreenvideo"
-                         data-x="0"
-                         data-y="0"
-                         data-speed="800"
-                         data-start="200"
-                         data-easing="Power3.easeInOut"
-                         data-endspeed="800"
-                         data-autoplay="true"
-                         data-autoplayonlyfirsttime="false"
-                         data-dottedoverlay="" style="z-index: 2"><video class="video-js vjs-default-skin" loop preload="none" width="100%" height="100%" 
-                                                                    poster=@{'public/img/mainback.png'} data-setup="{}"> 
-                            <!--                                    <source src='http://demo.scheetzdesigns.com/espresso_assets/espresso_slider_video.mp4' type='video/mp4' />
-                                                                <source src='http://demo.scheetzdesigns.com/espresso_assets/espresso_slider_video.webm' type='video/webm' />
-                                                                <source src='http://demo.scheetzdesigns.com/espresso_assets/espresso_slider_video.png.ogv' type='video/ogg' />-->
-                        </video>
+         line-height: 50%;
+         text-align: center;
+         background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNhOTAzMjkiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSI0NCUiIHN0b3AtY29sb3I9IiM4ZjAyMjIiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjNmQwMDE5IiBzdG9wLW9wYWNpdHk9IjEiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+         background: -moz-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%, rgba(143,2,34,1) 44%, rgba(109,0,25,1) 100%); /* FF3.6+ */
+         background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(169,3,41,1)), color-stop(44%,rgba(143,2,34,1)), color-stop(100%,rgba(109,0,25,1))); /* Chrome,Safari4+ */
+         background: -webkit-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Chrome10+,Safari5.1+ */
+         background: -o-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* Opera 12+ */
+         background: -ms-radial-gradient(center, ellipse cover,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* IE10+ */
+         background: radial-gradient(ellipse at center,  rgba(169,3,41,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%); /* W3C */
+         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a90329', endColorstr='#6d0019',GradientType=1 ); /* IE6-8 fallback on horizontal gradient */" class="" id="tt">
 
-                    </div>
+        <span style="font-family: Garamond, serif;
+              letter-spacing: 1px;
+              font-weight:bold;
+              font-size: 18px;
+              line-height: 25px; 
+              text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+              ">Problema com conexão</span>
+    </div>
 
-                    <!-- LAYER NR. 2 -->
-                    <div class="tp-caption tp-fade"
-                         data-x="center" data-hoffset="0"
-                         data-y="center" data-voffset="0"
-                         data-speed="300"
-                         data-start="250"
-                         data-easing="Power3.easeInOut"
-                         data-endspeed="300"
-                         style="z-index: 3"><img src="http://demo.scheetzdesigns.com/espresso/files/2013/11/grid.png" alt="">
-                    </div>
-
-                    <!-- LAYER NR. 3 -->
-                    <div class="tp-caption espresso_large_white sft stt"
-                         data-x="center" data-hoffset="0"
-                         data-y="bottom" data-voffset="-375"
-                         data-speed="400"
-                         data-start="1000"
-                         data-easing="easeOutExpo"
-                         data-endspeed="400"
-                         data-endeasing="easeOutExpo"
-                         style="z-index: 4">Smar Supervisory.
-                    </div>
-
-                    <!-- LAYER NR. 4 -->
-                    <div class="tp-caption medium_text sft stt"
-                         data-x="center" data-hoffset="0"
-                         data-y="center" data-voffset="-45"
-                         data-speed="400"
-                         data-start="1400"
-                         data-easing="easeOutExpo"
-                         data-endspeed="400"
-                         style="z-index: 5">Sistema supervisório da planta da Smar
-                    </div>
-
-                    <!-- LAYER NR. 5 -->
-                    <div class="tp-caption sft"
-                         data-x="center" data-hoffset="0"
-                         data-y="325" 
-                         data-speed="300"
-                         data-start="1900"
-                         data-easing="Power3.easeInOut"
-                         data-endspeed="300"
-                         style="z-index: 6"><a href="http://demo.scheetzdesigns.com/espresso/events/upcoming/"><img src="http://demo.scheetzdesigns.com/espresso/files/2013/11/button_events.jpg" alt=""></a>
-                    </div>
-
-                    <!-- LAYER NR. 6 -->
-                    <div class="tp-caption sft"
-                         data-x="right" data-hoffset="-836"
-                         data-y="325" 
-                         data-speed="300"
-                         data-start="1800"
-                         data-easing="Power3.easeInOut"
-                         data-endspeed="300"
-                         style="z-index: 7"><a href="http://demo.scheetzdesigns.com/espresso/espresso-menus/coffees/"><img src="http://demo.scheetzdesigns.com/espresso/files/2013/11/button_menu.jpg" alt=""></a>
-                    </div>
-
-                    <!-- LAYER NR. 7 -->
-                    <div class="tp-caption sft"
-                         data-x="836"
-                         data-y="325" 
-                         data-speed="300"
-                         data-start="2000"
-                         data-easing="Power3.easeInOut"
-                         data-endspeed="300"
-                         style="z-index: 8"><a href="http://demo.scheetzdesigns.com/espresso/reservation/"><img src="http://demo.scheetzdesigns.com/espresso/files/2013/11/button_book.jpg" alt=""></a>
-                    </div>
-                </li>
-                <!-- SLIDE  -->
-                <li data-transition="fade" data-slotamount="7" data-masterspeed="600" >
-                    <!-- MAIN IMAGE -->
-                    <img src="@{'public/img/mainback.png'}" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
-                    <!-- LAYERS -->
-
-                    <!-- LAYER NR. 1 -->
-                    <div class="tp-caption large_bg_black skewfromleftshort tp-resizeme"
-                         data-x="104"
-                         data-y="bottom" data-voffset="-393"
-                         data-speed="300"
-                         data-start="300"
-                         data-easing="Power3.easeInOut"
-                         data-endspeed="300"
-                         style="z-index: 2">Confiabilidade
-                    </div>
-
-                    <!-- LAYER NR. 2 -->
-                    <div class="tp-caption modern_big_redbg skewfromleftshort tp-resizeme"
-                         data-x="104"
-                         data-y="165" 
-                         data-speed="300"
-                         data-start="500"
-                         data-easing="Power3.easeInOut"
-                         data-endspeed="300"
-                         style="z-index: 3">Precisão
-                    </div>
-
-                    <!-- LAYER NR. 3 -->
-                    <div class="tp-caption large_bg_green skewfromrightshort tp-resizeme"
-                         data-x="right" data-hoffset="-138"
-                         data-y="bottom" data-voffset="-225"
-                         data-speed="300"
-                         data-start="700"
-                         data-easing="Power3.easeInOut"
-                         data-endspeed="300"
-                         style="z-index: 4">Segurança
-                    </div>
-
-                    <!-- LAYER NR. 4 -->
-                    <div class="tp-caption mediumwhitebg skewfromrightshort tp-resizeme"
-                         data-x="right" data-hoffset="-138"
-                         data-y="333" 
-                         data-speed="300"
-                         data-start="900"
-                         data-easing="Power3.easeInOut"
-                         data-endspeed="300"
-                         style="z-index: 5">Controle
-                    </div>
-                </li>
-            </ul>
+    <header class="def header" style="height: 80px">
+        <div class="shell" style="text-align: left">
+            <a href="#"><img src="@{'public/img/logo.png'}" class="logo-image" alt="" /></a>
+            #{if session.login}
+            <a id="login" class="logout-place" href="@{Action.logout}">Logout</a>
+            #{/if}
+            #{else}
+            <a id="login" class="login-place">Login</a>
+            #{/else}
         </div>
-    </div>			
-    <script type="text/javascript">
+        <div class="menu">
+            <form class="css_form" style="padding: 0px; width: 20px;position: absolute; left: 640px ; top: 8px">
+                <fieldset class="form_toggle">
+                    <input id="toggle2" type="checkbox" checked />
+                    <label class="toggle_label" for="toggle2"><span>M1</span><span>M2</span></label>
+                    <span class="toggle_button"></span>
+                </fieldset>
+            </form>  
+            <div class="playbutton green" style="margin-left: 110px">
+                <a class="link icon_play"></a>
+                <div class="item_content">
+                    <h2></h2>
+                </div>
+            </div>
+            <div class="item blue tagbutton">
+                <a class="link icon_help"></a>
+                <div class="item_content">
+                    <h2>Tags</h2>
+                </div>
+            </div>
 
-        var tpj = jQuery;
-        tpj.noConflict();
-        var revapi1;
+            <div class="item blue grafbutton">
+                <a class="link icon_trend"></a>
+                <div class="item_content">
+                    <h2>Grafico</h2>
+                </div>
+            </div>
 
-        tpj(document).ready(function() {
+            <div  class="item blue homebutton">
+                <a  class="link icon_home "></a>
+                <div class="item_content ">
+                    <h2>Home</h2>
+                </div>
+            </div>
+        </div>
+    </header>
 
-            if (tpj('#rev_slider_1_1').revolution == undefined)
-                revslider_showDoubleJqueryError('#rev_slider_1_1');
-            else
-                revapi1 = tpj('#rev_slider_1_1').show().revolution(
-                        {
-                            dottedOverlay: "none",
-                            delay: 9000,
-                            startwidth: 1440,
-                            startheight: 558,
-                            hideThumbs: 200,
-                            thumbWidth: 100,
-                            thumbHeight: 50,
-                            thumbAmount: 2,
-                            navigationType: "bullet",
-                            navigationArrows: "solo",
-                            navigationStyle: "round",
-                            touchenabled: "on",
-                            onHoverStop: "on",
-                            navigationHAlign: "center",
-                            navigationVAlign: "bottom",
-                            navigationHOffset: 0,
-                            navigationVOffset: 20,
-                            soloArrowLeftHalign: "left",
-                            soloArrowLeftValign: "center",
-                            soloArrowLeftHOffset: 20,
-                            soloArrowLeftVOffset: 0,
-                            soloArrowRightHalign: "right",
-                            soloArrowRightValign: "center",
-                            soloArrowRightHOffset: 20,
-                            soloArrowRightVOffset: 0,
-                            shadow: 0,
-                            fullWidth: "on",
-                            fullScreen: "off",
-                            stopLoop: "off",
-                            stopAfterLoops: -1,
-                            stopAtSlide: -1,
-                            shuffle: "off",
-                            autoHeight: "off",
-                      forceFullWidth: "off",
-                            hideThumbsOnMobile: "off",
-                            hideBulletsOnMobile: "off",
-                            hideArrowsOnMobile: "off",
-                            hideThumbsUnderResolution: 0,
-                            hideSliderAtLimit: 0,
-                            hideCaptionAtLimit: 0,
-                            hideAllCaptionAtLilmit: 0,
-                            startWithSlide: 0,
-                            videoJsPath: "http://demo.scheetzdesigns.com/espresso/wp-content/plugins/revslider/rs-plugin/videojs/",
-                            fullScreenOffsetContainer: ""
-                        });
+    <div style="height: 91%; background: rgb(30,87,153); /* Old browsers */
+         /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+         background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzFlNTc5OSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjQ5JSIgc3RvcC1jb2xvcj0iIzIwN2NjYSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9Ijg0JSIgc3RvcC1jb2xvcj0iIzI5ODlkOCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM3ZGI5ZTgiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+         background: -moz-linear-gradient(top,  rgba(30,87,153,1) 0%, rgba(32,124,202,1) 49%, rgba(41,137,216,1) 84%, rgba(125,185,232,1) 100%); /* FF3.6+ */
+         background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(30,87,153,1)), color-stop(49%,rgba(32,124,202,1)), color-stop(84%,rgba(41,137,216,1)), color-stop(100%,rgba(125,185,232,1))); /* Chrome,Safari4+ */
+         background: -webkit-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(32,124,202,1) 49%,rgba(41,137,216,1) 84%,rgba(125,185,232,1) 100%); /* Chrome10+,Safari5.1+ */
+         background: -o-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(32,124,202,1) 49%,rgba(41,137,216,1) 84%,rgba(125,185,232,1) 100%); /* Opera 11.10+ */
+         background: -ms-linear-gradient(top,  rgba(30,87,153,1) 0%,rgba(32,124,202,1) 49%,rgba(41,137,216,1) 84%,rgba(125,185,232,1) 100%); /* IE10+ */
+         background: linear-gradient(to bottom,  rgba(30,87,153,1) 0%,rgba(32,124,202,1) 49%,rgba(41,137,216,1) 84%,rgba(125,185,232,1) 100%); /* W3C */
+         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1e5799', endColorstr='#7db9e8',GradientType=0 ); /* IE6-8 */
+         " >
+        <!--                <div  id="malha1" class="malha" >asdasd</div>
+                        <div id="malha2" class="malha">asdasd</div>-->
+        <!--PLANTA DIV-->
+        <div id="home-ctx" class=" ctx notDisplayable" style="z-index: 1; position: absolute; top: 82 px; left: 0px; width: 100%;  padding-left:140px">
+            <div style="margin-left: -140px; top: 0px;" >
+                <img src="@{'public/img/pplantaFinal.jpg'}"/>
 
-        });	//ready
+            </div>
+            <div class="data-container" style="top: 160px; left:  490px">
+                <label class="desc labelfont">TI-31</label><br/>
+                <input id="tq1Temp" class="dataBox" type="text"  value="26.3">
+                <label class="unid labelfont ">˚C</label>
+
+            </div>
+            <div class="data-container" style="top: 250px; left: 610px">
+                <label class="desc labelfont">TI-32</label><br/>
+                <input id="tq2Temp" class="dataBox" type="text"  value="26.5">
+                <label class="unid labelfont">˚C</label>
+                <label class="arrow up notDisplayable"></label>
+
+            </div>
+
+            <div class="data-container" style="top: 220px; left: 490px">
+                <label class="desc labelfont">LI-31</label><br/>
+                <input id="tq1Niv" class="dataBox " type="text"  value="78.4">
+                <label class="unid labelfont   ">%</label>
+            </div>
+
+            <div class="data-container" style="top: 230px; left: 840px">
+                <label class="desc labelfont">LI-32</label><br/>
+                <input id="tq2Niv" class="dataBox" type="text"  value="20.1">
+                <label class="unid labelfont">%</label>
+                <label class="arrow down notDisplayable"></label>
+
+            </div>
+            <div class="data-container" style="top: 210px; left: 118px">
+                <label class="desc labelfont">FI-31</label><br/>
+                <input id="tq1Vaz" class="dataBox desl" type="text"  value="20.3"><label class="unid labelfont">L/H</label><br/>
+                <button id="rB1" class="btn btn-mini btn-primary" type="button">R</button>
+                <input id="tq1VazTot" class="dataBox" type="text"  value="42.89">
+                <label class="unid labelfont">L</label>
+            </div>
+            <div class="data-container" style="top: 210px; left: 1060px">
+                <label class="desc labelfont">FI-32</label><br/>
+                <input id="tq2Vaz" class="dataBox desl" type="text"  value="8.7"><label class="unid labelfont">L/H</label><br/>
+                <button id="rB2" class="btn btn-mini btn-primary" type="button">R</button>
+                <input id="tq2VazTot" class="dataBox" type="text"  value="10.2">
+                <label class="unid labelfont">L</label>
+            </div>
+            <div class="data-container custom" style="top: 40px; left: 970px;">
+                <div><label class="desc-custom">LIC-32</label></div>
+                <div style="margin: 5px;">
+                    <input id="tq2Vaz" class="dataBox green-color" type="text"  value="0"><label class="unid-b labelfont">SP</label><br/>
+                    <input id="tq2VazTot" class="dataBox" type="text"  value="0"><label class="unid-b labelfont">PV</label><br/>
+                    <input id="tq2VazTot" class="dataBox green-color" type="text"  value="0"><label class="unid-b labelfont">MV</label><br/>
+                    <div class="make-switch switch-mini" data-on="primary" data-off="success" data-on-label="A" data-off-label="M">
+                        <input type="checkbox" checked>
+                    </div>
+                </div>
+            </div>
+            <div class="data-container custom" style="top: 40px; left: 180px;">
+                <div><label class="desc-custom">LIC-31</label></div>
+                <div style="margin: 5px;">
+                    <input id="tq2Vaz" class="dataBox green-color" type="text"  value="82.5"><label class="unid-b labelfont">SP</label><br/>
+                    <input id="tq2VazTot" class="dataBox" type="text"  value="78.4"><label class="unid-b labelfont">PV</label><br/>
+                    <input id="tq2VazTot" class="dataBox green-color" type="text"  value="5.9"><label class="unid-b labelfont">MV</label><br/>
+                    <div class="make-switch switch-mini" data-on="secondary" data-off="success" data-on-label="A" data-off-label="M">
+                        <input type="checkbox" checked>
+                    </div>
+                </div>
+            </div>
+            <div class="data-container custom" style="top: 230px; left: 250px;">
+                <div><label class="desc-custom">FY-31</label></div>
+                <div style="margin: 5px;">
+                    <input id="tq2Vaz" class="dataBox green-color" type="text"  value="68.9"><label class="unid-b">%</label><br/>
+                </div>
+            </div>
+            <div class="data-container custom" style="top: 230px; left: 950px;">
+                <div><label class="desc-custom">FY-32</label></div>
+                <div style="margin: 5px;">
+                    <input id="tq2Vaz" class="dataBox green-color" type="text"  value="4.5"><label class="unid-b">%</label><br/>
+                </div>
+            </div>
+        </div>
+
+        <!--TAGS DIV-->
+        <div id="tag-ctx" class="fullContainer ctx "style="
+             position: absolute;
+             top: 14%;
+             bottom: 0;
+             left: 4%;
+             right: 0;
+             width: 92%;
+             height: 80%;
+             background-color: #f3f3f3;">
+            <div class="Topp"><label class="labelfont">TagList OPC</label></div>
+            <div class="Container">
+                <div class="Left">
+                    <ul id="tree">
+                        <li>
+                            <a href="#">StatusConnection_ETH </a>
+                            <ul class="icon-tag">
+                                <li>
+                                    <a href="#">1st item 2nd levelaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">StatusDevice_PD3SMAR</a>
+                            <ul class="icon-tag">
+                                <li>
+                                    <a href="#">1st item 2nd level</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">PD3SMAR</a>
+                            <ul>
+                                <li>
+                                    <a href="#">L1</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">FV027</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">tag1</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">CO012</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">tag1</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">L/R031</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">tag1</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">A/M035</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">tag1</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">PID043</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">CACT</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CTYP</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CARL</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CARU</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"  class="blue-color">AKp</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="blue-color">ATr</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="blue-color">ATd</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">ABIA</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">PID043.OUT055</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">AI002</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">CFRT</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CLIN</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CSQR</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">ACUT</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">ATIM</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">AI002.OUT003</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="blue-color">AI002.OUT004</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="#">L2</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">FV027</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">tag1</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">CO012</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">tag1</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">L/R031</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">tag1</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">A/M035</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">tag1</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">PID043</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">CACT</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CTYP</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CARL</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CARU</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"  class="blue-color">AKp</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="blue-color">ATr</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="blue-color">ATd</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">ABIA</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">PID043.OUT055</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">AI002</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">CFRT</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CLIN</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CSQR</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">ACUT</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">ATIM</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">AI002.OUT003</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="blue-color">AI002.OUT004</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">L3</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">FV027</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">tag1</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">CO012</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">tag1</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">L/R031</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">tag1</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">A/M035</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">tag1</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">PID043</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">CACT</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CTYP</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CARL</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CARU</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"  class="blue-color">AKp</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="blue-color">ATr</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="blue-color">ATd</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">ABIA</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">PID043.OUT055</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">AI002</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">CFRT</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CLIN</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CSQR</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">ACUT</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">ATIM</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">AI002.OUT003</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="blue-color">AI002.OUT004</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">L4</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">FV027</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">tag1</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">CO012</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">tag1</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">L/R031</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">tag1</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">A/M035</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">tag1</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">PID043</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">CACT</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CTYP</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CARL</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CARU</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"  class="blue-color">AKp</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="blue-color">ATr</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="blue-color">ATd</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">ABIA</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">PID043.OUT055</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">AI002</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">CFRT</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CLIN</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CSQR</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">ACUT</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">ATIM</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">AI002.OUT003</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="blue-color">AI002.OUT004</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">LG</a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">FV027</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">tag1</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">CO012</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">tag1</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">L/R031</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">tag1</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">A/M035</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">tag1</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">PID043</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">CACT</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CTYP</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CARL</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CARU</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"  class="blue-color">AKp</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="blue-color">ATr</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="blue-color">ATd</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">ABIA</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">PID043.OUT055</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">AI002</a>
+                                            <ul class="icon-tag">
+                                                <li>
+                                                    <a href="#">CFRT</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CLIN</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">CSQR</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">ACUT</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">ATIM</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">AI002.OUT003</a>
+                                                </li>
+                                                <li>
+                                                    <a href="#" class="blue-color">AI002.OUT004</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </li>
+                    </ul>
+                </div>
+                <div class="Middle" style="overflow: hidden;">
+                    <table class="tagtable" id="tagtable" style="height:545px" >
+                        <thead>
+                            <tr>
+                                <th><span>Item ID</span></th>
+                                <th><span>Valor</span></th>
+                                <th><span>Tipo de dado</span></th>
+                                <th><span>Dir. de Acesso</span></th>
+                                <th><span>TimeStamp</span></th>
+                                <th><span>Quality</span></th>
+                                <th><span>Update Count</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="icon-tag-novo">PD3SMAR.L1.AI002.AI002.OUT004</td>
+                                <td>72,56</td>
+                                <td>4[VT_R4]</td>
+                                <td>READ Only</td>
+                                <td>25/03/2014 06:34</td>
+                                <td>GOOD</td>
+                                <td>701</td>
+                            </tr>
+                            <tr>
+                                <td>PD3SMAR.L1.PID043.AKp</td>
+                                <td><input value="5,13"></td>
+                                <td>4[VT_R4]</td>
+                                <td>READ/WRITE</td>
+                                <td>25/03/2014 06:34</td>
+                                <td>GOOD</td>
+                                <td>14</td>
+                            </tr>
+                            <tr>
+                                <td>PD3SMAR.L1.PID043.ATd</td>
+                                <td><input value="0,06"></td>
+                                <td>4[VT_R4]</td>
+                                <td>READ/WRITE</td>
+                                <td>25/03/2014 06:34</td>
+                                <td>GOOD</td>
+                                <td>16</td>
+                            </tr>
+                            <tr>
+                                <td>PD3SMAR.L1.PID043.ATr</td>
+                                <td><input value="0,85"></td>
+                                <td>4[VT_R4]</td>
+                                <td>READ/WRITE</td>
+                                <td>25/03/2014 06:34</td>
+                                <td>GOOD</td>
+                                <td>17</td>
+                            </tr>
+                            <tr>
+                                <td>PD3SMAR.LG.COMM.CMV1_A/M035.MV_REGISTER</td>
+                                <td><input value="2,89"></td>
+                                <td>4[VT_R4]</td>
+                                <td>READ/WRITE</td>
+                                <td>25/03/2014 06:34</td>
+                                <td>GOOD</td>
+                                <td>32</td>
+                            </tr>
+                            <tr>
+                                <td>PD3SMAR.LG.COMM.CMV1_A/M035.State</td>
+                                <td><input value="False"></td>
+                                <td>11[VT_BOOL]</td>
+                                <td>READ/WRITE</td>
+                                <td>25/03/2014 06:34</td>
+                                <td>GOOD</td>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <td>PD3SMAR.LG.COMM.CRO_L/R031.REGISTER</td>
+                                <td><input value="18"></td>
+                                <td>4[VT_R4]</td>
+                                <td>READ/WRITE</td>
+                                <td>25/03/2014 06:34</td>
+                                <td>GOOD</td>
+                                <td>16</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            <div class="bottom" >
+                <div style="color: white; margin-left: 670px">
+                    7 Tags Selecionadas
+                </div>
+            </div>
+        </div>
+
+        <!--GRÁFICO-->
+        <div id="graf-ctx" class="fullContainer ctx"style="
+             position: absolute;
+             top: 14%;
+             bottom: 0;
+             left: 4%;
+             right: 0;
+             width: 92%;
+             height: 78%;
+             background-color: #f3f3f3;">
+            <div class="Topp"><label class="labelfont">Gráfico</label></div>
+            <div id="myChart">
+
+            </div>
+            <div class="bottom" >
+            </div>
+        </div>
+
+
+    </div>
+    <div id="page-post">
+    </div>
+
+    <div class="bottom-spacer"></div>
+    <section id="ctas" class="no-slider">
+        <div class="shell clearfix">
+        </div>
+    </section>
+
+
+
+
+    <script>
+
+
+        //    jQuery(document).ready(function(){
+        //        if("jQuery{flash.error}"){
+        //            //            alert("jQuery{flash.error}");
+        //            showErro("Eduardo");
+        //
+        //        }
+        //    });
+
+        initLoginBox();
+        jQuery(document).keyup(function(e) {
+
+            if (e.keyCode == KEYCODE_ESC) {
+                uLoginBox.clear()
+            }
+        });
+        
+        
+        jQuery('#login').click(function() {
+            //        if("{session.login}"){
+            showLoginBox();
+            //
+            //        }
+            //        jQuery("#tt").show(400);
+            //        showErro("adad");
+        });
+        jQuery('#ta').click(function() {
+            //        if("{session.login}"){
+            //            showLoginBox();
+            //
+            //        }
+            //        jQuery("#tt").show(400);
+            //        showErro("adad");
+            jQuery('#centralMessage').slideDown("100");
+            ;
+        });
+        jQuery('#login2').click(function() {
+            //    hideMessage()
+            //        showLoginBox();
+            jQuery('#centralMessage').slideUp("100");
+            ;
+            //        jQuery("#centralMessage").toogle(400);
+        });
+        function submetence() {
+            jQuery('#loginForm').submit(function() {
+                jQuery("#botao").focus();
+                jQuery('#ajaxMessage').hide(500);
+                jQuery('#loginWaiting').show();
+                disableButton("#botao");
+                disableInput("#login-input, #senha-input");
+                if (jQuery(this).data('shouldSubmit')) {
+                    return true;
+                }
+
+                jQuery.ajax({
+                    url: '/login',
+                    type: 'get',
+                    dataType: 'json',
+                    context: this,
+                    data: {
+                        login: jQuery('#login-input').val(),
+                        senha: jQuery('#senha-input').val()
+                    },
+                    success: function(erro) {
+                        jQuery('#loginWaiting').hide();
+                        if (erro) {
+                            jQuery('#senha-input').val("");
+                            //                        jQuery('#loginMessage').html(erro.msg)
+                            jQuery('#ajaxMessage').show(500);
+                            enableButton("#botao, #cancelar");
+                            enableInput("#matricula, #senha");
+                            jQuery("#matricula").focus();
+                        } else {
+                            jQuery(this)
+                                    .data('shouldSubmit', true)
+                                    .submit();
+                        }
+                    }
+                });
+                return false;
+            });
+        }
+
+        function showLoginBox() {
+
+            submetence();
+            uLoginBox.alert({
+                width: '500px',
+                opened: function() {
+                    jQuery("#login-input").focus();
+                    jQuery("#login-input, #senha").keypress(function(event) {
+                        if (event.which == KEYCODE_ENTER) {
+                        }
+                    });
+                    jQuery('#loginCancel').click(function() {
+                        uLoginBox.clear();
+                    });
+                    jQuery('#botao').click(function() {
+                    });
+                }
+            });
+        }
+
+        jQuery("#teste").click(function() {
+            jQuery.getJSON("@{Supervisory.data()}", function(systemData) {
+                console.log(systemData.get(AI005.OUT010))
+            });
+        });
+
+
 
     </script>
 
-    <!-- END REVOLUTION SLIDER --></div>
-<section id="ctas">
-    asdasd
-</section>
-
-<div class="bottom-spacer"></div>
-<section id="footer-widgets">
-    <div class="overlay">
-        <div class="shell clearfix">
+    <script>
+        var temp = "#home-ctx";
 
 
-        </div>
-    </div>
-</section><footer class="clearfix">
-    <div class="shell">
-        <section class="left">
-            Copyright &copy;2013 Eduardo Medeiros.
-        </section>
-    </div>
-</footer><div class="customizer-style-main"></div><div class="customizer-style-alt"></div>
+        jQuery('.item').hover(
+                function() {
+                    var $this = jQuery(this);
+                    expand($this);
+                },
+                function() {
+                    var $this = jQuery(this);
+                    collapse($this);
+                }
+        );
+        function expand($elem) {
+            var angle = 0;
+            var t = setInterval(function() {
+                if (angle == 1440) {
+                    clearInterval(t);
+                    return;
+                }
+                angle += 40;
+                jQuery('.link', $elem).stop().animate({rotate: '+=-40deg'}, 0);
+            }, 10);
+            $elem.stop().animate({width: '150px'}, 1000)
+                    .find('.item_content').fadeIn(400, function() {
+                jQuery(this).find('p').stop(true, true).fadeIn(600);
+            });
+        }
+        function collapse($elem) {
+            var angle = 1440;
+            var t = setInterval(function() {
+                if (angle == 0) {
+                    clearInterval(t);
+                    return;
+                }
+                angle -= 40;
+                jQuery('.link', $elem).stop().animate({rotate: '+=40deg'}, 0);
+            }, 10);
+            $elem.stop().animate({width: '52px'}, 1000)
+                    .find('.item_content').stop(true, true).fadeOut().find('p').stop(true, true).fadeOut();
+        }
+
+        jQuery('#tree').explrTree();
+
+        jQuery('.homebutton').click(function() {
+            jQuery(temp).fadeOut('slow', function() {
+                jQuery('#home-ctx').fadeIn('slow');
+                temp = "#home-ctx";
+            });
+        });
+
+        jQuery('.tagbutton').click(function() {
+            jQuery(temp).fadeOut('slow', function() {
+                jQuery('#tag-ctx').fadeIn('slow');
+                temp = "#tag-ctx";
+            });
+        });
+
+        jQuery('.grafbutton').click(function() {
+            jQuery(temp).fadeOut('slow', function() {
+                jQuery('#graf-ctx').fadeIn('slow');
+                temp = "#graf-ctx";
+            });
+        });
+
+        jQuery(function() {
+            jQuery('#tagtable').tablesorter();
+        });
+
+        jQuery('#tagtable').on('scroll', function() {
+            jQuery("#tagtable > *").width(jQuery("#tagtable").width() + jQuery("#tagtable").scrollLeft());
+        });
+
+        jQuery('#tagtable').on('click', 'tbody tr', function(event) {
+            jQuery(this).addClass('highlight').siblings().removeClass('highlight');
+        });
 
 
 
-<!--<script type="text/javascript" src="@{'public/js/jquery.slicknav.min.js'}"></script>--> 
 
-<!--<script type='text/javascript' src="@{'public/js/jquery.slicknav.min.js'}" />-->
-<!--<script type='text/javascript' src="@{'public/js/jquery.carouFredSel-6.2.1-packed.js'}" />-->
-<!--<script type='text/javascript' src="@{'public/js/jquery.collagePlus.min.js'}" />-->
-<!--<script type='text/javascript' src="@{'public/js/jquery.collageCaption.min.js'}" />-->
-<!--<script type='text/javascript' src="@{'public/js/jquery.removeWhitespace.min.js'}" />-->
-<!--<script type='text/javascript' src="@{'public/js/jquery.easing.js'}" />-->
-<!--<script type='text/javascript' src="@{'public/js/fitvids.js'}" />-->
-<!--<script type='text/javascript' src="@{'public/js/StackBoxBlur.js'}" />-->
-<!--<script type='text/javascript' src="@{'public/js/magnific.js'}" />-->
-<!--<script type='text/javascript' src="@{'public/js/jquery.blurSlider.js'}" />-->
-<!--<script type='text/javascript' src="@{'public/js/jquery.easing.js'}" />-->
-<!--<script type='text/javascript' src="@{'public/js/jquery.main.js'}" />-->
 
-<!--        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/themes/espresso/js/jquery.slicknav.min.js?ver=1.0'></script>
-        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/themes/espresso/js/jquery.carouFredSel-6.2.1-packed.js?ver=1.0'></script>
-        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/themes/espresso/js/jquery.collagePlus.min.js?ver=1.0'></script>
-        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/themes/espresso/js/jquery.collageCaption.min.js?ver=1.0'></script>
-        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/themes/espresso/js/jquery.removeWhitespace.min.js?ver=1.0'></script>
-        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/themes/espresso/js/jquery.easing.js?ver=1.0'></script>
-        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/themes/espresso/js/fitvids.js?ver=1.0'></script>
-        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/themes/espresso/js/StackBoxBlur.js?ver=1.0'></script>
-        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/themes/espresso/js/magnific.js?ver=0.9.5'></script>
-        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/themes/espresso/js/jquery.blurSlider.js?ver=1.0'></script>
-        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/themes/espresso/js/jquery.main.js?ver=1.0'></script>
-        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js?ver=2.0.20'></script>
-        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/plugins/woocommerce/assets/js/jquery-blockui/jquery.blockUI.min.js?ver=2.60'></script>
-        <script type='text/javascript' src='http://demo.scheetzdesigns.com/espresso/wp-content/plugins/woocommerce/assets/js/jquery-placeholder/jquery.placeholder.min.js?ver=2.0.20'></script>
--->
+        chart = new Highcharts.StockChart({
+            chart: {
+                renderTo: 'myChart',
+                alignTicks: true,
+                animation: false,
+                height: 524
+            },
+            title: {
+                text: ''
+            },
+            legend: {
+                enabled: true,
+                align: 'center',
+                floating: true,
+                layout: 'horizontal',
+                verticalAlign: 'top'
+            },
+            exporting: {
+                enable: true
+            },
+            rangeSelector: {
+                buttons: [{
+                        count: 1,
+                        type: 'minute',
+                        text: '1M'
+                    }, {
+                        count: 5,
+                        type: 'minute',
+                        text: '5M'
+                    }, {
+                        type: 'all',
+                        text: 'All'
+                    }],
+                inputEnabled: false,
+                selected: 0
+            },
+            credits: {
+                enable: true,
+                text: ""
+            },
+            series: [
+                {
+                    name: 'SP',
+                    data: (function() {
+                        // generate an array of random data
+                        var data = [], time = (new Date()).getTime(), i;
+
+                        for (i = -299; i <= 0; i++) {
+                            data.push([
+                                time + i * 1000,
+                                82.5
+                            ]);
+                        }
+                        return data;
+                    })()
+                },
+                {
+                    name: 'PV',
+                    data: (function() {
+                        // generate an array of random data
+                        var data = [], aux = 0, time = (new Date()).getTime(), i;
+
+                        for (i = -299; i <= 0; i++) {
+
+                            data.push([
+                                time + i * 1000,
+                                aux = aux + (Math.floor(Math.random() * (0.276 - 0 + 1)) + 0)
+                            ]);
+                        }
+                        return data;
+                    })()
+                },
+                {
+                    name: 'MV',
+                    data: (function() {
+                        // generate an array of random data
+                        var data = [], time = (new Date()).getTime(), i;
+
+                        for (i = -299; i <= 0; i++) {
+                            data.push([
+                                time + i * 1000,
+                                (Math.floor(Math.random() * (8 - 4.1 + 1)) + 4.1)
+
+                            ]);
+                        }
+                        return data;
+                    })()
+                }
+            ]
+        });
+
+
+        jQuery("#graf-ctx").addClass("notDisplayable");
+
+
+        var setPoint = chart.series[0];//HighStockChart
+        var pv = chart.series[1];//HighStockChart
+
+        var mv = chart.series[2];//HighStockChart
+
+
+        console.log(setPoint)
+
+    </script>

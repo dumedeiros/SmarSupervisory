@@ -25,7 +25,6 @@ nav#main-nav .dropdown,
 a, #homepage-events article small span, #footer-widgets article.hours-block p.right, #respond span.required, #page-post article.page-content h3, section.social-search .search form input[type=submit] { color:#2f9acc; }
 nav#main-nav.full ul li a:hover { background:rgba(47, 154, 204, 0.25); }
 #footer-widgets .overlay, #mobile-slider .colored-wrap { background:rgba(47, 154, 204, 0.40) !important; }
-.gform_wrapper .gsection { border-bottom:5px solid #2f9acc !important; }
 .gform_wrapper input, .gform_wrapper select { color:#2f9acc !important; }
 .gform_wrapper input[type=button], .gform_wrapper input[type=submit] { color:#fff !important; }
 
@@ -111,7 +110,6 @@ a:hover { color:#000; }
 a.es-button.black:hover { background:rgba(0,0,0,0.5); }
 
 /* FONT */
-body, input, select, textarea { font-family:'Lato', sans-serif; }
 
 
 /* Responsive Coloring */
@@ -187,9 +185,8 @@ body, input, select, textarea { font-family:'Lato', sans-serif; }
 }
 
 .arrow{
-    padding-right:  20px;
-    padding-top:  0px;
-    padding-bottom: 0px;
+    margin-left: 5px;
+    padding-left: 20px;
     width: 100px;
     height: 10px;
 }

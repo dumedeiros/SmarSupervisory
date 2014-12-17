@@ -366,3 +366,24 @@ input[type=checkbox], input[type=radio] {
     background:url('../images/edit.png') no-repeat;
     background-position:2px -26px;
 }
+
+
+.dataBox{
+    color: white
+}
+.green-color{
+    color: greenyellow;
+}
+
+.yellow-color{
+    color: yellow;
+}
+
+.red-color{
+    color: red;
+}
+
+.blue-color{
+    color: blue !important;
+}
+

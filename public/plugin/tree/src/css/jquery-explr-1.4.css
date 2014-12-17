@@ -1,90 +1,90 @@
- /*
- * Explr v1.4
- * jQuery Simple Tree Plugin
- *
- * Copyright 2010 Amatyr4n
- * http://codecanyon.net/user/amatyr4n
- *
- * licensed under Envato licenses
- * http://wiki.envato.com/support/legal-terms/licensing-terms/
- */
+/*
+* Explr v1.4
+* jQuery Simple Tree Plugin
+*
+* Copyright 2010 Amatyr4n
+* http://codecanyon.net/user/amatyr4n
+*
+* licensed under Envato licenses
+* http://wiki.envato.com/support/legal-terms/licensing-terms/
+*/
 
 .explr-tree * {
-	margin: 0;
-	padding: 0;
+    margin: 0;
+    padding: 0;
 }
 
 .explr-tree, 
 .explr-tree ol,
 .explr-tree ul {
-	display: block;
-	font-family: Ubuntu, Helvetica, Tahoma, sans-serif;
-	font-size: 12px;
-	letter-spacing: normal;
-	line-height: 12px;
-	list-style: none;
-	margin: 0;
-	padding-bottom: 0;
-	padding-left: 20px;
-	padding-top: 5px;
-	position: relative;
+    display: block;
+    font-family: Ubuntu, Helvetica, Tahoma, sans-serif;
+    font-size: 12px;
+    letter-spacing: normal;
+    line-height: 12px;
+    list-style: none;
+    margin: 0;
+    padding-bottom: 0;
+    padding-left: 20px;
+    padding-top: 5px;
+    position: relative;
 }
 
 .explr-tree {
-	background: #fff;
-/*	border: 1px solid #999;*/
-	overflow: auto;
+    background: #fff;
+    /*	border: 1px solid #999;*/
+    overflow: auto;
 }
 
 .explr-tree li {
-	background: url("img/pc.de/folder.png") 16px 2px no-repeat;
-	display: block;
-	position: relative;
-	white-space: nowrap;
+    background: url("img/pc.de/folder.png") 16px 2px no-repeat;
+    display: block;
+    position: relative;
+    white-space: nowrap;
 }
 
 .explr-tree li a {
-	color: #555;
-	display: block;
-	font-size: 12px;
-	margin-left: 30px;
-	padding: 3px 0 5px 8px;
-	text-decoration: none;
+    color: #555;
+    display: block;
+    font-size: 12px;
+    margin-left: 30px;
+    padding: 3px 0 5px 8px;
+    text-decoration: none;
 }
 
 .explr-tree li a:hover {
-	color: #ff0084;
-	text-decoration: underline;
+    color: #ff0084;
+    text-decoration: underline;
 }
 
 .explr-line {
-	border-left: 1px dotted #999;
-	border-bottom: 1px dotted #999;
-	height: 22px;
-	position: absolute;
-	margin-left: 0;
-	margin-top: -12px;
-	width: 12px;
+    border-left: 1px dotted #999;
+    border-bottom: 1px dotted #999;
+    height: 22px;
+    position: absolute;
+    margin-left: 0;
+    margin-top: -12px;
+    width: 12px;
 }
 
 .explr-tree ol>li:first-child>.explr-line,
 .explr-tree ul>li:first-child>.explr-line {
-	margin-top: -8px;
-	height: 18px;
+    margin-top: -8px;
+    height: 18px;
 }
 
 .explr-line-fix {
-	border-left: 1px dotted #999;
+    border-left: 1px dotted #999;
 }
 
 .explr-plus {
-	background: url("img/pc.de/plus.png") 0 0 no-repeat;
-	height: 16px;
-	margin-left: -8px;
-	margin-top: 2px;
-	position: absolute;
-	width: 40px;
-	z-index: 1;
+    background: url("img/pc.de/plus.png") 0 0 no-repeat;
+    height: 16px;
+    margin-left: -8px;
+    margin-top: 2px;
+    position: absolute;
+    width: 40px;
+    z-index: 1;
 }
 
 .explr-minus { background-image: url("img/pc.de/busy.png"); }
@@ -143,6 +143,7 @@
 .explr-tree .icon-showreel > li, .explr-tree li.icon-showreel { background-image: url("img/pc.de/showreel.png"); }
 .explr-tree .icon-star > li, .explr-tree li.icon-star { background-image: url("img/pc.de/star.png"); }
 .explr-tree .icon-tag > li, .explr-tree li.icon-tag { background-image: url("img/pc.de/tag.png"); }
+.explr-tree .icon-tag-novo > li, .explr-tree li.icon-tag-novo { background-image: url("img/pc.de/tag-novo.png"); }
 .explr-tree .icon-text2 > li, .explr-tree li.icon-text2 { background-image: url("img/pc.de/issue.png"); }
 .explr-tree .icon-text3 > li, .explr-tree li.icon-text3 { background-image: url("img/pc.de/future-projects.png"); }
 .explr-tree .icon-text4 > li, .explr-tree li.icon-text4 { background-image: url("img/pc.de/old-versions.png"); }
@@ -156,36 +157,45 @@
 .explr-ie, 
 .explr-ie ol,
 .explr-ie ul {
-	margin-left: 4px;
-	padding-left: 16px;
-	position: static;
+    margin-left: 4px;
+    padding-left: 16px;
+    position: static;
 }
 
 .explr-ie ol,
 .explr-ie ul {
-	overflow: hidden;
+    overflow: hidden;
 }
 
 .explr-ie {
-	padding-top: 20px;
+    padding-top: 20px;
 }
 
 .explr-ie .explr-line, 
 .explr-ie .explr-plus {
-	top: 0;
-	left: 4px;
+    top: 0;
+    left: 4px;
 }
 
 .explr-ie li {
-	height: auto !important;
-	height: 24px;
-	*padding-top: 12px;
-	_padding-top: 0;
+    height: auto !important;
+    height: 24px;
+    *padding-top: 12px;
+    _padding-top: 0;
 }
 
 .explr-ie li a {
-	*position: absolute;
-	_position: static;
-	*top: 0;
-	_top: auto;
+    *position: absolute;
+    _position: static;
+    *top: 0;
+    _top: auto;
 }
+
+
+.tagtable tbody tr td:first-child{ 
+    background-image: url("img/pc.de/tag-novo.png");
+    background-repeat: no-repeat;
+    padding-left:  20px;
+    background-position:left center;
+}
+

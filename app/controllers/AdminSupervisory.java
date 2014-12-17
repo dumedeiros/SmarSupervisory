@@ -18,6 +18,7 @@ public class AdminSupervisory extends Admin {
     }
 
     public static void index() {
+        flash.put("error", "Ocorreu um erro");
         render();
     }
 }
