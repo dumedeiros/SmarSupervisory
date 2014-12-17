@@ -25,7 +25,6 @@ import play.mvc.Controller;
  */
 public class Supervisory extends Controller {
 
-    Boolean a;
     public static Map<TagItem, ProcessData> opcData;
     public static Map<String, Entry<TagItem, ProcessData>> opcDataMap;
     public static SupervisoryThread thread = new SupervisoryThread(true);
